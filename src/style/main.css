@@ -1,0 +1,230 @@
+/*Font*/
+
+@font-face {
+  font-family: "AvenirNext-Bold";
+  src: url("../fonts/AvenirNext-Bold.woff2") format("woff2"),
+    url("../fonts/AvenirNext-Bold.woff") format("woff");
+}
+@font-face {
+  font-family: "AvenirNext-DemiBold";
+  src: url("../fonts/AvenirNext-DemiBold.woff2") format("woff2"),
+    url("../fonts/AvenirNext-DemiBold.woff") format("woff");
+}
+@font-face {
+  font-family: "AvenirNext-Medium";
+  src: url("../fonts/AvenirNext-Medium.woff2") format("woff2"),
+    url("../fonts/AvenirNext-Medium.woff") format("woff");
+}
+@font-face {
+  font-family: "AvenirNext-Regular";
+  src: url("../fonts/AvenirNext-Regular.woff2") format("woff2"),
+    url("../fonts/AvenirNext-Regular.woff") format("woff");
+}
+/**/
+a {
+  text-decoration: none;
+  text-transform: capitalize;
+}
+ul,
+li {
+  list-style-type: none;
+  text-transform: capitalize;
+}
+p,
+h1,
+h2,
+h3{
+  text-transform: capitalize;
+}
+.container {
+  max-width: 90%;
+  margin: 0 auto;
+  overflow: hidden;
+}
+/*Header*/
+.web-title {
+  color: #c83b1b;
+  text-align: center;
+  margin: 29px 0;
+  font-size: 30px;
+  font-family: AvenirNext-DemiBold;
+}
+.group-header-items {
+  display: flex;
+  justify-content: space-around;
+  font-size: 20px;
+  font-family: AvenirNext-Medium;
+}
+.icon {
+  display: flex;
+}
+.icon p {
+  padding-right: 30px;
+  font-weight: bold;
+}
+.navbar-menue {
+  display: flex;
+  margin-right: 175px;
+}
+.navbar-menue li {
+  padding-right: 30px;
+}
+/*Hero*/
+.hero-img {
+  border: 1px solid white;
+  height: 550px;
+  background-image: url("../img/Hero-Image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.hero-img-bacground {
+  border: 1px solid #eff0de;
+  background-color: #eff0de;
+  height: 421px;
+  width: 628px;
+  position: absolute;
+  left: 670px;
+  top: 300px;
+}
+.hero-img-bacground p {
+  color: #c83b1b;
+  text-align: center;
+  font-size: 64px;
+  font-family: AvenirNext-Bold;
+}
+.soical-media {
+  margin-left: 115px;
+}
+.soical-media p {
+  color: black;
+  font-size: 18px;
+  border-top: 3px solid black;
+  width: 400px;
+  text-align: center;
+}
+.soical-media img {
+  margin: 0 43px;
+}
+/*FeaturedBooks*/
+.featured-books-title , .new-books-title {
+  color: black;
+  font-size: 35px;
+  font-family: AvenirNext-Bold;
+  font-weight: bold;
+  background-color: rgba(200, 59, 27, 0.49);
+  width: 285px;
+  height: 57px;
+  padding: 18px;
+  text-align: center;
+  float: right;
+}
+.books-gride {
+  display: flex;
+}
+.books-gride li{
+    padding: 127px 61px 30px 61px;
+    justify-content: space-around;
+}
+
+/*AboutUs*/
+.about-us-desc{
+  display: flex;
+    justify-content: space-around;
+    position: relative;
+    bottom: 440px;
+    right: 100px;
+    background-color: #c00e0e0d;;
+    height: 440px;
+}
+.about-us-pargraph{
+    font-size: 36px;
+    max-width: 922px;
+    line-height: 49px;
+    padding-top: 100px;
+}
+.about-us-title{
+  font-size: 80px;
+  color: #ffff;
+  max-width: 30px;
+}
+/*Footer*/
+.section-footer{
+  background-color: rgba(231, 215, 71, 0.67);
+  height: 140px;
+  padding: 12px 30px;
+}
+.contact-info{
+    
+    line-height: 15px;
+}
+.contact-info h3{
+  color:#C83B1B;
+  font-size: 24px;
+}
+.contact-info h4{
+  font-size: 20px;
+}
+.delivery{
+  display: flex;
+}
+.delivery img{
+  padding: 0 5px;
+}
+.delivery-info{
+  position: relative;
+  bottom: 144px;
+  left: 600px;
+}
+.delivery-info h3{
+  font-size:20px;
+}
+.payment-methods{
+  display: flex;
+  position: relative;
+  bottom: 132px;
+  left: 795px
+}
+.payment-methods h3{
+  font-size: 20px;
+}
+.payment-methods img{
+
+  padding: 0 6px;
+}
+/*BookPage*/
+.searchBook-img-bacground {
+  border: 1px solid white;
+  height: 550px;
+  background-image: url("../img/search-image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.searchBook-img-bacground p {
+  color:#FFFCFC;;
+  text-align: center;
+  font-size: 64px;
+  font-family: AvenirNext-Bold;
+}
+.searchBook-img-bacground h3 {
+  font-size: 36px;
+line-height: 42px;
+text-align: center;
+color: #FFFCFC;
+}
+.search-bar{
+  text-align: center;
+}
+#search-book{
+  font-size: 30px;
+text-align: center;
+color: rgba(0, 0, 0, 0.07);
+border: 3px solid #000000;
+padding: 12px 139px;
+}
+#search-but{
+  background: #C83B1B;
+border: 3px solid #FFFBFB;
+font-size: 30px;
+text-align: center;
+padding: 12px 30px;
+}

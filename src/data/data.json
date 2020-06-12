@@ -1,0 +1,82 @@
+[
+  {
+    "id": 1,
+    "image": "../img/img-1.png",
+    "tittle": "365 days of self love",
+    "price": "12$",
+    "describtion": "Bunny Williams worked for legendary decorators Sister Parish and Albert Hadley. Striking out on her own, she rose to the top rank of the interior design profession. Part memoir and part how-to manual, this work showcases many of the drop-dead chic but always costly comfortable residences whose interiors Williams has designed during her career.",
+    "Author":"Williams, Bunny",
+    "Pub. Year":"15-12-2009",
+    "Pages":100
+  },
+  {
+    "id": 2,
+    "image": "../img/img-2.png",
+    "tittle": "The Life After College",
+    "price": "13$",
+    "describtion": "Bunny Williams worked for legendary decorators Sister Parish and Albert Hadley. Striking out on her own, she rose to the top rank of the interior design profession. Part memoir and part how-to manual, this work showcases many of the drop-dead chic but always costly comfortable residences whose interiors Williams has designed during her career.",
+    "Author":"Williams, Bunny",
+    "Pub. Year":"15-12-2010",
+    "Pages":200
+  },
+  {
+    "id": 3,
+    "image": "../img/img-3.png",
+    "tittle": "The Bear`s Happiness",
+    "price": "14$",
+    "describtion": "Bunny Williams worked for legendary decorators Sister Parish and Albert Hadley. Striking out on her own, she rose to the top rank of the interior design profession. Part memoir and part how-to manual, this work showcases many of the drop-dead chic but always costly comfortable residences whose interiors Williams has designed during her career.",
+    "Author":"Williams, Bunny",
+    "Pub. Year":"15-12-2011",
+    "Pages":20
+  },
+  {
+    "id": 4,
+    "image": "../img/img-4.png",
+    "tittle": "Under The Hills",
+    "price": "12$",
+    "describtion": "Bunny Williams worked for legendary decorators Sister Parish and Albert Hadley. Striking out on her own, she rose to the top rank of the interior design profession. Part memoir and part how-to manual, this work showcases many of the drop-dead chic but always costly comfortable residences whose interiors Williams has designed during her career.",
+    "Author":"Williams, Bunny",
+    "Pub. Year":"2020",
+    "Pages":119
+  },
+  {
+    "id": 5,
+    "image": "../img/img-5.png",
+    "tittle": "103 Home Cooked Male",
+    "price": "11$",
+    "describtion": "Bunny Williams worked for legendary decorators Sister Parish and Albert Hadley. Striking out on her own, she rose to the top rank of the interior design profession. Part memoir and part how-to manual, this work showcases many of the drop-dead chic but always costly comfortable residences whose interiors Williams has designed during her career.",
+    "Author":"Williams, Bunny",
+    "Pub. Year":"2020",
+    "Pages":150
+  },
+  {
+    "id": 6,
+    "image": "../img/img-6.png",
+    "tittle": "Love EllIOT",
+    "price": "11$",
+    "describtion": "Bunny Williams worked for legendary decorators Sister Parish and Albert Hadley. Striking out on her own, she rose to the top rank of the interior design profession. Part memoir and part how-to manual, this work showcases many of the drop-dead chic but always costly comfortable residences whose interiors Williams has designed during her career.",
+    "Author":"Williams, Bunny",
+    "Pub. Year":"2020",
+    "Pages":80
+  },
+  {
+    "id": 7,
+    "image": "../img/img-7.png",
+    "tittle": "ILLUSTRATING MONSTERS",
+    "price": "11$",
+    "describtion": "Bunny Williams worked for legendary decorators Sister Parish and Albert Hadley. Striking out on her own, she rose to the top rank of the interior design profession. Part memoir and part how-to manual, this work showcases many of the drop-dead chic but always costly comfortable residences whose interiors Williams has designed during her career.",
+    "Author":"Williams, Bunny",
+    "Pub. Year":"2020",
+    "Pages":12
+  },
+  {
+    "id": 8,
+    "image": "../img/img-8.png",
+    "tittle": "Thinking Out Side The Books",
+    "price": "12$",
+    "describtion": "Bunny Williams worked for legendary decorators Sister Parish and Albert Hadley. Striking out on her own, she rose to the top rank of the interior design profession. Part memoir and part how-to manual, this work showcases many of the drop-dead chic but always costly comfortable residences whose interiors Williams has designed during her career.",
+    "Author":"Williams, Bunny",
+    "Pub. Year":"2020",
+    "Pages":80
+  }
+]

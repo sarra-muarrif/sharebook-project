@@ -1,0 +1,8 @@
+.book-details {
+  justify-content: space-around;
+  padding: 10px 65px;
+}
+
+.book-details h1{
+    font-family: AvenirNext-Bold;
+}

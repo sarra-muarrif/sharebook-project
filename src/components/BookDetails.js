@@ -1,7 +1,5 @@
 import React from "react"
-
-import "./BookDetails.css"
-import AddToCartButton from "../../components/AddToCartButton/AddToCartButton"
+import AddToCartButton from "./AddToCartButton.js"
 
 class BookDetails extends React.Component{
     render(){
@@ -10,7 +8,7 @@ class BookDetails extends React.Component{
             <div className="book-details">
             <h1>{this.props.price}</h1>
             <img
-            src={require("../../img/" + this.props.image.split("/")[2])}
+            src={require("../img/" + this.props.image.split("/")[2])}
             alt="book cover"
             width="300px"
           />

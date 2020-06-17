@@ -1,8 +1,5 @@
 import React from "react";
-
-import "./BookGridDetails.css";
-
-import BookDetails from "../BookDetails/BookDetails";
+import BookDetails from "./BookDetails";
 
 class BookGridDetails extends React.Component {
   render() {

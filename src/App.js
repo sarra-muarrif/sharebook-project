@@ -1,14 +1,12 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-
-import Header from "./components/Header.js";
 import Footer from "./components/Footer.js";
 import HomePage from "./pages/HomePage.js";
 import BooksPage from "./pages/BooksPage.js";
-import DetailsPage from "./pages/Details/DetailsPage"
+import DetailsPage from "./pages/DetailsPage.js"
 import data from "./data/data.json";
-import ContactPage from "./pages/Contact/ContactPage"
-import CartPage from "./pages/Cart/CartPage.js";
+import ContactPage from "./pages/ContactPage.js"
+import CartPage from "./pages/CartPage.js";
 
 class App extends React.Component {
   state = {
@@ -17,7 +15,6 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <Header />
         <>
           <Route
             exact
@@ -58,21 +55,21 @@ class App extends React.Component {
             exact
             path="/contact"
             render={(props) => {
-              return <HomePage {...props} books={this.state.books} />;
+              return <ContactPage {...props}  />;
             }}
           />
           <Route
             exact
             path="/cart"
             render={(props) => {
-              return <HomePage {...props} books={this.state.books} />;
+              return <CartPage {...props} />;
             }}
           />
           <Route
             exact
             path="/detils"
             render={(props) => {
-              return <HomePage {...props} books={this.state.books} />;
+              return <DetailsPage {...props} books={this.state.books} />;
             }}
           />
         </>

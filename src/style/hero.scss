@@ -1,0 +1,59 @@
+h1{
+    color:  #C83B1B;
+    margin: auto;
+    padding: 25px;
+    font-size: 64px;
+ }
+ .searchInput{
+     font: 22px/120% var(--font-stack-regular);
+     width: 16em;
+     border-radius: 25px;
+     border: 1px solid #ccc;
+     padding: 10px 35px 10px 10px;
+ }
+ .searchWrapper{
+     display: grid;
+     justify-content: center;
+     text-align: -webkit-center;
+ }
+ .buffer{
+     height: 6rem;
+ }
+ .price-hero-saler{
+     width: 8em;
+     height: 3em;
+     border: 1px solid #ccc;
+     border-radius: 25px;
+ }
+ .select-Type-saler {
+     width: 8em;
+     height: 3em;
+     border: 1px solid #ccc;
+     border-radius: 25px;
+     margin-left: 60px;
+ }
+ input.load-image-saler {
+     width: 14em;
+     height: 14em;
+     border: 1px solid #ccc;
+     border-radius: 25px;
+ }
+ .card-hero {
+     display: flex;
+     justify-content: space-around;
+     align-items: center;
+     text-align-last: center;
+     margin-top: 5em;
+ }
+ .card-saler{
+     border-top: 1px solid pink;
+ 
+ }
+ a.price-hero-saler.is-active {
+     display: inline-grid;
+     align-items: center;
+     background: rgba(196, 196, 196, 0.15);
+     color: black;
+     font-weight: bold;
+     margin: 6px 0;
+ }

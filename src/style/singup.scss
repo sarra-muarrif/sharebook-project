@@ -1,0 +1,24 @@
+body{
+    background-color: var(--color-orange-20);
+}
+
+
+.signin-signup{
+    
+    justify-content: center;
+}
+form.form-signin-signup input {
+    padding: 15px;
+    border-radius: 12px;
+    border: 1px solid #ccc;
+    margin: 6px;
+}
+.email-active {
+    width: 100%;
+    box-sizing: border-box;
+   
+}
+.password-active{
+    width: 100%;
+    box-sizing: border-box;
+}

@@ -1,0 +1,47 @@
+h2{
+    font-family: Roboto;
+    font-weight: bold;
+    font-size: 34px;
+    line-height: 56px;
+    color: #000000;
+    
+ }
+ .searchInput{
+     font: 22px/120% var(--font-stack-regular);
+     width: 16em;
+     border-radius: 25px;
+     border: 1px solid #ccc;
+     padding: 10px 35px 10px 10px;
+ }
+ .background-saler1 {
+    background: #F9F6F6;
+    width: 100%;
+    border-radius: 15px;
+}
+// p {
+//     font-size: 36px;
+//     padding: 26px;
+//     /* border-bottom: 1px solid; */
+// }
+.Type-Backgruond-1 {
+     display: grid;
+     grid-template-columns: repeat(2,1fr );
+     grid-template-rows: 1fr;   
+}
+
+.image-book{
+    grid-column-start: none;
+}
+p.box-Yourbook {
+    font-family: Averia Serif Libre;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 100px;
+    color: #000000;
+    text-transform: capitalize;
+    padding: 7px 7px;
+}
+span.remove-book {
+    border-top: 1px solid #000000;
+}

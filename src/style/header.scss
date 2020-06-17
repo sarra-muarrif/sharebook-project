@@ -1,0 +1,24 @@
+
+input{
+    background: rgba(196, 196, 196, 0.15);
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+    color: red;
+}
+
+.navbar-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid pink;
+}
+
+.Exit{
+    text-decoration: none;
+    color: #000000;
+    font-size: 48px;
+    font-family: Roboto;
+    font-weight: bold;
+}

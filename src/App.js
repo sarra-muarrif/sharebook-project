@@ -5,8 +5,10 @@ import Header from "./components/Header.js";
 import Footer from "./components/Footer.js";
 import HomePage from "./pages/HomePage.js";
 import BooksPage from "./pages/BooksPage.js";
-
+import DetailsPage from "./pages/Details/DetailsPage"
 import data from "./data/data.json";
+import ContactPage from "./pages/Contact/ContactPage"
+import CartPage from "./pages/Cart/CartPage.js";
 
 class App extends React.Component {
   state = {
@@ -76,6 +78,7 @@ class App extends React.Component {
         </>
         <Footer />
       </BrowserRouter>
+
     );
   }
 }

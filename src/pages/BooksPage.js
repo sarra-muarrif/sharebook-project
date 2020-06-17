@@ -1,5 +1,5 @@
 import React from "react";
-
+import Header from "../components/Header.js";
 import Searchbook from "../components/SearchBook.js";
 import BookGrid from "../components/BookGrid";
 
@@ -7,6 +7,7 @@ class BooksPage extends React.Component {
   render() {
     return (
       <>
+      <Header />
         <Searchbook />
         <BookGrid
         title="featured books"

@@ -8,6 +8,7 @@ import data from "./data/data.json";
 import ContactPage from "./pages/ContactPage.js"
 import CartPage from "./pages/CartPage.js";
 
+
 class App extends React.Component {
   state = {
     books: data,
@@ -75,7 +76,6 @@ class App extends React.Component {
         </>
         <Footer />
       </BrowserRouter>
-
     );
   }
 }

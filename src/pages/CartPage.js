@@ -1,13 +1,21 @@
 import React from "react";
-import Header from "../components/Header.js";
-import Cart from "../components/Cart.js";
+
+import BookCheckout from "../components/BookCheckout";
 
 class CartPage extends React.Component {
   render() {
     return (
-      <>
-      <Header />
-      < Cart />
+      <>   
+      <h2>Shopping Cart</h2>  
+        <BookCheckout />
+        <BookCheckout />
+        <div className="total-order">
+          <div className="total-price">
+          <h2>Total : 19 $</h2>
+            <h2>QTY :  2</h2>
+          </div>
+          <button>Proceed To Checkout</button>
+        </div>
       </>
     );
   }

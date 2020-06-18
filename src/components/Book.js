@@ -5,7 +5,7 @@ class Book extends React.Component {
   render() {
     return (
       <li className="books">
-        < NavLink exact to="./detils">
+        < NavLink exact to="./details">
           <img
             src={require("../img/" + this.props.image.split("/")[2])}
             alt="book cover"

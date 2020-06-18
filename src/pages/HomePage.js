@@ -8,7 +8,6 @@ class HomePage extends React.Component {
   render() {
     return (
       <>
-        <Header />
         <HeroHome />
         <BookGrid
           title="featured books"

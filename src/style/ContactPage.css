@@ -1,0 +1,62 @@
+form .container{
+    background-color: #f1e0465b;
+    width: 90%;
+    margin: 50px;
+    margin-right: 60px;
+    padding: 40px;
+    display: flex;
+    font-family: AvenirNext-Medium;
+}
+.dialer-info{
+padding: 10px;
+margin-top: 20px;
+}
+.dialer-name , .dialer-email {
+    padding: 10px;
+}
+.dialer-name label , .dialer-email label{
+    padding: 10px;
+    font-weight: bold;  
+}
+.dialer-name input, .dialer-email input{
+    width: 400px;
+    height: 40px;
+    background-color: rgba(212, 212, 212, 0.575);
+    font-size: large;
+    border: 2px solid rgba(36, 36, 36, 0.335);
+    padding-left: 10px;
+}
+
+.dialer-message{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+.dialer-message textarea{
+width: 500px;
+height: 200px;
+font-size: 1.5em;
+padding-left: 20px;
+background-color: rgba(212, 212, 212, 0.575);
+border: none;
+margin-bottom: 20px;
+text-align: center;
+line-height: 1.5em;
+}
+
+ .send-btn{
+    background-color: #9e9117d5;
+    width: 170px;
+    height: 50px;
+    font-size: 1.5em;
+    font-weight: bolder;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    border: none;
+    cursor: pointer;
+}
+.send-btn:hover{
+    color: cornsilk;
+}

@@ -7,7 +7,6 @@ import BookGridDetails from "../components/BookGridDetails.js";
 const DetailsPage = (props) => {
   return (
     <>
-      <Header />
       <section className="detail">
         <div className="container">
           <div className="book-preview">
@@ -23,6 +22,8 @@ const DetailsPage = (props) => {
               {props.books[0].price}
               {
                 <span>
+                  <img src={ImgStar} alt="star" width="30px" />
+                  <img src={ImgStar} alt="star" width="30px" />
                   <img src={ImgStar} alt="star" width="30px" />
                   <img src={ImgStar} alt="star" width="30px" />
                   <img src={ImgStar} alt="star" width="30px" />

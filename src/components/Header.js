@@ -11,8 +11,8 @@ class Header extends React.Component {
           </div>
           <div className="group-header-items">
             <div className="icon">
-              <NavLink exact to ="./lig in">sign in</NavLink>
-              <NavLink exact to ="./register">sign up</NavLink>
+              <NavLink exact to ="./sign-in">sign in</NavLink>
+              <NavLink exact to ="./sign-up">sign up</NavLink>
             </div>
             <ul className="navbar-menue">
               <li>
@@ -31,13 +31,13 @@ class Header extends React.Component {
                 </NavLink>
               </li>
               <li>
-                <NavLink  exact to="./contact" className="navebar-item acive">
+                <NavLink  exact to="/contact" className="navebar-item acive">
                   contact
                 </NavLink>
               </li>
             </ul>
             <div className="cart-icon">
-            <NavLink  exact to="./cart">
+            <NavLink  exact to="/cart">
               <i className="fas fa-shopping-cart"></i>
               </NavLink>
             </div>

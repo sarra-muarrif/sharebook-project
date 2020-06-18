@@ -36,8 +36,8 @@ h2,
 h3 {
   text-transform: capitalize;
 }
-.container {
-  max-width: 90%;
-  margin: 0 auto;
-  overflow: hidden;
+
+body{
+  margin: 0;
+  padding: 0;
 }

@@ -7,7 +7,6 @@ class BooksPage extends React.Component {
   render() {
     return (
       <>
-      <Header />
         <Searchbook />
         <BookGrid
         title="featured books"

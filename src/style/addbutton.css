@@ -1,0 +1,20 @@
+.add-to-cart {
+  width: 300px;
+  height: 50px;
+  background-color: rgba(0, 0, 0, 0.472);
+  color: white;
+  cursor: pointer;
+  font-weight: bolder;
+  font-size: 1.2em;
+  font-family: AvenirNext-DemiBold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: black 2px solid;
+  margin-top: 23px;
+}
+
+.add-to-cart:hover {
+  background-color: white;
+  color: black;
+}

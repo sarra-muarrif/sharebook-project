@@ -1,10 +1,6 @@
 import React from "react";
 
-import instagram from "../icons/instagram.svg";
-import facebook from "../icons/facebook.svg";
-import twitter from "../icons/twitter.svg";
-
-class Hero extends React.Component {
+class HeroHome extends React.Component {
   render() {
     return (
       <section className="section hero-home ">
@@ -13,10 +9,14 @@ class Hero extends React.Component {
             <div className="hero-img-bacground">
               <p>“GOOD FRIENDS, GOOD BOOKS”</p>
               <div className="soical-media">
+                <div className=" soical-media border-line">
+                </div>
                 <p>FOLLOW US ON</p>
-                <img src={instagram} width="50px" alt="instagram" />
-                <img src={facebook} width="50px" alt="twitter" />
-                <img src={twitter} width="50px" alt="facebook" />
+                <div className="soical-media icons">
+                <i className="fab fa-twitter-square"></i>
+                <i className="fab fa-instagram"></i>
+                <i className="fab fa-facebook-square"></i>
+                </div>
               </div>
             </div>
           </div>
@@ -26,4 +26,4 @@ class Hero extends React.Component {
   }
 }
 
-export default Hero;
+export default HeroHome;

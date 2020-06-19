@@ -1,3 +1,14 @@
- .book-grid-details{
-    display: flex;
- }
+.book-grid-details {
+  display: flex;
+}
+.book-details {
+  justify-content: space-around;
+  padding: 10px 65px;
+}
+
+.book-details h1 {
+  font-family: AvenirNext-Bold;
+  font-size: 2.5em;
+  color: black;
+  padding: 15px;
+}

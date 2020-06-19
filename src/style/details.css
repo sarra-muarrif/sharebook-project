@@ -1,37 +1,50 @@
-.detail .container {
+.detail .book-details {
   display: flex;
   margin: 30px;
+  font-family: AvenirNext-DemiBold;
 }
 
 .main-photo {
-  width:300px;
+  width: 300px;
   border: #b12121 2px solid;
 }
-.book-preview p{
+.book-preview p {
   font-family: AvenirNext-DemiBold;
   text-align: center;
   font-size: 1.5em;
+  margin-top: 0;
+  font-weight: bold;
 }
 
 .book-overview {
-  margin: 0 40px ;
-  font-family: AvenirNext-DemiBold;
-  font-size: 1.2em;
+  margin: 0 40px;
   display: flex;
   flex-direction: column;
+  justify-content: space-around;
 }
 
-.book-overview h2{
+.book-title,
+.book-price {
   font-family: AvenirNext-Bold;
   font-weight: bolder;
-  margin-left: 0;
+  margin: 10px;
 }
-
-.book-overview h2 span{
+.book-description,
+.book-Author,
+.book-PubYear,
+.book-Pages {
+  font-family: AvenirNext-Regular;
+  font-weight: bold;
+  font-size: 1.5em;
+  padding: 0;
+  margin: 10px;
+  text-align: justify;
+}
+.book-overview h2 span {
   margin-left: 40px;
 }
 
-.book-overview h2 span img{
+.book-overview h2 span img {
   margin-left: 10px;
 }
 .other-options {
@@ -43,5 +56,5 @@
   align-items: center;
   justify-content: center;
   background-color: #b1212177;
+  color: black;
 }
-

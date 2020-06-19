@@ -1,19 +1,17 @@
 import React from "react";
-import Header from "../components/Header";
 import img1 from "../img/img-1.png";
 import ImgStar from "../img/star.svg";
 import BookGridDetails from "../components/BookGridDetails.js";
+import AddToCartButton from "../components/AddToCartButton";
 
 const DetailsPage = (props) => {
   return (
     <>
       <section className="detail">
-        <div className="container">
+        <div className="book-details">
           <div className="book-preview">
             <img src={img1} className="main-photo" alt="book cover" />
-            <a href="/" className="add-to-cart">
-              Add To Cart
-            </a>
+            <AddToCartButton />
             <p>Saler : Sara</p>
           </div>
           <div className="book-overview">

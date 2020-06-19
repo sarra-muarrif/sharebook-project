@@ -9,13 +9,12 @@ class HeroHome extends React.Component {
             <div className="hero-img-bacground">
               <p>“GOOD FRIENDS, GOOD BOOKS”</p>
               <div className="soical-media">
-                <div className=" soical-media border-line">
-                </div>
+                <div className=" soical-media border-line"></div>
                 <p>FOLLOW US ON</p>
                 <div className="soical-media icons">
-                <i className="fab fa-twitter-square"></i>
-                <i className="fab fa-instagram"></i>
-                <i className="fab fa-facebook-square"></i>
+                  <i className="fab fa-twitter-square"></i>
+                  <i className="fab fa-instagram"></i>
+                  <i className="fab fa-facebook-square"></i>
                 </div>
               </div>
             </div>

@@ -1,50 +1,49 @@
-.book-checkout{
-    background-color: #F9F6F6;
-    border: 3px solid black;
-    font-family: AvenirNext-DemiBold;
-    font-size: 1.2em;
-    display: flex;
-    flex-direction: column;   
-    align-items: center; 
-    margin: 30px 40px;
+.book-checkout {
+  background-color: #f9f6f6;
+  border: 3px solid black;
+  font-family: AvenirNext-DemiBold;
+  font-size: 1.2em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 30px 40px;
 }
-.book-checkout img{
-    width:230px;
-    border: 2px solid black;
-
+.book-checkout img {
+  width: 230px;
+  border: 2px solid black;
 }
-.book-review{
-display: flex;
-width: 90%;
-border-bottom: 3px solid #B12121;
-padding: 30px;
+.book-review {
+  display: flex;
+  width: 90%;
+  border-bottom: 3px solid #b12121;
+  padding: 30px;
 }
-.book-desc{
-padding: 40px;
-display: flex;
-flex-direction: column;
-justify-content: space-around;
+.book-desc {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
-.cart-btns{
-    margin: 20px;
+.cart-btns {
+  margin: 20px;
 }
-.cart-btns button{
-font-size: 2em;
-background-color: transparent;
-border: none;
-cursor: pointer;
-padding: 20px 120px;
-font-weight: bold;
+.cart-btns button {
+  font-size: 2em;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 20px 120px;
+  font-weight: bold;
 }
-.cart-btns button :hover{
-    color: green;
+.cart-btns button :hover {
+  color: green;
 }
-.cart-btns .delete-btn{
-border-right: 3px solid #E7D747;
+.cart-btns .delete-btn {
+  border-right: 3px solid #e7d747;
 }
-.cart-btns .delete-btn:hover{
-    color: red;
+.cart-btns .delete-btn:hover {
+  color: red;
 }
-a{
-    color: black;
+a {
+  color: black;
 }

@@ -1,38 +1,36 @@
 .searchBook-img-bacground {
-    border: 1px solid white;
-    height: 550px;
-    background-image: url("../img/search-image.png");
-    background-repeat: no-repeat;
-    background-size: cover;
-  }
-  .searchBook-img-bacground p {
-    color: #fffcfc;
-    text-align: center;
-    font-size: 64px;
-    font-family: AvenirNext-Bold;
-  }
-  .searchBook-img-bacground h3 {
-    font-size: 36px;
-    line-height: 42px;
-    text-align: center;
-    color: #fffcfc;
-  }
-  .search-bar {
-    text-align: center;
-  }
-  #search-book {
-    font-size: 30px;
-    text-align: center;
-    color: rgba(0, 0, 0, 0.07);
-    border: 3px solid #000000;
-    padding: 12px 139px;
-  }
-  #search-but {
-    background: #c83b1b;
-    border: 3px solid #fffbfb;
-    font-size: 30px;
-    text-align: center;
-    padding: 12px 30px;
-  }
-  
-  
+  border: 1px solid white;
+  height: 550px;
+  background-image: url("../img/search-image.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.searchBook-img-bacground p {
+  color: #fffcfc;
+  text-align: center;
+  font-size: 64px;
+  font-family: AvenirNext-Bold;
+}
+.searchBook-img-bacground h3 {
+  font-size: 36px;
+  line-height: 42px;
+  text-align: center;
+  color: #fffcfc;
+}
+.search-bar {
+  text-align: center;
+}
+#search-book {
+  font-size: 30px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.07);
+  border: 3px solid #000000;
+  padding: 12px 139px;
+}
+#search-but {
+  background: #c83b1b;
+  border: 3px solid #fffbfb;
+  font-size: 30px;
+  text-align: center;
+  padding: 12px 30px;
+}

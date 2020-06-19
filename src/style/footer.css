@@ -1,45 +1,45 @@
-.section-footer .container{
-    background-color: rgba(231, 215, 71, 0.67);
-  }
-  .section-desc{
-    display: flex;
-    justify-content: space-between;
-    padding-top: 12px;
-  }
-  .contact-info{
-    line-height: 15px;
-    margin: 0 0 12px 40px;
-  }
-  .contact-info h3 {
-    color: #c83b1b;
-    font-family: AvenirNext-DemiBold;
-    font-size: 24px;
-  }
-  .contact-info h4 {
-    font-family: AvenirNext-DemiBold;
-    font-size: 20px;
-  }
-  .fa-truck {
-    font-size: 24px;
-    padding-right: 12px;
-    padding-top: 12px;
-    color: #0099cc;
-  }
-  .delivery h3{
-    font-family: AvenirNext-DemiBold;
-    font-size: 20px;
-  }
-  .payment-methods{
-    margin: 0 85px 0 0px;
-  }
-  .payment-methods h3{
-    font-family: AvenirNext-DemiBold;
-    font-size: 20px;
-    float: left;
-  }
-  .fa-cc-visa,
-  .fa-cc-mastercard,
-  .fa-cc-paypal {
-    font-size: 39px;
-    padding: 15px 0px 0 12px;
-  }
+.section-footer .container {
+  background-color: rgba(231, 215, 71, 0.67);
+}
+.section-desc {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 12px;
+}
+.contact-info {
+  line-height: 15px;
+  margin: 0 0 12px 40px;
+}
+.contact-info h3 {
+  color: #c83b1b;
+  font-family: AvenirNext-DemiBold;
+  font-size: 24px;
+}
+.contact-info h4 {
+  font-family: AvenirNext-DemiBold;
+  font-size: 20px;
+}
+.fa-truck {
+  font-size: 24px;
+  padding-right: 12px;
+  padding-top: 12px;
+  color: #0099cc;
+}
+.delivery h3 {
+  font-family: AvenirNext-DemiBold;
+  font-size: 20px;
+}
+.payment-methods {
+  margin: 0 85px 0 0px;
+}
+.payment-methods h3 {
+  font-family: AvenirNext-DemiBold;
+  font-size: 20px;
+  float: left;
+}
+.fa-cc-visa,
+.fa-cc-mastercard,
+.fa-cc-paypal {
+  font-size: 39px;
+  padding: 15px 0px 0 12px;
+}

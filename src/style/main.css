@@ -20,7 +20,7 @@
   src: url("../fonts/AvenirNext-Regular.woff2") format("woff2"),
     url("../fonts/AvenirNext-Regular.woff") format("woff");
 }
-/**/
+/*normalization*/
 a {
   text-decoration: none;
   text-transform: capitalize;
@@ -37,7 +37,7 @@ h3 {
   text-transform: capitalize;
 }
 
-body{
+body {
   margin: 0;
   padding: 0;
 }

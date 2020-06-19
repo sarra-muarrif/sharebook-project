@@ -1,18 +1,17 @@
-/*font file*/
+/*font file and normalize style*/
 @import "./main.css";
 /*home page */
 @import "./header.css";
 @import "./herohome.css";
-@import "./booksgride.css";
+@import "./booksgrid.css";
 @import "./aboutus.css";
 @import "./footer.css";
 /*book page */
 @import "./searchbook.css";
 /*detils page */
 @import "./details.css";
-@import "./addbutton.css";
+@import "./AddToCartButton.css";
 @import "./BookGridDetails.css";
-@import "./bookdetails.css";
 /*cart page */
 @import "./CartPage.css";
 @import "./BookCheckout.css";

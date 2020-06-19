@@ -1,4 +1,3 @@
-
 .featured-books .container,
 .New-books .container {
   display: flex;
@@ -23,7 +22,7 @@
   justify-content: space-around;
 }
 .books-gride li {
-  padding: 12px 15px ;
+  padding: 12px 15px;
 }
 .books-gride img {
   width: 300px;

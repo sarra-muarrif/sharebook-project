@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="31a1460f-c658-4b0f-9201-794b60aec581" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/src/components/AboutUs.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AboutUs.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/AddToCartButton.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/AddToCartButton.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/Book.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/Book.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BookCheckout.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BookCheckout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BookDetails.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BookDetails.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/components/BookGrid.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/components/BookGrid.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/BooksPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/BooksPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/CartPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/CartPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/ContactPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/ContactPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SellerPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SellerPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SignInPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SignInPage.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/SignUpPage.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/SignUpPage.js" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1dWieLEDbjhyL3q5p399YWbaXLa" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="31a1460f-c658-4b0f-9201-794b60aec581" name="Default Changelist" comment="" />
+      <created>1592547355462</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592547355462</updated>
+    </task>
+    <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="391" y="191" key="com.intellij.ide.util.TipDialog" timestamp="1592547803705">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="391" y="191" key="com.intellij.ide.util.TipDialog/0.0.1366.728@0.0.1366.728" timestamp="1592547803705" />
+  </component>
+</project>

@@ -15,6 +15,7 @@
     position: relative;
     text-align: center;
     transform: matrix(0.99, -0.11, 0.17, 0.99, 0, 0);
+    padding: 99px 0;
   }
   .all-about {
     color: #ffff;
@@ -33,5 +34,6 @@
     max-width: 822px;
     line-height: 54px;
     text-align: justify;
-    padding: 66px 0 0 204px;
+    padding: 30px 0 0 90px;
+    margin: 60px 0 0 160px;
   }

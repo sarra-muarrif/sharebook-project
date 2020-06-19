@@ -1,5 +1,4 @@
 import React from "react";
-
 import BookCheckout from "../components/BookCheckout";
 
 class CartPage extends React.Component {

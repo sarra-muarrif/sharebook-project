@@ -5,11 +5,15 @@
     background-repeat: no-repeat;
     background-size: cover;
   }
+  .searchBook-img-bacground p, .searchBook-img-bacground  h3, .search-bar {
+    line-height: 130px;
+  }
   .searchBook-img-bacground p {
     color: #fffcfc;
     text-align: center;
     font-size: 64px;
     font-family: AvenirNext-Bold;
+    padding: 130px 0 0;
   }
   .searchBook-img-bacground h3 {
     font-size: 36px;

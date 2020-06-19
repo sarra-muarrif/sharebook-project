@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../components/Header.js";
 import HeroHome from "../components/HeroHome.js";
 import AboutUs from "../components/AboutUs.js";
 import BookGrid from "../components/BookGrid";

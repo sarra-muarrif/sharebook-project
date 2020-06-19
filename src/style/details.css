@@ -1,47 +1,62 @@
 .detail .container {
   display: flex;
-  margin: 30px;
+  margin-top: 45px;
 }
-
 .main-photo {
-  width:300px;
+  width: 300px;
   border: #b12121 2px solid;
 }
-.book-preview p{
+.book-details {
+  margin: 0 40px;
+}
+.book-preview p {
   font-family: AvenirNext-DemiBold;
   text-align: center;
   font-size: 1.5em;
+  padding: 15px 0;
 }
-
 .book-overview {
-  margin: 0 40px ;
   font-family: AvenirNext-DemiBold;
   font-size: 1.2em;
   display: flex;
   flex-direction: column;
 }
-
-.book-overview h2{
+.book-overview h2 {
   font-family: AvenirNext-Bold;
   font-weight: bolder;
   margin-left: 0;
 }
-
-.book-overview h2 span{
+.book-overview h2 span {
   margin-left: 40px;
 }
-
-.book-overview h2 span img{
-  margin-left: 10px;
+.book-overview h2 span img {
+  margin-left: 20px;
 }
-.other-options {
-  font-family: AvenirNext-Bold;
-  height: 128px;
-  padding: 10px;
-  display: flex;
-  font-size: 3em;
-  align-items: center;
-  justify-content: center;
+.book-description p {
+  font-size: 26px;
+  line-height: 39px;
+  color: #000000;
+  font-family: AvenirNext-DemiBold;
+  text-align: justify;
+  margin-bottom: 78px;
+}
+.book-info {
+  font-size: 22px;
+  line-height: 35px;
+  color: #000000;
+  font-family: AvenirNext-DemiBold;
+  margin-bottom: 150px;
+}
+ .other-options {
   background-color: #b1212177;
+    height: 128px;
+    max-width: 90%;
+    margin: 50px auto;
 }
-
+.other-options h3 {
+  font-family: AvenirNext-Bold;
+  padding: 35px 0;
+  font-size: 3em;
+  text-align: center;
+  margin: 50px 140px;
+}

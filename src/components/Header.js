@@ -7,12 +7,12 @@ class Header extends React.Component {
       <header className="section-header">
         <div className="container">
           <div className="web-title">
-            <h1>ShareBook</h1>
+            <NavLink exact to ="./">ShareBook</NavLink>
           </div>
           <div className="group-header-items">
             <div className="icon">
-              <NavLink exact to ="./sign-in">sign in</NavLink>
-              <NavLink exact to ="./sign-up">sign up</NavLink>
+              <NavLink exact to ="./signIn">sign in</NavLink>
+              <NavLink exact to ="./signUp">sign up</NavLink>
             </div>
             <ul className="navbar-menue">
               <li>

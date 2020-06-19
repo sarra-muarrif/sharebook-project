@@ -1,9 +1,11 @@
+/*reset file*/
+@import "./reset.css";
 /*font file*/
 @import "./main.css";
 /*home page */
 @import "./header.css";
 @import "./herohome.css";
-@import "./booksgride.css";
+@import "./booksgrid.css";
 @import "./aboutus.css";
 @import "./footer.css";
 /*book page */
@@ -11,10 +13,8 @@
 /*detils page */
 @import "./details.css";
 @import "./addbutton.css";
-@import "./BookGridDetails.css";
-@import "./bookdetails.css";
 /*cart page */
-@import "./CartPage.css";
-@import "./BookCheckout.css";
+@import "./cartpage.css";
+@import "./bookcheckout.css";
 /*contact page */
-@import "./ContactPage.css";
+@import "./contactpage.css";

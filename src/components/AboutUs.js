@@ -4,7 +4,7 @@ import aboutUsImg from "../img/All-About-Us.png";
 class AboutUs extends React.Component {
   render() {
     return (
-      <section className="section-about-us">
+      <section id="about-us" className="section-about-us" >
         <div className="container">
           <div className="about-us-cover">
             <img src={aboutUsImg} alt="AboutUsCover" />

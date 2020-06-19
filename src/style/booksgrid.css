@@ -1,4 +1,8 @@
-
+.featured-books,
+.New-books,
+.book-details {
+  margin: 50px 0;
+}
 .featured-books .container,
 .New-books .container {
   display: flex;
@@ -17,14 +21,20 @@
   padding: 18px;
   text-align: center;
 }
-.books-gride {
+.books-grid {
   display: flex;
   flex-wrap: nowrap;
   justify-content: space-around;
+  margin: 45px 0;
 }
-.books-gride li {
-  padding: 12px 15px ;
+.books-grid li {
+  padding: 12px 15px;
 }
-.books-gride img {
+.books-grid img {
   width: 300px;
+}
+.price {
+  font-size: 30px;
+  padding-bottom: 12px;
+  font-family: AvenirNext-Bold;
 }

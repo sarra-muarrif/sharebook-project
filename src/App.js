@@ -8,6 +8,9 @@ import data from "./data/data.json";
 import ContactPage from "./pages/ContactPage.js";
 import CartPage from "./pages/CartPage.js";
 import Header from "./components/Header.js";
+import SignInPage from "./pages/SignInPage"
+import SignUpPage from "./pages/SignUpPage"
+import SellerPage from "./pages/SellerPage"
 
 
 class App extends React.Component {
@@ -22,16 +25,23 @@ class App extends React.Component {
         <>
           <Route
             exact
-            path="/signIn"
+            path="/sign-in"
             render={(props) => {
-              return <HomePage {...props} books={this.state.books}/>;
+              return <SignInPage />;
             }}
           />
           <Route
             exact
-            path="/signUp"
+            path="/sign-up"
             render={(props) => {
-              return <HomePage {...props} books={this.state.books}/>;
+              return <SignUpPage />;
+            }}
+          />
+           <Route
+            exact
+            path="/seller"
+            render={(props) => {
+              return <SellerPage />;
             }}
           />
           <Route

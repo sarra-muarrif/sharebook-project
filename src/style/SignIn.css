@@ -1,0 +1,19 @@
+ .email-active{
+     display: flow-root;
+     width: 100%;
+ }
+ .password-active{
+     display: flow-root;
+     width: 100%;
+ }
+.signin {
+    display: flex;
+    justify-content: center;
+    margin-top: 6em;
+}
+.Signup-link a {
+    padding: 3px 103px;
+    margin-left: 5em;
+    color: black;
+    font-family: Averia Serif Libre;
+}

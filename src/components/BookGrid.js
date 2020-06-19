@@ -1,5 +1,4 @@
 import React from "react";
-
 import Book from "./Book.js";
 
 class BookGrid extends React.Component {

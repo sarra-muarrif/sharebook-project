@@ -1,0 +1,30 @@
+
+.featured-books .container,
+.New-books .container {
+  display: flex;
+  flex-direction: column;
+  direction: rtl;
+}
+.featured-books-title,
+.new-books-title {
+  color: black;
+  font-size: 35px;
+  font-family: AvenirNext-Bold;
+  font-weight: bold;
+  background-color: rgba(200, 59, 27, 0.49);
+  width: 285px;
+  height: 57px;
+  padding: 18px;
+  text-align: center;
+}
+.books-gride {
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+}
+.books-gride li {
+  padding: 12px 15px ;
+}
+.books-gride img {
+  width: 300px;
+}

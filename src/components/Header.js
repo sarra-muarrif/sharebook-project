@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 class Header extends React.Component {
   render() {
@@ -6,42 +7,42 @@ class Header extends React.Component {
       <header className="section-header">
         <div className="container">
           <div className="web-title">
-            <h1>shark book</h1>
+            <h1>ShareBook</h1>
           </div>
           <div className="group-header-items">
             <div className="icon">
-              <p>Log in</p>
-              <p>Register</p>
+              <NavLink exact to ="./sign-in">sign in</NavLink>
+              <NavLink exact to ="./sign-up">sign up</NavLink>
             </div>
             <ul className="navbar-menue">
               <li>
-                <a href="#" className="navebar-item">
+                <NavLink exact to="./about" className="navebar-item acive">
                   about
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a href="#" className="navebar-item">
+                <NavLink  exact to="/" className="navebar-item acive">
                   home
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a href="#" className="navebar-item">
+                <NavLink  exact to="./books" className="navebar-item acive">
                   books
-                </a>
+                </NavLink>
               </li>
               <li>
-                <a href="#" className="navebar-item">
+                <NavLink  exact to="/contact" className="navebar-item acive">
                   contact
-                </a>
+                </NavLink>
               </li>
             </ul>
             <div className="cart-icon">
-              <a>
-                <span className="material-icons">add_shopping_cart</span>
-              </a>
+            <NavLink  exact to="/cart">
+              <i className="fas fa-shopping-cart"></i>
+              </NavLink>
             </div>
           </div>
-        </div>
+          </div>
       </header>
     );
   }

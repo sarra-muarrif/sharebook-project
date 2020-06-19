@@ -1,0 +1,24 @@
+<<<<<<< HEAD
+
+=======
+/*font file*/
+@import "./main.css";
+/*home page */
+@import "./header.css";
+@import "./herohome.css";
+@import "./booksgride.css";
+@import "./aboutus.css";
+@import "./footer.css";
+/*book page */
+@import "./searchbook.css";
+/*detils page */
+@import "./details.css";
+@import "./addbutton.css";
+@import "./BookGridDetails.css";
+@import "./bookdetails.css";
+/*cart page */
+@import "./CartPage.css";
+@import "./BookCheckout.css";
+/*contact page */
+@import "./ContactPage.css";
+>>>>>>> de22a1c1ff81030ca9b9d5d8807493c2b50c6b6f

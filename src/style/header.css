@@ -1,0 +1,43 @@
+.group-header-items,
+.icon,
+.navbar-menue {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+/* .navebar-item.acive{
+  color: #E7D747;
+  font-weight:bold ;
+} */
+.web-title {
+  color: #c83b1b;
+  text-align: center;
+  margin: 29px 0;
+  font-size: 30px;
+  font-family: AvenirNext-Bold;
+}
+.group-header-items {
+  font-size: 25px;
+  font-family: AvenirNext-Medium;
+  color: #000000;
+}
+.icon {
+  font-weight: bold;
+}
+.icon a {
+  padding: 12px;
+  color: #000000;
+}
+.navbar-menue {
+  padding: 0 200px 0 20px;
+}
+.navbar-menue li {
+  padding-right: 39px;
+}
+.navbar-menue li a {
+  color: #000000;
+}
+.fa-shopping-cart {
+  color: #0099cc;
+  font-size: 32px;
+}

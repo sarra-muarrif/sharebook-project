@@ -7,33 +7,15 @@ class AboutUs extends React.Component {
       <section className="section-about-us">
         <div className="container">
           <div className="about-us-cover">
-            <img
-              src={aboutUsImg}
-              alt="AboutUsCover"
-              width="350px"
-              height="412px"
-            />
-          </div>
-          <div className="about-us-desc">
-            <p className="about-us-title">all about </p>
-            <span
-              style={{
-                color: "red",
-                fontSize: "80px",
-                fontFamily: "AvenirNext-Regular",
-                fontStyle: "italic",
-                position: "relative",
-                top: "230px",
-                right: "210px",
-              }}
-            >
-              us
-            </span>
+            <img src={aboutUsImg} alt="AboutUsCover" />
+            <p className="all-about">all about <span id="us">us</span></p> 
+            <div className="about-us-background">
             <p className="about-us-pargraph">
               sharkbook is the largest online used bookstore in the Middle East,
               offering more than 9.5 million titles of english books with home
               delivery.
             </p>
+            </div>
           </div>
         </div>
       </section>

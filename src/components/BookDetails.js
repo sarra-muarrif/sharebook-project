@@ -8,7 +8,7 @@ class BookDetails extends React.Component {
       <>
         <div className="book-details">
           <li>
-            <h1 className="price">{this.props.price}</h1>
+            <div className="price">{this.props.price}</div>
             <NavLink exact to="./details">
               <img
                 src={require("../img/" + this.props.image.split("/")[2])}

@@ -1,19 +1,61 @@
-.email-active {
-  display: flow-root;
-  width: 100%;
+.section-signin .container {
+  margin: 80px auto 140px auto;
 }
-.password-active {
-  display: flow-root;
-  width: 100%;
-}
-.signin {
-  display: flex;
-  justify-content: center;
-  margin-top: 6em;
-}
-.Signup-link a {
-  padding: 3px 103px;
-  margin-left: 5em;
+.header-singin {
+  font-size: 50px;
   color: black;
-  font-family: Averia Serif Libre;
+  line-height: 100px;
+}
+.hero-singin {
+  padding: 12px 0;
+  line-height: 55px;
+}
+.hero-singin h2 {
+  color: #c83b1b;
+  font-size: 45px;
+  font-family: AvenirNext-Medium;
+}
+.hero-singin p {
+  color: black;
+  font-size: 25px;
+  font-family: AvenirNext-Medium;
+}
+.sign-up-now {
+  color: #c83b1b;
+  padding: 0 5px;
+}
+.reader-seller-btn {
+  margin: 60px 0;
+}
+.reader-seller-btn a {
+  color: black;
+  margin-right: 25px;
+  font-family: AvenirNext-Medium;
+  font-size: 20px;
+  background: rgba(231, 215, 71, 0.71);
+  border: none;
+  padding: 12px 35px;
+}
+.form-signin {
+  display: flex;
+  flex-direction: column;
+}
+#email-signin,
+#password-signin {
+  padding: 12px 30px;
+  background: rgba(196, 196, 196, 0.15);
+  border: 2px solid #000000;
+  margin: 0 30px 30px 0;
+  height: 50px;
+  width: 500px;
+  font-size: 20px;
+}
+.sign-in-btn {
+  display: list-item;
+  background: rgba(231, 215, 71, 0.71);
+  border: none;
+  width: 250px;
+  height: 60px;
+  font-size: 20px;
+  font-weight: bold;
 }

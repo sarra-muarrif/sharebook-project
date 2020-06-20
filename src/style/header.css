@@ -1,11 +1,11 @@
 .group-header-items,
 .icon,
-.navbar-menue {
+.navbar-menu {
   display: flex;
   align-items: center;
   justify-content: space-around;
 }
-.group-header-items{
+.group-header-items {
   margin: 12px 0;
 }
 /* .navebar-item.acive{
@@ -18,7 +18,7 @@
   font-size: 49px;
   font-family: AvenirNext-Bold;
 }
-.web-title a{
+.web-title a {
   color: #c83b1b;
 }
 .group-header-items {
@@ -33,13 +33,13 @@
   padding: 12px;
   color: #000000;
 }
-.navbar-menue {
+.navbar-menu {
   padding: 0 200px 0 20px;
 }
-.navbar-menue li {
+.navbar-menu li {
   padding-right: 39px;
 }
-.navbar-menue li a {
+.navbar-menu li a {
   color: #000000;
 }
 .fa-shopping-cart {

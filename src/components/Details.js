@@ -14,7 +14,7 @@ class Details extends React.Component {
             </a>
             <p>Saler : Sara</p>
           </div>
-          <div className="book-details">
+          <div className="book-detail">
             <div className="book-overview">
               <h2 className="book-title">{this.props.books[0].title}</h2>
               <div>

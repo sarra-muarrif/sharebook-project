@@ -8,13 +8,12 @@ class BooksPage extends React.Component {
       <>
         <Searchbook />
         <BookGridDetails
-        title="other opthions"
-        gridtype="featured-books"
-        classname="featured-books-title"
-        limit={4}
-        books={this.props.books}
-      />
-      
+          title="other opthions"
+          gridtype="featured-books"
+          classname="featured-books-title"
+          limit={4}
+          books={this.props.books}
+        />
       </>
     );
   }

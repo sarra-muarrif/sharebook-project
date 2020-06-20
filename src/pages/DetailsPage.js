@@ -6,13 +6,13 @@ class DetailsPage extends React.Component {
   render() {
     return (
       <>
-      <Details books={this.props.books}/>
+        <Details books={this.props.books} />
         <BookGridDetails
-        gridtype="featured-books"
-        classname="featured-books-title"
-        limit={4}
-        books={this.props.books}
-      />
+          gridtype="featured-books"
+          classname="featured-books-title"
+          limit={4}
+          books={this.props.books}
+        />
       </>
     );
   }

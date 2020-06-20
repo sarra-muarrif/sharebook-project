@@ -4,32 +4,37 @@ class ContactPage extends React.Component {
   render() {
     return (
       <>
-      <section className="section-contant">
+        <section className="section-contant">
           <div className="container">
-        <h2>Contact Us</h2>
-        <form action="submit" >
-            <div className="dialer-info">
-              <div className="dialer-name">
-                <label for="name">name</label>
-                <input type="text" placeholder="Enter Your Name" />
+            <h2 className="contact-us">Contact Us</h2>
+            <form className="contat-form" action="submit">
+              <div className="dialer-info">
+                <div className="dialer-name">
+                  <label for="name">name</label>
+                  <input id="name" type="text" placeholder="Enter Your Name" />
+                </div>
+                <div className="dialer-email">
+                  <label for="email">email</label>
+                  <input
+                    id="email"
+                    type="email"
+                    placeholder="Enter Your Email"
+                  />
+                </div>
               </div>
-              <div className="dialer-email">
-                <label for="email">email</label>
-                <input type="email" placeholder="Enter Your Email" />
+              <div className="dialer-message">
+                <textarea
+                  id="message"
+                  type="Text"
+                  cols="40"
+                  rows="5"
+                  placeholder="Leave Your Message Here"
+                ></textarea>
+                <button className="send-btn">Send</button>
               </div>
-            </div>
-            <div className="dialer-message">
-              <textarea
-                name="Text"
-                cols="40"
-                rows="5"
-                placeholder="Leave Your Message Here"
-              ></textarea>
-              <button className="send-btn">Send</button>
+            </form>
           </div>
-        </form>
-            </div>
-      </section>
+        </section>
       </>
     );
   }

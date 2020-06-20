@@ -7,42 +7,48 @@ class Header extends React.Component {
       <header className="section-header">
         <div className="container">
           <div className="web-title">
-            <NavLink exact to ="./">ShareBook</NavLink>
+            <NavLink exact to="./">
+              ShareBook
+            </NavLink>
           </div>
           <div className="group-header-items">
             <div className="icon">
-              <NavLink exact to ="./signIn">sign in</NavLink>
-              <NavLink exact to ="./signUp">sign up</NavLink>
+              <NavLink exact to="./sign-in">
+                sign in
+              </NavLink>
+              <NavLink exact to="./sign-up">
+                sign up
+              </NavLink>
             </div>
-            <ul className="navbar-menue">
+            <ul className="navbar-menu">
               <li>
-                <NavLink exact to="./about" className="navebar-item acive">
+                <a href="/#about-us" className="navebar-item acive">
                   about
-                </NavLink>
+                </a>
               </li>
               <li>
-                <NavLink  exact to="/" className="navebar-item acive">
+                <NavLink exact to="/" className="navebar-item acive">
                   home
                 </NavLink>
               </li>
               <li>
-                <NavLink  exact to="./books" className="navebar-item acive">
+                <NavLink exact to="./books" className="navebar-item acive">
                   books
                 </NavLink>
               </li>
               <li>
-                <NavLink  exact to="/contact" className="navebar-item acive">
+                <NavLink exact to="/contact" className="navebar-item acive">
                   contact
                 </NavLink>
               </li>
             </ul>
             <div className="cart-icon">
-            <NavLink  exact to="/cart">
-              <i className="fas fa-shopping-cart"></i>
+              <NavLink exact to="/cart">
+                <i className="fas fa-shopping-cart"></i>
               </NavLink>
             </div>
           </div>
-          </div>
+        </div>
       </header>
     );
   }

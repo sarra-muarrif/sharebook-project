@@ -8,7 +8,9 @@ import data from "./data/data.json";
 import ContactPage from "./pages/ContactPage.js";
 import CartPage from "./pages/CartPage.js";
 import Header from "./components/Header.js";
-
+import SignInPage from "./pages/SignInPage";
+import SignUpPage from "./pages/SignUpPage";
+import SellerPage from "./pages/SellerPage";
 
 class App extends React.Component {
   state = {
@@ -16,29 +18,28 @@ class App extends React.Component {
   };
   render() {
     return (
-    
       <BrowserRouter>
         <Header />
         <>
           <Route
             exact
-            path="/signIn"
+            path="/sign-in"
             render={(props) => {
-              return <HomePage {...props} books={this.state.books}/>;
+              return <SignInPage />;
             }}
           />
           <Route
             exact
-            path="/signUp"
+            path="/sign-up"
             render={(props) => {
-              return <HomePage {...props} books={this.state.books}/>;
+              return <SignUpPage />;
             }}
           />
           <Route
             exact
-            path="/about"
+            path="/seller"
             render={(props) => {
-              return <HomePage {...props} books={this.state.books}/>;
+              return <SellerPage />;
             }}
           />
           <Route
@@ -59,7 +60,7 @@ class App extends React.Component {
             exact
             path="/contact"
             render={(props) => {
-              return <ContactPage {...props}  />;
+              return <ContactPage {...props} />;
             }}
           />
           <Route

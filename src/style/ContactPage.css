@@ -1,9 +1,15 @@
 .section-contant {
   margin: 20px auto;
 }
+.contact-us {
+  font-size: 2em;
+  font-family: AvenirNext-Bold;
+  text-align: center;
+}
 .section-contant .container {
   background-color: #f1e0465b;
   display: flex;
+  flex-direction: column;
   font-family: AvenirNext-Medium;
   padding: 55px 0;
 }

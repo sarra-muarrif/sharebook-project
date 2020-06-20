@@ -1,36 +1,39 @@
+
 .about-us-cover {
-  display: flex;
-}
-.about-us-cover img {
-  width: 400.31px;
-  height: 364px;
-  border: 4px solid #c00e0e;
-  position: absolute;
-}
-.all-about,
-#us {
-  font-size: 80px;
-  font-family: "Playball", cursive;
-  position: relative;
-  text-align: center;
-  transform: matrix(0.99, -0.11, 0.17, 0.99, 0, 0);
-}
-.all-about {
-  color: #ffff;
-}
-#us {
-  color: #c00e0e;
-}
-.about-us-background {
-  background-color: rgba(196, 196, 196, 0.13);
-  height: 373px;
-  width: 90%;
-}
-.about-us-pargraph {
-  font-size: 36px;
-  font-family: AvenirNext-Regular;
-  max-width: 822px;
-  line-height: 54px;
-  text-align: justify;
-  padding: 66px 0 0 204px;
-}
+    display: flex;
+  }
+  .about-us-cover img {
+    width: 400.31px;
+    height: 364px;
+    border: 4px solid #c00e0e;
+    position: absolute;
+  }
+  .all-about,
+  #us {
+    font-size: 80px;
+    font-family: "Playball", cursive;
+    position: relative;
+    text-align: center;
+    transform: matrix(0.99, -0.11, 0.17, 0.99, 0, 0);
+    padding: 99px 0;
+  }
+  .all-about {
+    color: #ffff;
+  }
+  #us {
+    color: #c00e0e;
+  }
+  .about-us-background {
+    background-color: rgba(196, 196, 196, 0.13);
+    height: 373px;
+    width: 90%;
+  }
+  .about-us-pargraph {
+    font-size: 36px;
+    font-family:AvenirNext-Regular ;
+    max-width: 822px;
+    line-height: 54px;
+    text-align: justify;
+    padding: 30px 0 0 90px;
+    margin: 60px 0 0 160px;
+  }

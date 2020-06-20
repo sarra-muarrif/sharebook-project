@@ -5,12 +5,21 @@
   align-items: center;
   justify-content: space-around;
 }
+.group-header-items{
+  margin: 12px 0;
+}
+/* .navebar-item.acive{
+  color: #E7D747;
+  font-weight:bold ;
+} */
 .web-title {
-  color: #c83b1b;
   text-align: center;
   margin: 29px 0;
-  font-size: 30px;
+  font-size: 49px;
   font-family: AvenirNext-Bold;
+}
+.web-title a{
+  color: #c83b1b;
 }
 .group-header-items {
   font-size: 25px;

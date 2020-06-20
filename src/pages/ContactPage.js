@@ -4,16 +4,17 @@ class ContactPage extends React.Component {
   render() {
     return (
       <>
-        <h2>Contact Us</h2>
-        <form action="submit">
+      <section className="section-contant">
           <div className="container">
+        <h2>Contact Us</h2>
+        <form action="submit" >
             <div className="dialer-info">
               <div className="dialer-name">
-                <label for="name">NAME</label>
+                <label for="name">name</label>
                 <input type="text" placeholder="Enter Your Name" />
               </div>
               <div className="dialer-email">
-                <label for="email">EMAIL</label>
+                <label for="email">email</label>
                 <input type="email" placeholder="Enter Your Email" />
               </div>
             </div>
@@ -25,9 +26,10 @@ class ContactPage extends React.Component {
                 placeholder="Leave Your Message Here"
               ></textarea>
               <button className="send-btn">Send</button>
-            </div>
           </div>
         </form>
+            </div>
+      </section>
       </>
     );
   }

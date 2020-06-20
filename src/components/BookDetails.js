@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import AddToCartButton from "./AddToCartButton.js";
 
 class BookDetails extends React.Component {
@@ -6,13 +7,16 @@ class BookDetails extends React.Component {
     return (
       <>
         <div className="book-details">
-          <h1>{this.props.price}</h1>
-          <img
-            src={require("../img/" + this.props.image.split("/")[2])}
-            alt="book cover"
-            width="300px"
-          />
-          <AddToCartButton />
+          <li>
+            <h1 className="price">{this.props.price}</h1>
+            <NavLink exact to="./details">
+              <img
+                src={require("../img/" + this.props.image.split("/")[2])}
+                alt="book cover"
+              />
+            </NavLink>
+            <AddToCartButton />
+          </li>
         </div>
       </>
     );

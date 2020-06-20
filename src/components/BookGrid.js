@@ -11,7 +11,7 @@ class BookGrid extends React.Component {
       <section className={`section ${this.props.gridtype}`}>
         <div className="container">
           <h3 className={this.props.classname}>{this.props.title}</h3>
-          <ul className="books-gride">{bookList}</ul>
+          <ul className="books-grid">{bookList}</ul>
         </div>
       </section>
     );

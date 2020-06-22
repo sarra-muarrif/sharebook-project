@@ -14,11 +14,11 @@
   padding: 15px 0;
 }
 .book-detail {
-  margin-left: 20px;
+  margin-left: 40px;
 }
 .book-overview {
-  font-family: AvenirNext-DemiBold;
-  font-size: 1.2em;
+  font-family: AvenirNext-Bold;
+  font-size: 2em;
   display: flex;
   flex-direction: column;
   margin-left: 20px;
@@ -27,6 +27,7 @@
   font-family: AvenirNext-Bold;
   font-weight: bolder;
   margin-left: 0;
+  padding: 20px 0;
 }
 .book-overview h2 span {
   margin-left: 40px;
@@ -41,6 +42,7 @@
   font-family: AvenirNext-DemiBold;
   text-align: justify;
   margin-bottom: 30px;
+  padding: 10px 20px;
 }
 .book-info {
   font-size: 1.2em;
@@ -53,6 +55,7 @@
 #book-PubYear,
 #book-Pages {
   font-size: 1.2em;
+  padding: 20px;
 }
 .other-options {
   background-color: #b1212177;

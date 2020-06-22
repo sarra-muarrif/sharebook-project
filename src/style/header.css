@@ -8,10 +8,7 @@
 .group-header-items {
   margin: 12px 0;
 }
-/* .navebar-item.acive{
-  color: #E7D747;
-  font-weight:bold ;
-} */
+
 .web-title {
   text-align: center;
   margin: 29px 0;
@@ -32,6 +29,7 @@
 .icon a {
   padding: 12px;
   color: #000000;
+  width: max-content;
 }
 .navbar-menu {
   padding: 0 200px 0 20px;

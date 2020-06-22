@@ -39,7 +39,7 @@ class App extends React.Component {
             exact
             path="/seller"
             render={(props) => {
-              return <SellerPage />;
+              return <SellerPage books={this.state.books} />;
             }}
           />
           <Route

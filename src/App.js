@@ -9,6 +9,7 @@ import CartPage from "./pages/CartPage.js";
 import SignInPage from "./pages/SignInPage";
 import SignUpPage from "./pages/SignUpPage";
 import SellerPage from "./pages/SellerPage";
+import Footer from "./components/Footer";
 
 class App extends React.Component {
   state = {
@@ -74,6 +75,7 @@ class App extends React.Component {
               return <DetailsPage {...props} books={this.state.books} />;
             }}
           />
+          <Footer />
         </>
       </BrowserRouter>
     );

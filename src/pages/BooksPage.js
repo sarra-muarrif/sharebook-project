@@ -1,7 +1,6 @@
 import React from "react";
 import Searchbook from "../components/SearchBook.js";
 import BookGridDetails from "../components/BookGridDetails.js";
-import Footer from "../components/Footer.js";
 import Header from "../components/Header.js";
 
 class BooksPage extends React.Component {
@@ -17,7 +16,6 @@ class BooksPage extends React.Component {
           limit={4}
           books={this.props.books}
         />
-        <Footer />
       </>
     );
   }

@@ -1,6 +1,5 @@
 import React from "react";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 import HeroHome from "../components/HeroHome.js";
 import AboutUs from "../components/AboutUs.js";
 import BookGrid from "../components/BookGrid";
@@ -26,7 +25,6 @@ class HomePage extends React.Component {
           books={this.props.books}
         />
         <AboutUs />
-        <Footer />
       </>
     );
   }

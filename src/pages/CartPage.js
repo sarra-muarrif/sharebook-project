@@ -1,6 +1,5 @@
 import React from "react";
 import img1 from "../img/img-1.png";
-import Footer from "../components/Footer";
 import Header from "../components/Header";
 class CartPage extends React.Component {
   render() {
@@ -36,7 +35,6 @@ class CartPage extends React.Component {
             </div>
           </div>
         </section>
-        <Footer />
       </>
     );
   }

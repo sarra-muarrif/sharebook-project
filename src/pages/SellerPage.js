@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import img1 from "../img/img-1.png";
 import Header from "../components/Header";
-import Footer from "../components/Footer";
 class SellerPage extends Component {
   render() {
     const books = this.props.books;
@@ -54,7 +53,6 @@ class SellerPage extends Component {
             </div>
           </div>
         </section>
-        <Footer />
       </>
     );
   }

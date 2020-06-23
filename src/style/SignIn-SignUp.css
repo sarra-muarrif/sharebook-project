@@ -31,10 +31,10 @@
   color: #c83b1b;
   padding: 0 5px;
 }
-.reader-seller-butt {
+.reader-seller-btn {
   margin: 60px 0;
 }
-.reader-seller-butt a {
+.reader-seller-btn a {
   color: black;
   margin-right: 25px;
   font-family: AvenirNext-Medium;
@@ -64,8 +64,8 @@
   display: list-item;
   width: 915px;
 }
-#sign-in-butt,
-#signup-butt {
+#sign-in-btn,
+#signup-btn {
   display: list-item;
   background: rgba(231, 215, 71, 0.71);
   border: none;

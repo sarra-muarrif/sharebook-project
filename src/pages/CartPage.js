@@ -22,7 +22,6 @@ class CartPage extends React.Component {
               </div>
               <div className="cart-btns">
                 <button className="delete-btn">Delete</button>
-
                 <a href="/books">
                   <button className="back-btn">Back To Shopping</button>
                 </a>

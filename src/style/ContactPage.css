@@ -1,6 +1,9 @@
 .section-contant {
   margin: 20px auto;
 }
+.contact-form {
+  display: flex;
+}
 .contact-us {
   font-size: 2em;
   font-family: AvenirNext-Bold;
@@ -64,11 +67,7 @@
   justify-content: center;
   margin: 0 auto;
   border: none;
-  cursor: pointer;
 }
 .send-btn:hover {
   color: cornsilk;
-}
-form {
-  display: flex;
 }

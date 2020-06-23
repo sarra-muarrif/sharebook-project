@@ -9,7 +9,7 @@ class BookDetails extends React.Component {
         <div className="book-details">
           <li>
             <div className="price">{this.props.price}</div>
-            <NavLink exact to="./details">
+            <NavLink exact to="/details">
               <img
                 src={require("../img/" + this.props.image.split("/")[2])}
                 alt="book cover"

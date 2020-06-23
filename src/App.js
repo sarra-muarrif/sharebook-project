@@ -1,13 +1,11 @@
 import React from "react";
 import { BrowserRouter, Route } from "react-router-dom";
-import Footer from "./components/Footer.js";
 import HomePage from "./pages/HomePage.js";
 import BooksPage from "./pages/BooksPage.js";
 import DetailsPage from "./pages/DetailsPage.js";
 import data from "./data/data.json";
 import ContactPage from "./pages/ContactPage.js";
 import CartPage from "./pages/CartPage.js";
-import Header from "./components/Header.js";
 import SignInPage from "./pages/SignInPage";
 import SignUpPage from "./pages/SignUpPage";
 import SellerPage from "./pages/SellerPage";
@@ -19,7 +17,6 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <Header />
         <>
           <Route
             exact
@@ -78,7 +75,6 @@ class App extends React.Component {
             }}
           />
         </>
-        <Footer />
       </BrowserRouter>
     );
   }

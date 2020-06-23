@@ -1,5 +1,5 @@
 .section-seller {
-  padding: 120px 0;
+  padding: 60px 0;
 }
 .sign-out {
   float: right;
@@ -63,12 +63,19 @@
   font-size: 30px;
   height: 48px;
   border: none;
-  background: none;
+  background: transparent;
   padding: 0 50px;
+  font-weight: bold;
 }
 .add-btn {
   border-right: 2px solid #e7d747;
   text-transform: capitalize;
+}
+.add-btn:hover {
+  color: rgba(98, 148, 24, 0.76);
+}
+.remove-btn:hover {
+  color: #be0b0b;
 }
 .your-book h2 {
   color: black;
@@ -78,13 +85,15 @@
   padding: 150px 0 50px 0;
 }
 .book-group {
-  border: 1px solid black;
-  padding: 100px 80px;
+  border: 2px solid black;
+  padding: 40px 40px 10px 40px;
+  background-color: #f9f6f6;
 }
 .book-group-image {
   display: flex;
   justify-content: space-between;
   direction: rtl;
+  padding-bottom: 15px;
 }
 .book-group-info {
   display: flex;

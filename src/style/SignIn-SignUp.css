@@ -1,61 +1,77 @@
-.section-signin .container {
+.section-signin .container,
+.section-signup .container {
   margin: 80px auto 140px auto;
 }
-.header-singin {
+.header-singin,
+.header-singup {
   font-size: 50px;
   color: black;
   line-height: 100px;
 }
-.hero-singin {
+.hero-singin,
+.hero-singup {
   padding: 12px 0;
   line-height: 55px;
 }
-.hero-singin h2 {
+.hero-singin h2,
+.hero-singup h2 {
   color: #c83b1b;
   font-size: 45px;
   font-family: AvenirNext-Medium;
+  font-weight: bold;
 }
-.hero-singin p {
+.hero-singin p,
+.hero-singup p {
   color: black;
   font-size: 25px;
   font-family: AvenirNext-Medium;
 }
-.sign-up-now {
+.sign-up-now,
+.sign-in-now {
   color: #c83b1b;
   padding: 0 5px;
 }
-.reader-seller-btn {
+.reader-seller-butt {
   margin: 60px 0;
 }
-.reader-seller-btn a {
+.reader-seller-butt a {
   color: black;
   margin-right: 25px;
   font-family: AvenirNext-Medium;
   font-size: 20px;
+  font-weight: bold;
   background: rgba(231, 215, 71, 0.71);
   border: none;
   padding: 12px 35px;
 }
-.form-signin {
-  display: flex;
-  flex-direction: column;
-}
+#first-name,
+#last-name,
+#email-signup,
+#password-signup,
 #email-signin,
-#password-signin {
-  padding: 12px 30px;
+#password-signin,
+#confirm-password {
+  padding: 12px 90px;
   background: rgba(196, 196, 196, 0.15);
   border: 2px solid #000000;
   margin: 0 30px 30px 0;
   height: 50px;
-  width: 500px;
+  width: 350px;
   font-size: 20px;
+  text-transform: capitalize;
 }
-.sign-in-btn {
+#email-signup {
+  display: list-item;
+  width: 915px;
+}
+#sign-in-butt,
+#signup-butt {
   display: list-item;
   background: rgba(231, 215, 71, 0.71);
   border: none;
-  width: 250px;
+  width: 201px;
   height: 60px;
-  font-size: 20px;
+  font-family: AvenirNext-Medium;
   font-weight: bold;
+  font-size: 25px;
 }

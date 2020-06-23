@@ -1,13 +1,16 @@
 import React from "react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 class ContactPage extends React.Component {
   render() {
     return (
       <>
+        <Header />
         <section className="section-contant">
           <div className="container">
             <h2 className="contact-us">Contact Us</h2>
-            <form className="contat-form" action="submit">
+            <form className="contact-form" action="submit">
               <div className="dialer-info">
                 <div className="dialer-name">
                   <label for="name">name</label>
@@ -35,6 +38,7 @@ class ContactPage extends React.Component {
             </form>
           </div>
         </section>
+        <Footer />
       </>
     );
   }

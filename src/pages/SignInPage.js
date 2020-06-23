@@ -10,16 +10,18 @@ class SignInPage extends React.Component {
             <h2>sharebook</h2>
             <p>
               new customer? start here
-              <NavLink exact to="/sign-up">
-                <span className="sign-up-now"> sign up</span>now!
+              <NavLink exact to="./sign-up" className="sign-up-now">
+                {" "}
+                sign up
               </NavLink>
+              now!
             </p>
           </div>
-          <div className="reader-seller-btn">
-            <NavLink exact to="./sign-in">
+          <div className="reader-seller-butt">
+            <NavLink exact to="/sign-in">
               Reader
             </NavLink>
-            <NavLink exact to="/seller">
+            <NavLink exact to="./seller">
               Seller
             </NavLink>
           </div>
@@ -27,7 +29,7 @@ class SignInPage extends React.Component {
             <input
               id="email-signin"
               type="Email"
-              placeholder="Email"
+              placeholder="email"
               required
             />
             <input
@@ -36,7 +38,7 @@ class SignInPage extends React.Component {
               placeholder="password"
               required
             />
-            <button className="sign-in-btn">SIGN IN</button>
+            <input id="sign-in-butt" type="button" value="SIGN IN" />
           </form>
         </div>
       </section>

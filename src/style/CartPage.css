@@ -1,41 +1,85 @@
-.shopping {
-  margin: 20px 80px;
+.cart-title h2 {
   font-size: 2em;
   font-family: AvenirNext-Bold;
+  margin: 25px 30px;
 }
-
-.total-order {
-  display: flex;
+.book-checkout {
   background-color: #f9f6f6;
-  margin: 60px 40px;
-  margin-bottom: 300px;
+  border: 3px solid black;
+  font-family: AvenirNext-DemiBold;
   font-size: 1.2em;
-  font-weight: bold;
-  flex-direction: row;
-  justify-content: space-around;
+  align-items: center;
 }
-.total-price {
+.book-review {
+  display: flex;
+  width: 90%;
+  border-bottom: 3px solid #b12121;
   padding: 30px;
   margin: 30px;
 }
-.last-price,
-.last-qty {
+.book-checkout img {
+  width: 260px;
+  border: 2px solid black;
+}
+.book-desc h2 {
   font-family: AvenirNext-Bold;
-  padding: 10px;
+  padding: 40px;
+  margin: 50px;
   font-size: 1.5em;
 }
-
-.proceed-to-checkout {
+.cart-btns {
+  margin: 15px;
+  display: flex;
+  justify-content: center;
+}
+.cart-btns button {
+  font-size: 1.7em;
+  background-color: transparent;
+  border: none;
+  padding: 15px 120px;
+  font-weight: bold;
+}
+.cart-btns a .back-btn {
+  width: max-content;
+}
+.cart-btns .back-btn:hover {
+  color: green;
+}
+.cart-btns .delete-btn {
+  border-right: 3px solid #e7d747;
+}
+.cart-btns .delete-btn:hover {
+  color: red;
+}
+.total-order {
+  display: flex;
+  background-color: #f9f6f6;
+  justify-content: space-around;
+  margin: 40px 0;
+  font-size: 1.4em;
+  font-weight: bold;
+  align-items: center;
+}
+.total-price h2 {
+  font-size: 1.2em;
+  font-family: AvenirNext-Bold;
+  padding: 20px;
+  margin: 20px 0;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+}
+.total-order button {
   background-color: transparent;
   border: 3px solid #0d541c;
   border-radius: 8%;
-  font-size: 1.7em;
+  font-size: 1.5em;
   font-weight: bold;
   color: #0d541c;
   margin: 80px;
-  padding: 15px;
+  padding: 20px;
   font-family: AvenirNext-Bold;
 }
-.proceed-to-checkout:hover {
+.total-order button:hover {
   color: yellowgreen;
 }

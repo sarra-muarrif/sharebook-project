@@ -1,50 +1,64 @@
-import React, { Component } from "react";
-
-class SignUpPage extends Component {
+import React from "react";
+import { NavLink } from "react-router-dom";
+class SignUpPage extends React.Component {
   render() {
     return (
-      <>
-        <section className="searchWrapper-signup">
-          <div>
-            <h1 className="Title-hero-ShareBook-signup">ShareBook</h1>
-            <form className="card-hero-signup">
-              <p className="text-signin-signup">
-                Do you have an Account?<a href="/sign-in"> Sign In </a>Now
-              </p>
-              <div className="class-Reader-Saler">
-                <a className="Reader-Saler" href="sign-up">
-                  Reader
-                </a>
-                <a className="Reader-Saler" href="/seller">
-                  Seller
-                </a>
-              </div>
-            </form>
+      <section className="section-signup">
+        <div className="container">
+          <h2 className="header-singup">sign up</h2>
+          <div className="hero-singup">
+            <h2>sharebook</h2>
+            <p>
+              do you have an account?
+              <NavLink exact to="./sign-in" className="sign-in-now">
+                {" "}
+                sign in{" "}
+              </NavLink>
+            </p>
           </div>
-          <div className="signin-signup">
-            <form className="form-signin-signup">
-              <input type="text" placeholder="First Name" />
-              <input type="text" placeholder="Last Name" />
-              <br />
-              <input
-                className="email-active-"
-                type="Email"
-                placeholder="Email"
-                required
-              />
-              <br />
-              <input type="password" placeholder="Password" />
-              <input type="password" placeholder="Confirm Password" />
-              <br />
-              <div className="Signup-link">
-                <a className="Reader-Saler" href="#">
-                  Sign UP
-                </a>
-              </div>
-            </form>
+          <div className="reader-seller-butt">
+            <NavLink exact to="/sign-up">
+              Reader
+            </NavLink>
+            <NavLink exact to="./seller">
+              Seller
+            </NavLink>
           </div>
-        </section>
-      </>
+          <form className="form-signin">
+            <input
+              id="first-name"
+              type="text"
+              placeholder="frist name"
+              required
+            />
+            <input
+              id="last-name"
+              type="text"
+              placeholder="last name"
+              required
+            />
+            <input
+              id="email-signup"
+              type="Email"
+              placeholder="email"
+              required
+            />
+            <input
+              id="password-signup"
+              type="password"
+              placeholder="password"
+              required
+            />
+            <input
+              id="confirm-password"
+              type="password"
+              placeholder="confirmp password"
+              required
+            />
+            <input id="signup-butt" type="button" value="sign up" />
+          </form>
+        </div>
+      </section>
     );
   }
 }

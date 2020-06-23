@@ -21,14 +21,19 @@
     url("../fonts/AvenirNext-Regular.woff") format("woff");
 }
 /**/
+button {
+  cursor: pointer;
+}
 a {
   text-decoration: none;
   text-transform: capitalize;
+  cursor: pointer;
 }
 ul,
 li {
   list-style-type: none;
   text-transform: capitalize;
+  cursor: pointer;
 }
 p,
 h1,
@@ -39,5 +44,4 @@ h3 {
 .container {
   max-width: 90%;
   margin: 0 auto;
-  overflow: hidden;
 }

@@ -1,11 +1,20 @@
-form .container {
-  background-color: #f1e0465b;
-  width: 90%;
-  margin: 50px;
-  margin-right: 60px;
-  padding: 40px;
+.section-contant {
+  margin: 20px auto;
+}
+.contact-form {
   display: flex;
+}
+.contact-us {
+  font-size: 2em;
+  font-family: AvenirNext-Bold;
+  text-align: center;
+}
+.section-contant .container {
+  background-color: #f1e0465b;
+  display: flex;
+  flex-direction: column;
   font-family: AvenirNext-Medium;
+  padding: 55px 0;
 }
 .dialer-info {
   padding: 10px;
@@ -14,6 +23,7 @@ form .container {
 .dialer-name,
 .dialer-email {
   padding: 10px;
+  text-transform: uppercase;
 }
 .dialer-name label,
 .dialer-email label {
@@ -29,7 +39,6 @@ form .container {
   border: 2px solid rgba(36, 36, 36, 0.335);
   padding-left: 10px;
 }
-
 .dialer-message {
   display: flex;
   flex-direction: column;
@@ -58,7 +67,6 @@ form .container {
   justify-content: center;
   margin: 0 auto;
   border: none;
-  cursor: pointer;
 }
 .send-btn:hover {
   color: cornsilk;

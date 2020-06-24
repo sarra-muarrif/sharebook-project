@@ -10,10 +10,11 @@ class BookGridDetails extends React.Component {
       );
     });
     return (
-      <>
-        <ul className="book-grid-details">{bookList}</ul>
-        <ul className="book-grid-details">{bookList}</ul>
-      </>
+      <section className="book-details">
+        <div className="container">
+          <ul className="books-grid">{bookList}</ul>
+        </div>
+      </section>
     );
   }
 }

@@ -1,0 +1,115 @@
+.section-seller {
+  padding: 60px 0;
+}
+.sign-out {
+  float: right;
+  border: 2px solid #b12121;
+  padding: 18px 15px;
+}
+.sign-out a {
+  color: #b12121;
+  font-family: AvenirNext-Bold;
+  font-size: 20px;
+  font-weight: bold;
+  margin: 30px auto;
+}
+.seller-name {
+  margin: 60px auto 20px;
+}
+.seller-name h1 {
+  color: black;
+  font-size: 28px;
+  font-family: AvenirNext-Regular;
+  font-weight: bold;
+}
+.hero-seller {
+  margin: 0px auto 50px;
+}
+.hero-seller h2 {
+  color: #c83b1b;
+  font-size: 38px;
+  font-family: AvenirNext-Medium;
+  font-weight: bold;
+}
+.form-seller {
+  border-bottom: 3px solid rgba(177, 33, 33, 0.99);
+  margin: 30px 0;
+}
+#book-name,
+#book-price,
+#book-type {
+  padding: 12px 20px;
+  background: rgba(196, 196, 196, 0.15);
+  border: 2px solid #000000;
+  font-size: 20px;
+  text-transform: capitalize;
+}
+#book-name {
+  display: list-item;
+  margin: 20px 0;
+  width: 600px;
+}
+#book-price {
+  margin: 20px 255px 30px 0;
+  width: 50px;
+}
+#type {
+  font-size: 25px;
+  text-transform: capitalize;
+  padding-right: 15px;
+}
+.add-btn,
+.remove-btn {
+  font-size: 30px;
+  height: 48px;
+  border: none;
+  background: transparent;
+  padding: 0 50px;
+  font-weight: bold;
+}
+.add-btn {
+  border-right: 2px solid #e7d747;
+  text-transform: capitalize;
+}
+.add-btn:hover {
+  color: rgba(98, 148, 24, 0.76);
+}
+.remove-btn:hover {
+  color: #be0b0b;
+}
+.your-book h2 {
+  color: black;
+  font-size: 30px;
+  font-family: AvenirNext-Medium;
+  font-weight: bold;
+  padding: 150px 0 50px 0;
+}
+.book-group {
+  border: 2px solid black;
+  padding: 40px 40px 10px 40px;
+  background-color: #f9f6f6;
+}
+.book-group-image {
+  display: flex;
+  justify-content: space-between;
+  direction: rtl;
+  padding-bottom: 15px;
+}
+.book-group-info {
+  display: flex;
+  justify-content: space-around;
+}
+.book-group-desc h2 {
+  color: black;
+  font-size: 30px;
+  font-family: AvenirNext-Medium;
+  padding: 45px 0;
+  direction: ltr;
+}
+.remove-group {
+  border-top: 2px solid #b12121;
+  padding: 12px;
+}
+.remove-btn.group {
+  border-right: 2px solid #e7d747;
+}

@@ -20,15 +20,20 @@
   src: url("../fonts/AvenirNext-Regular.woff2") format("woff2"),
     url("../fonts/AvenirNext-Regular.woff") format("woff");
 }
-/*normalization*/
+/**/
+button {
+  cursor: pointer;
+}
 a {
   text-decoration: none;
   text-transform: capitalize;
+  cursor: pointer;
 }
 ul,
 li {
   list-style-type: none;
   text-transform: capitalize;
+  cursor: pointer;
 }
 p,
 h1,
@@ -36,8 +41,7 @@ h2,
 h3 {
   text-transform: capitalize;
 }
-
-body {
-  margin: 0;
-  padding: 0;
+.container {
+  max-width: 90%;
+  margin: 0 auto;
 }

@@ -7,7 +7,9 @@ class Header extends React.Component {
       <header className="section-header">
         <div className="container">
           <div className="web-title">
-            <h1>ShareBook</h1>
+            <NavLink exact to="./">
+              ShareBook
+            </NavLink>
           </div>
           <div className="group-header-items">
             <div className="icon">
@@ -18,11 +20,11 @@ class Header extends React.Component {
                 sign up
               </NavLink>
             </div>
-            <ul className="navbar-menue">
+            <ul className="navbar-menu">
               <li>
-                <NavLink exact to="./about" className="navebar-item acive">
+                <a href="/#about-us" className="navebar-item acive">
                   about
-                </NavLink>
+                </a>
               </li>
               <li>
                 <NavLink exact to="/" className="navebar-item acive">

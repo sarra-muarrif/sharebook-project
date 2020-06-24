@@ -1,44 +1,47 @@
-import React, { Component } from "react";
-
-class SignInPage extends Component {
+import React from "react";
+import { NavLink } from "react-router-dom";
+class SignInPage extends React.Component {
   render() {
     return (
-      <>
-        <section className="searchWrapper-signup">
-          <div>
-            <h1 className="Title-hero-ShareBook-signup">ShareBook</h1>
-            <form className="card-hero-signup">
-              <p className="text-signin-signup">
-                Do you have an Account?<a href="/sign-up"> Sign UP </a>Now
-              </p>
-              <div className="class-Reader-Saler">
-                <a className="Reader-Saler" href="/sign-in">
-                  Reader
-                </a>
-                <a className="Reader-Saler" href="/seller">
-                  Seller
-                </a>
-              </div>
-            </form>
+      <section className="section-signin">
+        <div className="container">
+          <h2 className="header-singin">sign in</h2>
+          <div className="hero-singin">
+            <h2>sharebook</h2>
+            <p>
+              new customer? start here
+              <NavLink exact to="./sign-up" className="sign-up-now">
+                {" "}
+                sign up
+              </NavLink>
+              now!
+            </p>
           </div>
-          <div className="signin-signup">
-            <form className="form-signin-signup">
-              <input
-                className="email-active-signin"
-                type="Email"
-                placeholder="Email"
-                required
-              />
-              <input type="password" placeholder="Password" />
-              <div className="Signup-link">
-                <a className="Reader-Saler" href="#">
-                  Sign in
-                </a>
-              </div>
-            </form>
+          <div className="reader-seller-btn">
+            <NavLink exact to="/sign-in">
+              Reader
+            </NavLink>
+            <NavLink exact to="./seller">
+              Seller
+            </NavLink>
           </div>
-        </section>
-      </>
+          <form className="form-signin">
+            <input
+              id="email-signin"
+              type="Email"
+              placeholder="email"
+              required
+            />
+            <input
+              id="password-signin"
+              type="password"
+              placeholder="password"
+              required
+            />
+            <input id="sign-in-btn" type="button" value="SIGN IN" />
+          </form>
+        </div>
+      </section>
     );
   }
 }

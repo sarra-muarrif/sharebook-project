@@ -14,6 +14,7 @@
   position: relative;
   text-align: center;
   transform: matrix(0.99, -0.11, 0.17, 0.99, 0, 0);
+  padding: 99px 0;
 }
 .all-about {
   color: #ffff;
@@ -26,11 +27,13 @@
   height: 373px;
   width: 90%;
 }
+
 .about-us-pargraph {
   font-size: 36px;
   font-family: AvenirNext-Regular;
   max-width: 822px;
   line-height: 54px;
   text-align: justify;
-  padding: 66px 0 0 204px;
+  margin: 60px 0 0 160px;
+  padding-right: 30px;
 }

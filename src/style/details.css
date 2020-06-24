@@ -1,60 +1,72 @@
-.detail .book-details {
+.detail .container {
   display: flex;
-  margin: 30px;
-  font-family: AvenirNext-DemiBold;
+  margin-top: 45px;
 }
-
 .main-photo {
   width: 300px;
   border: #b12121 2px solid;
 }
+
 .book-preview p {
   font-family: AvenirNext-DemiBold;
   text-align: center;
   font-size: 1.5em;
-  margin-top: 0;
-  font-weight: bold;
+  padding: 15px 0;
 }
-
+.book-detail {
+  margin-left: 40px;
+}
 .book-overview {
-  margin: 0 40px;
+  font-family: AvenirNext-Bold;
+  font-size: 2em;
   display: flex;
   flex-direction: column;
-  justify-content: space-around;
+  margin-left: 20px;
 }
-
-.book-title,
-.book-price {
+.book-overview h2 {
   font-family: AvenirNext-Bold;
   font-weight: bolder;
-  margin: 10px;
-}
-.book-description,
-.book-Author,
-.book-PubYear,
-.book-Pages {
-  font-family: AvenirNext-Regular;
-  font-weight: bold;
-  font-size: 1.5em;
-  padding: 0;
-  margin: 10px;
-  text-align: justify;
+  margin-left: 0;
+  padding: 20px 0;
 }
 .book-overview h2 span {
   margin-left: 40px;
 }
-
 .book-overview h2 span img {
-  margin-left: 10px;
+  margin-left: 20px;
+}
+.book-description p {
+  font-size: 1.5em;
+  line-height: 39px;
+  color: #000000;
+  font-family: AvenirNext-DemiBold;
+  text-align: justify;
+  margin-bottom: 30px;
+  padding: 10px 20px;
+}
+.book-info {
+  font-size: 1.2em;
+  line-height: 20px;
+  color: #000000;
+  font-family: AvenirNext-DemiBold;
+  margin-bottom: 15px;
+}
+#book-Author,
+#book-PubYear,
+#book-Pages {
+  font-size: 1.2em;
+  padding: 20px;
 }
 .other-options {
-  font-family: AvenirNext-Bold;
-  height: 128px;
-  padding: 10px;
-  display: flex;
-  font-size: 3em;
-  align-items: center;
-  justify-content: center;
   background-color: #b1212177;
-  color: black;
+  height: 128px;
+  max-width: 90%;
+  margin: 50px auto;
+}
+.other-options h3 {
+  font-family: AvenirNext-Bold;
+  padding: 35px 0;
+  font-size: 3em;
+  text-align: center;
+  margin: 50px 140px;
 }

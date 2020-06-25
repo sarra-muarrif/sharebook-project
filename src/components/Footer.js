@@ -21,8 +21,8 @@ class Footer extends React.Component {
             <div className="payment-methods">
               <h3>payment methods</h3>
               <i className="fab fa-cc-visa"></i>
-              <i class="fab fa-cc-mastercard"></i>
-              <i class="fab fa-cc-paypal"></i>
+              <i className="fab fa-cc-mastercard"></i>
+              <i className="fab fa-cc-paypal"></i>
             </div>
           </div>
         </div>

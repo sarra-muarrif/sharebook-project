@@ -8,12 +8,9 @@ class BookDetails extends React.Component {
       <>
         <div className="book-details">
           <li>
-            <div className="price">{this.props.price}</div>
+            <div className="price">{this.props.title}</div>
             <NavLink exact to="/details">
-              <img
-                src={require("../img/" + this.props.image.split("/")[2])}
-                alt="book cover"
-              />
+              <img src={this.props.image} alt="book cover" />
             </NavLink>
             <AddToCartButton />
           </li>

@@ -6,10 +6,9 @@ class Book extends React.Component {
     return (
       <li className="books">
         <NavLink exact to="./details">
-          <img
-            src={require("../img/" + this.props.image.split("/")[2])}
-            alt="book cover"
-          />
+          {/* <a href={this.props.link} target="_blank"> */}
+          <img src={this.props.image} alt="book cover" />
+          {/* </a> */}
         </NavLink>
       </li>
     );

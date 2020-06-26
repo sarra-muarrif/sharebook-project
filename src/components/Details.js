@@ -1,6 +1,4 @@
 import React from "react";
-import img1 from "../img/img-1.png";
-import ImgStar from "../img/star.svg";
 
 class Details extends React.Component {
   render() {
@@ -8,7 +6,11 @@ class Details extends React.Component {
       <section className="detail">
         <div className="container">
           <div className="book-preview">
-            <img src={img1} className="main-photo" alt="book cover" />
+            <img
+              src={this.props.books[1].volumeInfo.imageLinks.thumbnail}
+              className="main-photo"
+              alt="book cover"
+            />
             <a href="/" className="add-to-cart">
               Add To Cart
             </a>
@@ -16,27 +18,35 @@ class Details extends React.Component {
           </div>
           <div className="book-detail">
             <div className="book-overview">
-              <h2 className="book-title">{this.props.books[0].title}</h2>
+              <h2 className="book-title">
+                {this.props.books[1].volumeInfo.title}
+              </h2>
               <div>
                 <h2 className="book-price">
-                  {this.props.books[0].price}
+                  {this.props.books[1].id}
                   <span>
-                    <img src={ImgStar} alt="star" width="30px" />
-                    <img src={ImgStar} alt="star" width="30px" />
-                    <img src={ImgStar} alt="star" width="30px" />
-                    <img src={ImgStar} alt="star" width="30px" />
-                    <img src={ImgStar} alt="star" width="30px" />
+                    <i className="fas fa-star" style={{ color: "yellow" }} />
+                    <i className="fas fa-star" style={{ color: "yellow" }} />
+                    <i className="fas fa-star" style={{ color: "yellow" }} />
+                    <i className="fas fa-star" style={{ color: "yellow" }} />
+                    <i className="fas fa-star" style={{ color: "yellow" }} />
                   </span>
                 </h2>
               </div>
             </div>
             <div className="book-description">
-              <p>{this.props.books[0].description}</p>
+              <p>{this.props.books[1].volumeInfo.description}</p>
             </div>
             <div className="book-info">
-              <p id="book-Author">Author: {this.props.books[0].Author}</p>
-              <p id="book-PubYear">Pub. Year: {this.props.books[0].PubYear}</p>
-              <p id="book-Pages">Pages: {this.props.books[0].Pages}</p>
+              <p id="book-Author">
+                Author: {this.props.books[1].volumeInfo.authors}
+              </p>
+              <p id="book-PubYear">
+                Pub. Year: {this.props.books[1].volumeInfo.publishedDate}
+              </p>
+              <p id="book-Pages">
+                Pages: {this.props.books[1].volumeInfo.pageCount}
+              </p>
             </div>
           </div>
         </div>

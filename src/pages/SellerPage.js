@@ -1,17 +1,15 @@
 import React, { Component } from "react";
-import img1 from "../img/img-1.png";
 import Header from "../components/Header";
 class SellerPage extends Component {
   render() {
     const books = this.props.books;
-    console.log(books[0].image, "book");
     return (
       <>
         <Header />
         <section className="section-seller">
           <div className="container">
             <div className="sign-out">
-              <a>sign out</a>
+              <a href="/">sign out</a>
             </div>
             <div className="seller-name">
               <h1>
@@ -41,9 +39,13 @@ class SellerPage extends Component {
             </div>
             <div className="book-group">
               <div className="book-group-image">
-                <img src={img1} width="200" />
+                <img
+                  src={books[0].volumeInfo.imageLinks.thumbnail}
+                  width="200"
+                  alt="book cover"
+                />
                 <div className="book-group-desc">
-                  <h2>{books[0].title}</h2>
+                  <h2>{books[0].volumeInfo.title}</h2>
                   <h2>Type:Paper</h2>
                 </div>
               </div>

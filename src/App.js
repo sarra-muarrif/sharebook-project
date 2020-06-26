@@ -3,18 +3,32 @@ import { BrowserRouter, Route } from "react-router-dom";
 import HomePage from "./pages/HomePage.js";
 import BooksPage from "./pages/BooksPage.js";
 import DetailsPage from "./pages/DetailsPage.js";
-import data from "./data/data.json";
 import ContactPage from "./pages/ContactPage.js";
 import CartPage from "./pages/CartPage.js";
 import SignInPage from "./pages/SignInPage";
 import SignUpPage from "./pages/SignUpPage";
 import SellerPage from "./pages/SellerPage";
 import Footer from "./components/Footer";
+import { END_POINT, API_KEY } from "./constants/urls";
 
 class App extends React.Component {
   state = {
-    books: data,
+    books: [],
   };
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  fetchData() {
+    fetch(`${END_POINT}&key=${API_KEY}`)
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({ books: res.items });
+      })
+      .catch((err) => console.log(err));
+  }
+
   render() {
     return (
       <BrowserRouter>
@@ -65,7 +79,7 @@ class App extends React.Component {
             exact
             path="/cart"
             render={(props) => {
-              return <CartPage {...props} />;
+              return <CartPage {...props} books={this.state.books} />;
             }}
           />
           <Route

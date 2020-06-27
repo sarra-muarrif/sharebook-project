@@ -2,12 +2,6 @@ import React from "react";
 
 class SearchBook extends React.Component {
   render() {
-    // state ={
-    //   searchTerm: '',
-    // }
-    //  onChangeHandler = (event) =>{
-    //    console.log(event.target.value);
-    //  }
     return (
       <section className="section hero-searchBook ">
         <div className="container">

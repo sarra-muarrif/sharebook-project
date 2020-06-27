@@ -1,11 +1,9 @@
 import React from "react";
-// import {withRout} from "react-router"
+
 class Details extends React.Component {
   render() {
     const bookId = this.props.bookid;
-    const book = this.props.books.find(book => book.id.includes(bookId))
-    console.log(this.props.bookid,"bookid detealis1")
-    console.log(book, "bookid detealis2")
+    const book = this.props.books.find(book => book.id.includes(bookId));
     return (
       <section className="detail">
         <div className="container">

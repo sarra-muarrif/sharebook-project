@@ -84,7 +84,7 @@ class App extends React.Component {
           />
           <Route
             exact
-            path="/details"
+            path="/details/:id"
             render={(props) => {
               return <DetailsPage {...props} books={this.state.books} />;
             }}

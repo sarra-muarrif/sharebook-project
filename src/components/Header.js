@@ -22,22 +22,22 @@ class Header extends React.Component {
             </div>
             <ul className="navbar-menu">
               <li>
-                <a href="/#about-us" className="navebar-item acive">
+                <a href="/#about-us" className="navebar-item ">
                   about
                 </a>
               </li>
               <li>
-                <NavLink exact to="/" className="navebar-item acive">
+                <NavLink exact to="/" className="navebar-item" activeClassName="active">
                   home
                 </NavLink>
               </li>
               <li>
-                <NavLink exact to="./books" className="navebar-item acive">
+                <NavLink exact to="./books" className="navebar-item" activeClassName="active">
                   books
                 </NavLink>
               </li>
               <li>
-                <NavLink exact to="/contact" className="navebar-item acive">
+                <NavLink exact to="./contact" className="navebar-item" activeClassName="active">
                   contact
                 </NavLink>
               </li>
@@ -55,3 +55,4 @@ class Header extends React.Component {
 }
 
 export default Header;
+

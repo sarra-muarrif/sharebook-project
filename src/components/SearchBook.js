@@ -2,6 +2,12 @@ import React from "react";
 
 class SearchBook extends React.Component {
   render() {
+    // state ={
+    //   searchTerm: '',
+    // }
+    //  onChangeHandler = (event) =>{
+    //    console.log(event.target.value);
+    //  }
     return (
       <section className="section hero-searchBook ">
         <div className="container">
@@ -14,6 +20,7 @@ class SearchBook extends React.Component {
                   type="text"
                   id="search-book"
                   placeholder="Enter name of book"
+                 
                 />
                 <button id="search-but">search</button>
               </div>

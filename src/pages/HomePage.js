@@ -6,18 +6,20 @@ import BookGrid from "../components/BookGrid";
 
 class HomePage extends React.Component {
   render() {
-    // const q = "flowers&key=AIzaSyB5rElTrudeCdlBNu_TM5k0YIQIOjWKpKQ";
-    // const END_POINT = "https://www.googleapis.com/books/v1/volumes";
-    // const API_KEY = "AIzaSyB5rElTrudeCdlBNu_TM5k0YIQIOjWKpKQ";
-    // fetch(`${END_POINT}?q=${q}&key=${API_KEY}`)
-    //   .then((res) => res.json())
-    //   .then((res) => {
-    //     if (res.error) {
-    //       throw new Error();
-    //     }
-    //     console.log(res);
-    //   })
-    //   .catch((err) => console.log(err));
+    //Featured Books
+   const filterItems = this.props.books.filter(book => {
+     return book.isEbook = true;
+   });
+   console.log(filterItems,"isEbook");
+   //New Books
+   const filterBooks =this.props.books.filter(book => {
+     return book.kind="books";
+   });
+   console.log(filterBooks,"filterbooks")
+   const sortData = filterBooks.sort((book1, book2) => {
+     return new Date(book1.volumeInfo.publishedDate) > new Date(book2.volumeInfo.publishedDate) ? -1 : 1;
+   }); 
+   console.log (sortData,"sortData")
     return (
       <>
         <Header />
@@ -27,14 +29,14 @@ class HomePage extends React.Component {
           gridtype="featured-books"
           classname="featured-books-title"
           limit={4}
-          books={this.props.books}
+          books={filterItems}
         />
         <BookGrid
           title="new books"
           gridtype=" New-books"
           classname="new-books-title"
           limit={4}
-          books={this.props.books}
+          books={sortData}
         />
         <AboutUs />
       </>

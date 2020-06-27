@@ -52,7 +52,7 @@ class SignUpPage extends React.Component {
             <input
               id="confirm-password"
               type="password"
-              placeholder="confirmp password"
+              placeholder="confirm password"
               required
             />
             <input id="signup-btn" type="button" value="sign up" />

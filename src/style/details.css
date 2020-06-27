@@ -32,8 +32,8 @@
 .book-overview h2 span {
   margin-left: 40px;
 }
-.book-overview h2 span img {
-  margin-left: 20px;
+.book-overview h2 span i {
+  margin-left: 10px;
 }
 .book-description p {
   font-size: 1.5em;

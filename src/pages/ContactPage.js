@@ -9,14 +9,14 @@ class ContactPage extends React.Component {
         <section className="section-contant">
           <div className="container">
             <h2 className="contact-us">Contact Us</h2>
-            <form className="contact-form" action="submit">
+            <form className="contact-form">
               <div className="dialer-info">
                 <div className="dialer-name">
-                  <label for="name">name</label>
+                  <label htmlFor="name">name</label>
                   <input id="name" type="text" placeholder="Enter Your Name" />
                 </div>
                 <div className="dialer-email">
-                  <label for="email">email</label>
+                  <label htmlFor="email">email</label>
                   <input
                     id="email"
                     type="email"

@@ -22,7 +22,7 @@ class SellerPage extends Component {
             <form className="form-seller">
               <input id="book-name" type="text" placeholder="enter book name" />
               <input id="book-price" type="text" placeholder="price" />
-              <label id="type" for="type">
+              <label id="type" htmlFor="type">
                 Type:
               </label>
               <select id="book-type">

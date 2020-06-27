@@ -30,13 +30,6 @@ class App extends React.Component {
   }
 
   render() {
- const q="flowers&key=AIzaSyB5rElTrudeCdlBNu_TM5k0YIQIOjWKpKQ";
-const END_POINT = "https://www.googleapis.com/books/v1/volumes?q=flowers";
-const API_KEY = "AIzaSyB5rElTrudeCdlBNu_TM5k0YIQIOjWKpKQ";
-fetch(`${END_POINT}?q=${q}&key=${API_KEY}`)
-  .then((res) => res.json())
-  .then((res) => console.log(res))
-  .catch((err) => console.log(err));
     return (
       <BrowserRouter>
         <>

@@ -9,8 +9,6 @@ class BookGrid extends React.Component {
         <Book
           key={book.id}
           book={book}
-          /* image={book.volumeInfo.imageLinks.thumbnail}  */
-          // link={book.volumeInfo.previewLink}
         />
       );
     });

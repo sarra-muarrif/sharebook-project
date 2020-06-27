@@ -10,16 +10,13 @@ class HomePage extends React.Component {
    const filterItems = this.props.books.filter(book => {
      return book.isEbook = true;
    });
-   console.log(filterItems,"isEbook");
    //New Books
    const filterBooks =this.props.books.filter(book => {
      return book.kind="books";
    });
-   console.log(filterBooks,"filterbooks")
    const sortData = filterBooks.sort((book1, book2) => {
      return new Date(book1.volumeInfo.publishedDate) > new Date(book2.volumeInfo.publishedDate) ? -1 : 1;
    }); 
-   console.log (sortData,"sortData")
     return (
       <>
         <Header />

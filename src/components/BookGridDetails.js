@@ -8,8 +8,6 @@ class BookGridDetails extends React.Component {
       return (
         <BookDetails
           key={book.id}
-          // price={book.saleInfo.listPrice.amount}
-          // link={book.volumeInfo.previewLink}
           title={book.volumeInfo.title}
           image={book.volumeInfo.imageLinks.thumbnail}
         />

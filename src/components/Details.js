@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 class Details extends React.Component {
   render() {
@@ -13,9 +14,9 @@ class Details extends React.Component {
               className="main-photo"
               alt={book.volumeInfo.title}
             />
-            <a href="/" className="add-to-cart">
+            <Link to="/cart" className="add-to-cart">
               Add To Cart
-            </a>
+            </Link>
             <p>Saler : Sara</p>
           </div>
           <div className="book-detail">

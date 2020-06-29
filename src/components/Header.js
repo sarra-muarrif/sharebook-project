@@ -7,16 +7,16 @@ class Header extends React.Component {
       <header className="section-header">
         <div className="container">
           <div className="web-title">
-            <NavLink exact to="./">
+            <NavLink exact to="/">
               ShareBook
             </NavLink>
           </div>
           <div className="group-header-items">
             <div className="icon">
-              <NavLink exact to="./sign-in">
+              <NavLink exact to="/sign-in">
                 sign in
               </NavLink>
-              <NavLink exact to="./sign-up">
+              <NavLink exact to="/sign-up">
                 sign up
               </NavLink>
             </div>
@@ -32,12 +32,12 @@ class Header extends React.Component {
                 </NavLink>
               </li>
               <li>
-                <NavLink exact to="./books" className="navebar-item" activeClassName="active">
+                <NavLink exact to="/books" className="navebar-item" activeClassName="active">
                   books
                 </NavLink>
               </li>
               <li>
-                <NavLink exact to="./contact" className="navebar-item" activeClassName="active">
+                <NavLink exact to="/contact" className="navebar-item" activeClassName="active">
                   contact
                 </NavLink>
               </li>

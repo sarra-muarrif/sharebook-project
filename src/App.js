@@ -14,8 +14,6 @@ import { END_POINT, API_KEY } from "./constants/urls";
 class App extends React.Component {
   state = {
     books: [],
-    orderBook:[],
-    item: 0
   };
 
   componentDidMount() {
@@ -29,20 +27,7 @@ class App extends React.Component {
         this.setState({ books: res.items });
       })
       .catch((err) => console.log(err));
-  };
-// add the book in the cart
-  catchItem = (item) => {
-    this.setState({orderBook: [...this.state.orderBook, item]}) 
-};
-// Delete the book in cart
-handleDelete = (id) => {
-  console.log(id)
- let books = this.state.books
- let i = books.findIndex(item => item.id ===id)
- books.splice(i, 1)
- this.setState({books})
-};
-
+  }
 
   render() {
     return (
@@ -94,14 +79,14 @@ handleDelete = (id) => {
             exact
             path="/cart"
             render={(props) => {
-              return <CartPage {...props} books={this.state.books} orderBook={this.state.orderBook} handleDelete={this.handleDelete} />;
+              return <CartPage {...props} books={this.state.books} />;
             }}
           />
           <Route
             exact
             path="/details/:id"
             render={(props) => {
-              return <DetailsPage {...props} books={this.state.books} catchItem={this.catchItem}  />;
+              return <DetailsPage {...props} books={this.state.books} />;
             }}
           />
           <Footer />

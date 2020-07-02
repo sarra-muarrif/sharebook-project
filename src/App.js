@@ -36,7 +36,6 @@ class App extends React.Component {
 };
 // Delete the book in cart
 handleDelete = (id) => {
-  console.log(id)
  let books = this.state.books
  let i = books.findIndex(item => item.id ===id)
  books.splice(i, 1)

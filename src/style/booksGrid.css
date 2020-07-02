@@ -35,8 +35,9 @@
   height: 400px;
 }
 .price {
-  font-size: 30px;
+  font-size: 20px;
   padding-bottom: 12px;
   font-family: AvenirNext-Bold;
   color: black;
+  width: max-content
 }

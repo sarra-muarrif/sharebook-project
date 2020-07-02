@@ -16,7 +16,9 @@ class BookGridDetails extends React.Component {
     return (
       <section className="book-details">
         <div className="container">
+        <div className="other-options-style">
           <ul className="books-grid">{bookList}</ul>
+        </div>
         </div>
       </section>
     );

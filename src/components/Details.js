@@ -1,8 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+
 
 class Details extends React.Component {
+
+
+
   render() {
+
     const bookId = this.props.bookid;
     const book = this.props.books.find(book => book.id.includes(bookId));
     return (
@@ -14,9 +18,10 @@ class Details extends React.Component {
               className="main-photo"
               alt={book.volumeInfo.title}
             />
-            <Link to="/cart" className="add-to-cart">
+        
+            <button onClick={() => this.props.catchItem(book)} className="add-to-cart">
               Add To Cart
-            </Link>
+            </button>
             <p>Saler : Sara</p>
           </div>
           <div className="book-detail">

@@ -1,7 +1,7 @@
 import React from "react";
 import Header from "../components/Header";
-class CartGrid extends React.Component {
 
+class CartGrid extends React.Component {
   render() {
     const {handleDelete} = this.props
     return (

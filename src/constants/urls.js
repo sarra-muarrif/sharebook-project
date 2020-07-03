@@ -1,5 +1,5 @@
-// https://www.googleapis.com/books/v1/volumes?q=flowers&key=AIzaSyB5rElTrudeCdlBNu_TM5k0YIQIOjWKpKQ
-const END_POINT = "https://www.googleapis.com/books/v1/volumes?q=flowers";
-const API_KEY = "AIzaSyB5rElTrudeCdlBNu_TM5k0YIQIOjWKpKQ";
+// https://www.googleapis.com/books/v1/volumes?q=flowers+time+star&orderBy=newest&key=AIzaSyB5rElTrudeCdlBNu_TM5k0YIQIOjWKpKQ
 
-export { END_POINT, API_KEY };
+const API_KEY = "AIzaSyB5rElTrudeCdlBNu_TM5k0YIQIOjWKpKQ";
+const SEARCH_POINT = "https://www.googleapis.com/books/v1/volumes";
+export { API_KEY, SEARCH_POINT };

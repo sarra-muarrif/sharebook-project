@@ -10,6 +10,7 @@ class BookGridDetails extends React.Component {
           key={book.id}
           title={book.volumeInfo.title}
           image={book.volumeInfo.imageLinks.thumbnail}
+          id={book.id}
         />
       );
     });

@@ -27,17 +27,32 @@ class Header extends React.Component {
                 </a>
               </li>
               <li>
-                <NavLink exact to="/" className="navebar-item" activeClassName="active">
+                <NavLink
+                  exact
+                  to="/"
+                  className="navebar-item"
+                  activeClassName="active"
+                >
                   home
                 </NavLink>
               </li>
               <li>
-                <NavLink exact to="/books" className="navebar-item" activeClassName="active">
+                <NavLink
+                  exact
+                  to="/books"
+                  className="navebar-item"
+                  activeClassName="active"
+                >
                   books
                 </NavLink>
               </li>
               <li>
-                <NavLink exact to="/contact" className="navebar-item" activeClassName="active">
+                <NavLink
+                  exact
+                  to="/contact"
+                  className="navebar-item"
+                  activeClassName="active"
+                >
                   contact
                 </NavLink>
               </li>
@@ -55,4 +70,3 @@ class Header extends React.Component {
 }
 
 export default Header;
-

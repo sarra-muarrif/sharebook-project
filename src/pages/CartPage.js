@@ -2,7 +2,11 @@ import React from "react";
 import Header from "../components/Header";
 class CartPage extends React.Component {
   render() {
-    const books = this.props.books;
+    const books=this.props.books;
+    const order = this.props.order;
+    const book = this.props.order;
+    console.log(books,"cart books");
+    console.log(order,"order")
     return (
       <>
         <Header />
@@ -14,11 +18,11 @@ class CartPage extends React.Component {
             <div className="book-checkout">
               <div className="book-review">
                 <img
-                  src={books[1].volumeInfo.imageLinks.thumbnail}
+                  src={book.volumeInfo.imageLinks.thumbnail}
                   alt="book cover"
                 />
                 <div className="book-desc">
-                  <h2>{books[1].volumeInfo.title}</h2>
+                  <h2>{book.volumeInfo.title}</h2>
                   <h2>Sold By : Sara</h2>
                 </div>
               </div>
@@ -31,7 +35,7 @@ class CartPage extends React.Component {
             </div>
             <div className="total-order">
               <div className="total-price">
-                <h2>Total : {books[1].id}</h2>
+                <h2>Total : {book.id}</h2>
                 <h2>QTY : 2</h2>
               </div>
               <button>Proceed To Checkout</button>

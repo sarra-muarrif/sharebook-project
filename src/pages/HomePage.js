@@ -6,19 +6,19 @@ import BookGrid from "../components/BookGrid";
 
 class HomePage extends React.Component {
   render() {
-    //Featured Books
-    const filterItems = this.props.books.filter((book) => {
-      return (book.isEbook = true);
-    });
-
-    //New Books
+    //Filter Books
     const filterBooks = this.props.books.filter((book) => {
-      return (book.kind = "books");
+      return (book.language = "en");
     });
-
-    const sortData = filterBooks.sort((book1, book2) => {
-      return new Date(book1.volumeInfo.publishedDate) >
-        new Date(book2.volumeInfo.publishedDate)
+    //Featured Books
+    const averageRating = filterBooks.filter((book) => {
+      return book.volumeInfo.averageRating
+        ? book.volumeInfo.averageRating
+        : (book.volumeInfo.averageRating = 2);
+    });
+    console.log(averageRating, "averageRating");
+    const featuredBooks = averageRating.sort((book1, book2) => {
+      return book1.volumeInfo.averageRating > book2.volumeInfo.averageRating
         ? -1
         : 1;
     });
@@ -32,14 +32,14 @@ class HomePage extends React.Component {
           gridtype="featured-books"
           classname="featured-books-title"
           limit={4}
-          books={filterItems}
+          books={featuredBooks}
         />
         <BookGrid
           title="new books"
           gridtype=" New-books"
           classname="new-books-title"
           limit={4}
-          books={sortData}
+          books={this.props.books}
         />
         <AboutUs />
       </>

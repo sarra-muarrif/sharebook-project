@@ -19,13 +19,10 @@ class App extends React.Component {
   componentDidMount() {
     this.fetchData();
   }
-
   fetchData() {
     fetch(`${END_POINT}&key=${API_KEY}`)
       .then((res) => res.json())
-      .then((res) => {
-        this.setState({ books: res.items });
-      })
+      .then((res) => this.setState({ books: [...res.items] }))
       .catch((err) => console.log(err));
   }
 

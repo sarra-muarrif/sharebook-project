@@ -5,14 +5,7 @@ class BookGrid extends React.Component {
   render() {
     const books = this.props.books.slice(0, this.props.limit);
     const bookList = books.map((book) => {
-      return (
-        <Book
-          key={book.id}
-          book={book}
-          // image={book.volumeInfo.imageLinks.thumbnail}
-          // link={book.volumeInfo.previewLink}
-        />
-      );
+      return <Book key={book.id} book={book} />;
     });
     return (
       <section className={`section ${this.props.gridtype}`}>

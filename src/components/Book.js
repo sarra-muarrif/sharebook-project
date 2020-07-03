@@ -5,13 +5,11 @@ class Book extends React.Component {
   render() {
     return (
       <li className="books">
-        <NavLink exact to={`./details/${this.props.books.id}`}>
-          {/* <a href={this.props.link} target="_blank"> */}
+        <NavLink exact to={`/details/${this.props.book.id}`}>
           <img
-            src={this.props.books.volumeInfo.imageLinks.thumbnail}
-            alt={this.props.books.volumeInfo.title}
+            src={this.props.book.volumeInfo.imageLinks.thumbnail}
+            alt={this.props.book.volumeInfo.title}
           />
-          {/* </a> */}
         </NavLink>
       </li>
     );

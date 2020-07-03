@@ -1,10 +1,12 @@
 import React from "react";
+import StarRating from "./StarRating.js";
+import AddToCartButton from "./AddToCartButton.js";
 
 class Details extends React.Component {
+  bookId = this.props.bookid;
+  book = this.props.books.find((book) => book.id.includes(this.bookId));
   render() {
-    const bookId = this.props.bookid;
-    const book = this.props.books.find((book) => book.id.includes(bookId));
-
+    const book = this.book;
     return (
       <section className="detail">
         <div className="container">
@@ -13,10 +15,9 @@ class Details extends React.Component {
               src={book.volumeInfo.imageLinks.thumbnail}
               className="main-photo"
               alt={book.volumeInfo.title}
+              ref={this.props.pageRef}
             />
-            <a href="/" className="add-to-cart">
-              Add To Cart
-            </a>
+            <AddToCartButton onClick={() => this.props.catchItem(book)} />
             <p>Saler : Sara</p>
           </div>
           <div className="book-detail">
@@ -24,14 +25,8 @@ class Details extends React.Component {
               <h2 className="book-title">{book.volumeInfo.title}</h2>
               <div>
                 <h2 className="book-price">
-                  {book.id}
-                  <span>
-                    <i className="fas fa-star" style={{ color: "yellow" }} />
-                    <i className="fas fa-star" style={{ color: "yellow" }} />
-                    <i className="fas fa-star" style={{ color: "yellow" }} />
-                    <i className="fas fa-star" style={{ color: "yellow" }} />
-                    <i className="fas fa-star" style={{ color: "yellow" }} />
-                  </span>
+                  12$
+                  <StarRating />
                 </h2>
               </div>
             </div>

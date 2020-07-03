@@ -15,6 +15,8 @@ class App extends React.Component {
   state = {
     books: [],
     query: "cats",
+    orderBook:[],
+    item: 0
   };
 
   //handle search value in booksPage
@@ -25,7 +27,7 @@ class App extends React.Component {
   handleSearch = (event) => {
     this.fetchData();
   };
-  componentWillMount() {
+  componentDidMount() {
     this.fetchData();
   }
   //fetch data with query from API
@@ -35,6 +37,19 @@ class App extends React.Component {
       .then((res) => this.setState({ books: [...res.items] }))
       .catch((err) => console.log(err));
   }
+// add the book in the cart
+  catchItem = (item) => {
+    this.setState({orderBook: [...this.state.orderBook, item]}) 
+};
+// Delete the book in cart
+handleDelete = (id) => {
+  console.log(id)
+ let books = this.state.books
+ let i = books.findIndex(item => item.id ===id)
+ books.splice(i, 1)
+ this.setState({books})
+};
+
   render() {
     console.log(this.state.query);
     return (
@@ -94,14 +109,14 @@ class App extends React.Component {
             exact
             path="/cart"
             render={(props) => {
-              return <CartPage {...props} books={this.state.books} />;
+              return <CartPage {...props} books={this.state.books} orderBook={this.state.orderBook} handleDelete={this.handleDelete} />;
             }}
           />
           <Route
             exact
             path="/details/:id"
             render={(props) => {
-              return <DetailsPage {...props} books={this.state.books} />;
+              return <DetailsPage {...props} books={this.state.books} catchItem={this.catchItem}  />;
             }}
           />
           <Footer />

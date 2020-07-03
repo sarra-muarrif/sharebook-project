@@ -9,6 +9,7 @@
   font-family: AvenirNext-DemiBold;
   font-size: 1.2em;
   align-items: center;
+  margin-top: 15px;
 }
 .book-review {
   display: flex;

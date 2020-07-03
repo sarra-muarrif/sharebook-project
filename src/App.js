@@ -9,27 +9,31 @@ import SignInPage from "./pages/SignInPage";
 import SignUpPage from "./pages/SignUpPage";
 import SellerPage from "./pages/SellerPage";
 import Footer from "./components/Footer";
-import { END_POINT, API_KEY } from "./constants/urls";
+import { API_KEY, SEARCH_POINT } from "./constants/urls";
 
 class App extends React.Component {
   state = {
     books: [],
+    query: "cats",
   };
-
-  componentDidMount() {
+  handleChange = (evt) => {
+    this.setState({ query: evt.target.value });
+  };
+  handleSearch = (event) => {
+    this.fetchData();
+  };
+  componentWillMount() {
     this.fetchData();
   }
 
   fetchData() {
-    fetch(`${END_POINT}&key=${API_KEY}`)
+    fetch(`${SEARCH_POINT}?q=${this.state.query}&key=${API_KEY}`)
       .then((res) => res.json())
-      .then((res) => {
-        this.setState({ books: res.items });
-      })
+      .then((res) => this.setState({ books: [...res.items] }))
       .catch((err) => console.log(err));
   }
-
   render() {
+    console.log(this.state.query);
     return (
       <BrowserRouter>
         <>
@@ -65,7 +69,15 @@ class App extends React.Component {
             exact
             path="/books"
             render={(props) => {
-              return <BooksPage {...props} books={this.state.books} />;
+              return (
+                <BooksPage
+                  {...props}
+                  query={this.state.query}
+                  handleSearch={this.handleSearch}
+                  handleChange={this.handleChange}
+                  books={this.state.books}
+                />
+              );
             }}
           />
           <Route

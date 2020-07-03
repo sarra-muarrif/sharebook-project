@@ -16,16 +16,19 @@ class App extends React.Component {
     books: [],
     query: "cats",
   };
+
+  //handle search value in booksPage
   handleChange = (evt) => {
     this.setState({ query: evt.target.value });
   };
+  //handle search in booksPage
   handleSearch = (event) => {
     this.fetchData();
   };
   componentWillMount() {
     this.fetchData();
   }
-
+  //fetch data with query from API
   fetchData() {
     fetch(`${SEARCH_POINT}?q=${this.state.query}&key=${API_KEY}`)
       .then((res) => res.json())

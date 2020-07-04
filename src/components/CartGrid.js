@@ -12,7 +12,7 @@ class CartGrid extends React.Component {
             <div className="cart-title">
               <h2>Shopping Cart</h2>
             </div>
-            {this.props.books.map(book => {
+            {books.map(book => {
             return (  
             <div key={book.id}>
              <div 

@@ -36,11 +36,11 @@
 .navbar-menu li {
   padding-right: 39px;
 }
- .navebar-item {
+.navebar-item {
   color: #000000;
 }
 .active {
-  color: #E7D747;
+  color: #e7d747;
   font-weight: bold;
 }
 

@@ -10,13 +10,13 @@ class HomePage extends React.Component {
     const filterBooks = this.props.books.filter((book) => {
       return (book.language = "en");
     });
+    console.log(filterBooks,"filterbooks")
     //Featured Books
     const averageRating = filterBooks.filter((book) => {
-      return book.volumeInfo.averageRating
-        ? book.volumeInfo.averageRating
+      return (book.volumeInfo.averageRating)
+        ? (book.volumeInfo.averageRating)
         : (book.volumeInfo.averageRating = 2);
     });
-    console.log(averageRating, "averageRating");
     const featuredBooks = averageRating.sort((book1, book2) => {
       return book1.volumeInfo.averageRating > book2.volumeInfo.averageRating
         ? -1

@@ -15,7 +15,7 @@ class App extends React.Component {
   state = {
     books: [],
   };
-
+  
   componentDidMount() {
     this.fetchData();
   }
@@ -83,7 +83,13 @@ class App extends React.Component {
             exact
             path="/details/:id"
             render={(props) => {
-              return <DetailsPage {...props} books={this.state.books} />;
+              return (
+                <DetailsPage
+                  {...props}
+                  books={this.state.books}
+                  ref={this.textInput}
+                />
+              );
             }}
           />
           <Footer />

@@ -15,8 +15,8 @@ class App extends React.Component {
   state = {
     books: [],
     query: "cats",
-    orderBook:[],
-    item: 0
+    orderBook: [],
+    item: 0,
   };
 
   //handle search value in booksPage
@@ -37,18 +37,19 @@ class App extends React.Component {
       .then((res) => this.setState({ books: [...res.items] }))
       .catch((err) => console.log(err));
   }
-// add the book in the cart
+  // add the book in the cart
   catchItem = (item) => {
-    this.setState({orderBook: [...this.state.orderBook, item]}) 
-};
-// Delete the book in cart
-handleDelete = (id) => {
-  console.log(id)
- let books = this.state.books
- let i = books.findIndex(item => item.id ===id)
- books.splice(i, 1)
- this.setState({books})
-};
+    console.log(item);
+    this.setState({ orderBook: [...this.state.orderBook, item] });
+  };
+  // Delete the book in cart
+  handleDelete = (id) => {
+    console.log(id);
+    let books = this.state.books;
+    let i = books.findIndex((item) => item.id === id);
+    books.splice(i, 1);
+    this.setState({ books });
+  };
 
   render() {
     console.log(this.state.query);
@@ -94,6 +95,7 @@ handleDelete = (id) => {
                   handleSearch={this.handleSearch}
                   handleChange={this.handleChange}
                   books={this.state.books}
+                  catchItem={this.catchItem}
                 />
               );
             }}
@@ -109,14 +111,27 @@ handleDelete = (id) => {
             exact
             path="/cart"
             render={(props) => {
-              return <CartPage {...props} books={this.state.books} orderBook={this.state.orderBook} handleDelete={this.handleDelete} />;
+              return (
+                <CartPage
+                  {...props}
+                  books={this.state.books}
+                  orderBook={this.state.orderBook}
+                  handleDelete={this.handleDelete}
+                />
+              );
             }}
           />
           <Route
             exact
             path="/details/:id"
             render={(props) => {
-              return <DetailsPage {...props} books={this.state.books} catchItem={this.catchItem}  />;
+              return (
+                <DetailsPage
+                  {...props}
+                  books={this.state.books}
+                  catchItem={this.catchItem}
+                />
+              );
             }}
           />
           <Footer />

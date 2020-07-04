@@ -11,6 +11,7 @@ class BookGridDetails extends React.Component {
           title={book.volumeInfo.title}
           image={book.volumeInfo.imageLinks.thumbnail}
           id={book.id}
+          catchItem={this.props.catchItem}
         />
       );
     });

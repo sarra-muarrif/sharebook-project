@@ -7,16 +7,19 @@ import BookGrid from "../components/BookGrid";
 class HomePage extends React.Component {
   render() {
     //Featured Books
-   const filterItems = this.props.books.filter(book => {
-     return book.isEbook = true;
-   });
-   //New Books
-   const filterBooks =this.props.books.filter(book => {
-     return book.kind="books";
-   });
-   const sortData = filterBooks.sort((book1, book2) => {
-     return new Date(book1.volumeInfo.publishedDate) > new Date(book2.volumeInfo.publishedDate) ? -1 : 1;
-   }); 
+    const filterItems = this.props.books.filter((book) => {
+      return (book.isEbook = true);
+    });
+    //New Books
+    const filterBooks = this.props.books.filter((book) => {
+      return (book.kind = "books");
+    });
+    const sortData = filterBooks.sort((book1, book2) => {
+      return new Date(book1.volumeInfo.publishedDate) >
+        new Date(book2.volumeInfo.publishedDate)
+        ? -1
+        : 1;
+    });
     return (
       <>
         <Header />

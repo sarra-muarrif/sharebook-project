@@ -12,7 +12,9 @@ class BookDetails extends React.Component {
             <NavLink exact to={`/details/${this.props.id}`}>
               <img src={this.props.image} alt="book cover" />
             </NavLink>
-            <AddToCartButton />
+            <AddToCartButton
+              onClick={() => this.props.catchItem(this.props.id)}
+            />
           </li>
         </div>
       </>

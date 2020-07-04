@@ -3,7 +3,7 @@ import Header from "../components/Header";
 
 class CartGrid extends React.Component {
   render() {
-    const { handleDelete } = this.props;
+    const { handleDelete, books } = this.props;
     return (
       <>
         <Header />
@@ -12,9 +12,9 @@ class CartGrid extends React.Component {
             <div className="cart-title">
               <h2>Shopping Cart</h2>
             </div>
-            {this.props.books.map((book) => {
+            {books.map((book) => {
               return (
-                <div className="book-checkout">
+                <div key={book.id} className="book-checkout">
                   <div className="book-review">
                     <img
                       src={book.volumeInfo.imageLinks.thumbnail}
@@ -41,7 +41,7 @@ class CartGrid extends React.Component {
             })}
             <div className="total-order">
               <div className="total-price">
-                {/* <h2>Total : {this.props.books[4].id}</h2> */}
+                <h2>Total : {books.id}</h2>
                 <h2>QTY : 2</h2>
               </div>
               <button>Proceed To Checkout</button>

@@ -116,7 +116,12 @@ handleDelete = (id) => {
             exact
             path="/details/:id"
             render={(props) => {
-              return <DetailsPage {...props} books={this.state.books} catchItem={this.catchItem}  />;
+              return (
+                <DetailsPage
+                  {...props}
+                  books={this.state.books}
+                />
+              );
             }}
           />
           <Footer />

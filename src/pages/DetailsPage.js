@@ -17,3 +17,5 @@ class DetailsPage extends React.Component {
 }
 
 export default DetailsPage;
+
+

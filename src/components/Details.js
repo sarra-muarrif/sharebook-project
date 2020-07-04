@@ -1,12 +1,15 @@
 import React from "react";
+import StarRating from "./StarRating.js";
+import AddToCartButton from "./AddToCartButton.js";
 
 
 class Details extends React.Component {
-
-
-
+    //Filter Price
+    const filterPrice =
+      (book.saleInfo.saleability === "NOT_FOR_SALE")
+        ? (book.saleInfo.saleability = 20)
+        : (book.saleInfo.retailPrice.amount);
   render() {
-
     const bookId = this.props.bookid;
     const book = this.props.books.find((book) => book.id.includes(bookId));
     return (
@@ -18,10 +21,7 @@ class Details extends React.Component {
               className="main-photo"
               alt={book.volumeInfo.title}
             />
-        
-            <button onClick={() => this.props.catchItem(book)} className="add-to-cart">
-              Add To Cart
-            </button>
+            <AddToCartButton onClick={() => this.props.catchItem(book)} />
             <p>Saler : Sara</p>
           </div>
           <div className="book-detail">
@@ -29,14 +29,8 @@ class Details extends React.Component {
               <h2 className="book-title">{book.volumeInfo.title}</h2>
               <div>
                 <h2 className="book-price">
-                  {book.id}
-                  <span>
-                    <i className="fas fa-star" style={{ color: "yellow" }} />
-                    <i className="fas fa-star" style={{ color: "yellow" }} />
-                    <i className="fas fa-star" style={{ color: "yellow" }} />
-                    <i className="fas fa-star" style={{ color: "yellow" }} />
-                    <i className="fas fa-star" style={{ color: "yellow" }} />
-                  </span>
+                  {filterPrice}
+                  <StarRating />
                 </h2>
               </div>
             </div>

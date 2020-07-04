@@ -6,7 +6,6 @@
   width: 300px;
   border: #b12121 2px solid;
 }
-
 .book-preview p {
   font-family: AvenirNext-DemiBold;
   text-align: center;
@@ -43,6 +42,8 @@
   text-align: justify;
   margin-bottom: 30px;
   padding: 10px 20px;
+  max-height: 8em;
+  overflow: overlay;
 }
 .book-info {
   font-size: 1.2em;

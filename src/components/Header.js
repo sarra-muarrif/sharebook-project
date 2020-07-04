@@ -22,7 +22,7 @@ class Header extends React.Component {
             </div>
             <ul className="navbar-menu">
               <li>
-                <a href="/#about-us" className="navebar-item">
+                <a href="/#about-us" className="navebar-item ">
                   about
                 </a>
               </li>

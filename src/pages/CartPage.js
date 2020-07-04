@@ -1,12 +1,8 @@
 import React from "react";
-import Header from "../components/Header";
+import CartGrid from "../components/CartGrid";
+
 class CartPage extends React.Component {
   render() {
-    const books=this.props.books;
-    const order = this.props.order;
-    const book = this.props.order;
-    console.log(books,"cart books");
-    console.log(order,"order")
     return (
       <>
         <Header />
@@ -42,8 +38,18 @@ class CartPage extends React.Component {
             </div>
           </div>
         </section>
+    const bookId = this.props.match.params.id;
+    const {handleDelete} = this.props
+   
+    return (
+      <> 
+        <CartGrid books={this.props.books} 
+        orderBook={this.props.orderBook} 
+        id={bookId} 
+        handleDelete={handleDelete} />
       </>
     );
   }
 }
-export default CartPage;
+
+export default CartPage

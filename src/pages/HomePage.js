@@ -22,7 +22,11 @@ class HomePage extends React.Component {
         ? -1
         : 1;
     });
-
+    
+   //New Books
+   const sortData = filterBooks.sort((book1, book2) => {
+     return new Date(book1.volumeInfo.publishedDate) > new Date(book2.volumeInfo.publishedDate) ? -1 : 1;
+   }); 
     return (
       <>
         <Header />
@@ -39,7 +43,7 @@ class HomePage extends React.Component {
           gridtype=" New-books"
           classname="new-books-title"
           limit={4}
-          books={this.props.books}
+          books={sortData}
         />
         <AboutUs />
       </>

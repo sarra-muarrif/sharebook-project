@@ -2,18 +2,16 @@ import React from "react";
 import StarRating from "./StarRating.js";
 import AddToCartButton from "./AddToCartButton.js";
 
+
 class Details extends React.Component {
-  bookId = this.props.bookid;
-  book = this.props.books.find((book) => book.id.includes(this.bookId));
-  render() {
-    const book = this.book;
-    console.log(book, "book2");
     //Filter Price
     const filterPrice =
-      book.saleInfo.saleability === "NOT_FOR_SALE"
+      (book.saleInfo.saleability === "NOT_FOR_SALE")
         ? (book.saleInfo.saleability = 20)
-        : book.saleInfo.retailPrice.amount;
-    console.log(filterPrice, "filterPrice");
+        : (book.saleInfo.retailPrice.amount);
+  render() {
+    const bookId = this.props.bookid;
+    const book = this.props.books.find((book) => book.id.includes(bookId));
     return (
       <section className="detail">
         <div className="container">
@@ -32,7 +30,6 @@ class Details extends React.Component {
               <div>
                 <h2 className="book-price">
                   {filterPrice}
-                  {book.accessInfo.country}
                   <StarRating />
                 </h2>
               </div>

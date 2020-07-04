@@ -9,7 +9,7 @@ class DetailsPage extends React.Component {
     return (
       <>
         <Header />
-        <Details books={this.props.books} bookid={bookId} />
+        <Details books={this.props.books} bookid={bookId} catchItem={this.props.catchItem}  />
         <BookGridDetails limit={4} books={this.props.books} />
       </>
     );

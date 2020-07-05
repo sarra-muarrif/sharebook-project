@@ -2,14 +2,13 @@ import React from "react";
 import StarRating from "./StarRating.js";
 import AddToCartButton from "./AddToCartButton.js";
 
-
 class Details extends React.Component {
   render() {
-       //Filter Price
-    const filterPrice =
-      (book.saleInfo.saleability === "NOT_FOR_SALE")
-        ? (book.saleInfo.saleability = 20)
-        : (book.saleInfo.retailPrice.amount);
+    //    //Filter Price
+    // const filterPrice =
+    //   (book.saleInfo.saleability === "NOT_FOR_SALE")
+    //     ? (book.saleInfo.saleability = 20)
+    //     : (book.saleInfo.retailPrice.amount);
     const bookId = this.props.bookid;
     const book = this.props.books.find((book) => book.id.includes(bookId));
     return (
@@ -29,7 +28,7 @@ class Details extends React.Component {
               <h2 className="book-title">{book.volumeInfo.title}</h2>
               <div>
                 <h2 className="book-price">
-                  {filterPrice}
+                  {/* {filterPrice} */}
                   <StarRating />
                 </h2>
               </div>

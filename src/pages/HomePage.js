@@ -10,11 +10,11 @@ class HomePage extends React.Component {
     const filterBooks = this.props.books.filter((book) => {
       return (book.language = "en");
     });
-    console.log(filterBooks,"filterbooks")
+    console.log(filterBooks, "filterbooks");
     //Featured Books
     const averageRating = filterBooks.filter((book) => {
-      return (book.volumeInfo.averageRating)
-        ? (book.volumeInfo.averageRating)
+      return book.volumeInfo.averageRating
+        ? book.volumeInfo.averageRating
         : (book.volumeInfo.averageRating = 2);
     });
     const featuredBooks = averageRating.sort((book1, book2) => {
@@ -22,11 +22,14 @@ class HomePage extends React.Component {
         ? -1
         : 1;
     });
-    
-   //New Books
-   const sortData = filterBooks.sort((book1, book2) => {
-     return new Date(book1.volumeInfo.publishedDate) > new Date(book2.volumeInfo.publishedDate) ? -1 : 1;
-   }); 
+
+    //New Books
+    const sortData = filterBooks.sort((book1, book2) => {
+      return new Date(book1.volumeInfo.publishedDate) >
+        new Date(book2.volumeInfo.publishedDate)
+        ? -1
+        : 1;
+    });
     return (
       <>
         <Header />

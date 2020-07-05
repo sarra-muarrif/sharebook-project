@@ -4,12 +4,12 @@ import AddToCartButton from "./AddToCartButton.js";
 
 
 class Details extends React.Component {
-    //Filter Price
+  render() {
+       //Filter Price
     const filterPrice =
       (book.saleInfo.saleability === "NOT_FOR_SALE")
         ? (book.saleInfo.saleability = 20)
         : (book.saleInfo.retailPrice.amount);
-  render() {
     const bookId = this.props.bookid;
     const book = this.props.books.find((book) => book.id.includes(bookId));
     return (

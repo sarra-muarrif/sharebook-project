@@ -14,7 +14,11 @@ class DetailsPage extends React.Component {
           bookid={bookId}
           catchItem={this.props.catchItem}
         />
-        <BookGridDetails limit={4} books={this.props.books} />
+        <BookGridDetails
+          limit={4}
+          books={this.props.books}
+          catchItem={this.props.catchItem}
+        />
       </>
     );
   }

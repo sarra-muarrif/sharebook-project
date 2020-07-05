@@ -31,11 +31,9 @@ class BooksPage extends React.Component {
           </div>
         </section>
         <BookGridDetails
-          title="other options"
-          gridtype="featured-books"
-          classname="featured-books-title"
           limit={4}
           books={this.props.books}
+          catchItem={this.props.catchItem}
         />
       </>
     );

@@ -3,7 +3,10 @@ import Header from "../components/Header";
 
 class CartPage extends React.Component {
   render() {
-    const { handleDelete, books } = this.props;
+    const books = this.props.orderBook;
+    const { handleDelete, orderBook, price, item } = this.props;
+    const total = orderBook.reduce((a, c) => a + c.price * c.item, 0);
+
     return (
       <>
         <Header />
@@ -14,7 +17,7 @@ class CartPage extends React.Component {
             </div>
             {books.map((book) => {
               return (
-                <div className="book-checkout">
+                <div className="book-checkout" key={book.id}>
                   <div className="book-review">
                     <img
                       src={book.volumeInfo.imageLinks.thumbnail}
@@ -41,8 +44,8 @@ class CartPage extends React.Component {
             })}
             <div className="total-order">
               <div className="total-price">
-                <h2>Total : 12$</h2>
-                <h2>QTY : 2</h2>
+                <h2>Total : {total}</h2>
+                <h2>QTY : {orderBook.length}</h2>
               </div>
               <button>Proceed To Checkout</button>
             </div>

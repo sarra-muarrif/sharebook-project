@@ -10,7 +10,7 @@ class HomePage extends React.Component {
     const filterBooks = this.props.books.filter((book) => {
       return (book.language = "en");
     });
-    console.log(filterBooks, "filterbooks");
+
     //Featured Books
     const averageRating = filterBooks.filter((book) => {
       return book.volumeInfo.averageRating

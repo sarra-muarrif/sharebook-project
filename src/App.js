@@ -17,6 +17,7 @@ class App extends React.Component {
     query: "cats",
     orderBook: [],
     item: 0,
+    price: "$12",
   };
 
   //handle search value in booksPage
@@ -37,6 +38,7 @@ class App extends React.Component {
       .then((res) => this.setState({ books: [...res.items] }))
       .catch((err) => console.log(err));
   }
+
   // add the book in the cart
   catchItem = (item) => {
     this.setState({ orderBook: [...this.state.orderBook, item] });
@@ -44,10 +46,10 @@ class App extends React.Component {
   // Delete the book in cart
   handleDelete = (id) => {
     console.log(id);
-    let books = this.state.books;
-    let i = books.findIndex((item) => item.id === id);
-    books.splice(i, 1);
-    this.setState({ books });
+    let itemDelete = this.state.orderBook;
+    let i = itemDelete.findIndex((item) => item.id === id);
+    itemDelete.splice(i, 1);
+    this.setState({ itemDelete });
   };
 
   render() {
@@ -94,6 +96,7 @@ class App extends React.Component {
                   handleSearch={this.handleSearch}
                   handleChange={this.handleChange}
                   books={this.state.books}
+                  catchItem={this.catchItem}
                 />
               );
             }}
@@ -115,6 +118,9 @@ class App extends React.Component {
                   books={this.state.books}
                   orderBook={this.state.orderBook}
                   handleDelete={this.handleDelete}
+                  catchItem={this.catchItem}
+                  price={this.state.price}
+                  item={this.state.item}
                 />
               );
             }}
@@ -123,7 +129,13 @@ class App extends React.Component {
             exact
             path="/details/:id"
             render={(props) => {
-              return <DetailsPage {...props} books={this.state.books} />;
+              return (
+                <DetailsPage
+                  {...props}
+                  books={this.state.books}
+                  catchItem={this.catchItem}
+                />
+              );
             }}
           />
           <Footer />

@@ -42,7 +42,6 @@ class App extends React.Component {
   // add the book in the cart
   catchItem = (product) => {
     const orderBook = this.state.orderBook.slice();
-    console.log(orderBook);
     let alreadyInCart = false;
     orderBook.forEach((item) => {
       if (item.id === product.id) {
@@ -58,7 +57,6 @@ class App extends React.Component {
   };
   // Delete the book in cart
   handleDelete = (id) => {
-    console.log(id);
     let itemDelete = this.state.orderBook;
     let i = itemDelete.findIndex((item) => item.id === id);
     itemDelete.splice(i, 1);
@@ -66,7 +64,6 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state.query);
     return (
       <BrowserRouter>
         <>

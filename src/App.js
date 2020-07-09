@@ -17,7 +17,7 @@ class App extends React.Component {
     query: "cats",
     orderBook: [],
     item: 0,
-    price: "$12",
+    price: 12,
   };
 
   //handle search value in booksPage
@@ -40,8 +40,21 @@ class App extends React.Component {
   }
 
   // add the book in the cart
-  catchItem = (item) => {
-    this.setState({ orderBook: [...this.state.orderBook, item] });
+  catchItem = (product) => {
+    const orderBook = this.state.orderBook.slice();
+    console.log(orderBook);
+    let alreadyInCart = false;
+    orderBook.forEach((item) => {
+      if (item.id === product.id) {
+        item.count++;
+        alreadyInCart = true;
+      }
+    });
+    if (!alreadyInCart) {
+      orderBook.push({ ...product, count: 1 });
+    }
+    this.setState({ orderBook });
+    // this.setState({ orderBook: [...this.state.orderBook, item] });
   };
   // Delete the book in cart
   handleDelete = (id) => {
@@ -82,7 +95,13 @@ class App extends React.Component {
             exact
             path="/"
             render={(props) => {
-              return <HomePage {...props} books={this.state.books} />;
+              return (
+                <HomePage
+                  {...props}
+                  books={this.state.books}
+                  orderBook={this.state.orderBook}
+                />
+              );
             }}
           />
           <Route
@@ -96,7 +115,9 @@ class App extends React.Component {
                   handleSearch={this.handleSearch}
                   handleChange={this.handleChange}
                   books={this.state.books}
+                  orderBook={this.state.orderBook}
                   catchItem={this.catchItem}
+                  item={this.state.item}
                 />
               );
             }}
@@ -132,6 +153,7 @@ class App extends React.Component {
               return (
                 <DetailsPage
                   {...props}
+                  orderBook={this.state.orderBook}
                   books={this.state.books}
                   catchItem={this.catchItem}
                 />

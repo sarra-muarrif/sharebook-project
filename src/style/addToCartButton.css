@@ -12,9 +12,28 @@
   justify-content: center;
   border: black 2px solid;
   margin-top: 23px;
+  padding-right: 0;
 }
 
 .add-to-cart:hover {
   background-color: white;
   color: black;
+}
+input.input-count {
+     padding: 5px;
+    width: 2em;
+    background-color: rgba(0, 0, 0, 0.472);
+    color: white;
+    font-weight: bolder;
+    font-size: 1.2em;
+    border: black 2px solid;
+    
+}
+/* .input-count:hover {
+  background-color: white;
+  color: black;
+} */
+.input-count-details{
+  padding: 0;
+  margin-left: auto;
 }

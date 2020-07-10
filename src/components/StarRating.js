@@ -1,29 +1,19 @@
-import React, { useState } from "react";
+import React from "react";
 
-const StarRating = () => {
-  const [rating, setRating] = useState(null);
-  // const averageRating = this.props.books.filter((book) => {
-  //   return (book.volumeInfo.averageRating)
-  //     ? (book.volumeInfo.averageRating)
-  //     : (book.volumeInfo.averageRating = 2);
-  // });
-  // console.log(averageRating,"averageRating")
+const StarRating = ({ score, averageRating }) => {
+  let newAverageRating = averageRating + 1;
   return (
     <span>
-      {[...Array(5)].map((star, i) => {
-        const ratingValue = i + 1;
+      {[...Array(score)].map((star, i) => {
+        newAverageRating--;
         return (
           <label key={i}>
-            <input
-              type="radio"
-              name="rating"
-              style={{ display: "none" }}
-              value={ratingValue}
-              onClick={() => setRating(ratingValue)}
-            />
+            <input type="radio" name="rating" style={{ display: "none" }} />
             <i
               className="fas fa-star"
-              style={{ color: ratingValue <= rating ? "#FFF34D" : "#9C9A94" }}
+              style={{
+                color: `${newAverageRating > 0 ? "#FFF34D" : "#9C9A94"}`,
+              }}
             />
           </label>
         );
@@ -31,5 +21,4 @@ const StarRating = () => {
     </span>
   );
 };
-
 export default StarRating;

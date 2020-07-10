@@ -3,18 +3,29 @@ import StarRating from "./StarRating.js";
 import AddToCartButton from "./AddToCartButton.js";
 
 class Details extends React.Component {
+  componentDidMount() {
+    window.scrollTo(0, 0);
+  }
   render() {
-    //    Filter Price
-    // const filterPrice =
-    //   (book.saleInfo.saleability === "NOT_FOR_SALE")
-    //     ? (book.saleInfo.saleability = 20)
-    //     : (book.saleInfo.retailPrice.amount);
     const { catchItem } = this.props;
     const bookId = this.props.bookid;
     const book = this.props.books.find((book) => book.id.includes(bookId));
+    console.log(book, "book2");
+    //Filter Price
+    const filterPrice =
+      book &&
+      (book.saleInfo.saleability === "NOT_FOR_SALE" ||
+        book.saleInfo.saleability === "FREE")
+        ? book && (book.saleInfo.saleability = "20$")
+        : book && book.saleInfo.retailPrice.amount;
+    //Filter averageRating
+    const averageRating =
+      book && book.volumeInfo.averageRating
+        ? book && book.volumeInfo.averageRating
+        : book && (book.volumeInfo.averageRating = 2);
     return (
-      <>
-        <section className="detail">
+      <section className="detail">
+        {book && (
           <div className="container">
             <div className="book-preview">
               <img
@@ -22,15 +33,22 @@ class Details extends React.Component {
                 className="main-photo"
                 alt={book.volumeInfo.title}
               />
-              <AddToCartButton item={book} catchItem={catchItem} />
-              <p>saler : sara</p>
+//               <AddToCartButton item={book} catchItem={catchItem} />
+//               <p>saler : sara</p>
+              <AddToCartButton onClick={() => this.props.catchItem(book)} />
+              <p>Saler : Sara</p>
             </div>
             <div className="book-detail">
               <div className="book-overview">
                 <h2 className="book-title">{book.volumeInfo.title}</h2>
                 <div>
                   <h2 className="book-price">
-                    <StarRating />
+                    {filterPrice}
+                    <StarRating
+                      book={book}
+                      score={5}
+                      averageRating={averageRating}
+                    />
                   </h2>
                 </div>
               </div>
@@ -46,11 +64,11 @@ class Details extends React.Component {
               </div>
             </div>
           </div>
-          <div className="other-options">
-            <h3>other options</h3>
-          </div>
-        </section>
-      </>
+        )}
+        <div className="other-options">
+          <h3>other options</h3>
+        </div>
+      </section>
     );
   }
 }

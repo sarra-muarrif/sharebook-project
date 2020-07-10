@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 
 const AddToCartButton = (props) => {
-  const [count] = useState(0);
+  
 
   return (
     <>
       <button
         className="add-to-cart"
-        onClick={() => props.catchItem({ ...props.item, count })}
+        onClick={() => props.catchItem({ ...props.item})}
       >
         Add To Cart
       </button>

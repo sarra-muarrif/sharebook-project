@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 
 class Header extends React.Component {
   render() {
+    const orderBook = this.props;
     return (
       <header className="section-header">
         <div className="container">
@@ -60,9 +61,7 @@ class Header extends React.Component {
             <div className="cart-icon">
               <NavLink exact to="/cart">
                 <i className="fas fa-shopping-cart"></i>
-                <span className="style-num-cart">
-                  {this.props.orderBook.length}
-                </span>
+                <span className="style-num-cart">{orderBook.length}</span>
               </NavLink>
             </div>
           </div>

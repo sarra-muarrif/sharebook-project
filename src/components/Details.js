@@ -7,21 +7,13 @@ class Details extends React.Component {
     window.scrollTo(0, 0);
   }
   render() {
-    const bookId = this.props.bookid;
-    const book = this.props.books.find((book) => book.id.includes(bookId));
-    console.log(book, "book2");
-    //Filter Price
-    const filterPrice =
-      book &&
-      (book.saleInfo.saleability === "NOT_FOR_SALE" ||
-        book.saleInfo.saleability === "FREE")
-        ? book && (book.saleInfo.saleability = "20$")
-        : book && book.saleInfo.retailPrice.amount;
+    const book = this.props.book;
+    const price = this.props.filterPrice;
     //Filter averageRating
     const averageRating =
       book && book.volumeInfo.averageRating
         ? book && book.volumeInfo.averageRating
-        : book && (book.volumeInfo.averageRating = 2);
+        : 2;
     return (
       <section className="detail">
         {book && (
@@ -40,7 +32,7 @@ class Details extends React.Component {
                 <h2 className="book-title">{book.volumeInfo.title}</h2>
                 <div>
                   <h2 className="book-price">
-                    {filterPrice}
+                    {`${price}$`}
                     <StarRating
                       book={book}
                       score={5}

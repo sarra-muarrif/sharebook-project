@@ -5,9 +5,16 @@ import Header from "../components/Header.js";
 
 class BooksPage extends React.Component {
   render() {
+    const {
+      books,
+      orderbook,
+      catchItem,
+      handleChange,
+      handleSearch,
+    } = this.props;
     return (
       <>
-        <Header />
+        {/* <Header orderbook={this.props.orderbook} /> */}
         <section className="section hero-searchBook ">
           <div className="container">
             <div className="searchBook-img">
@@ -18,11 +25,11 @@ class BooksPage extends React.Component {
                   <input
                     type="text"
                     id="search-book"
-                    placeholder={this.props.query}
+                    placeholder="Enter Category to search"
                     name="search-book"
-                    onChange={this.props.handleChange}
+                    onChange={handleChange}
                   />
-                  <button id="search-btn" onClick={this.props.handleSearch}>
+                  <button id="search-btn" onClick={handleSearch}>
                     search
                   </button>
                 </div>
@@ -30,11 +37,7 @@ class BooksPage extends React.Component {
             </div>
           </div>
         </section>
-        <BookGridDetails
-          limit={4}
-          books={this.props.books}
-          catchItem={this.props.catchItem}
-        />
+        <BookGridDetails limit={4} books={books} catchItem={catchItem} />
       </>
     );
   }

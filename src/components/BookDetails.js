@@ -9,7 +9,7 @@ class BookDetails extends React.Component {
       <>
         <div className="book-details">
           <li>
-            <div className="price">{this.props.title}</div>
+            <div className="price">{this.props.price}</div>
             <NavLink exact to={`/details/${this.props.id}`}>
               <img src={this.props.image} alt="book cover" />
             </NavLink>

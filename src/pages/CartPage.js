@@ -3,19 +3,17 @@ import Header from "../components/Header";
 
 class CartPage extends React.Component {
   render() {
-    const books = this.props.orderBook;
-    const { handleDelete, orderBook, price, item } = this.props;
-    const total = orderBook.reduce((a, c) => a + c.price * c.item, 0);
-
+    const { handleDelete, orderBook, price } = this.props;
+    const total = orderBook.reduce((a, c) => a + price * c.count, 0);
     return (
       <>
-        <Header />
+        <Header orderBook={orderBook} />
         <section className="section-cart">
           <div className="container">
             <div className="cart-title">
               <h2>Shopping Cart</h2>
             </div>
-            {books.map((book) => {
+            {orderBook.map((book) => {
               return (
                 <div className="book-checkout" key={book.id}>
                   <div className="book-review">

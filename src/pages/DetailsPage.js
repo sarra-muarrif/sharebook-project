@@ -16,7 +16,7 @@ class DetailsPage extends React.Component {
         : book.saleInfo.retailPrice.amount);
     return (
       <>
-        <Header />
+        <Header orderBook={this.props.orderBook} />
         <Details
           book={book}
           catchItem={this.props.catchItem}

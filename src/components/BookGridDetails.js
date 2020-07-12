@@ -7,14 +7,12 @@ class BookGridDetails extends React.Component {
       return (
         <BookDetails
           key={book.id}
-          id={book.id}
+          book={book}
           price={this.props.price}
-          image={book.volumeInfo.imageLinks.thumbnail}
           catchItem={this.props.catchItem}
         />
       );
     });
-    console.log(bookList, "booklist");
     return (
       <section className="book-details">
         <div className="container">

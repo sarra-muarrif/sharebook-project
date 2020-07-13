@@ -48,3 +48,8 @@
   color: #0099cc;
   font-size: 32px;
 }
+.cart-icon span {
+  position: absolute;
+  top: 4.2em;
+  right: 3.5em;
+}

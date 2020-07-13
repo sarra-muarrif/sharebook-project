@@ -32,7 +32,7 @@ class HomePage extends React.Component {
     });
     return (
       <>
-        <Header />
+        <Header orderBook={this.props.orderBook} />
         <HeroHome />
         <BookGrid
           title="featured books"

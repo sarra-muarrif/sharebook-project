@@ -17,7 +17,7 @@ class App extends React.Component {
     query: "cats",
     orderBook: [],
     item: 0,
-    price: "$12",
+    price: "12",
   };
 
   //handle search value in booksPage
@@ -40,12 +40,23 @@ class App extends React.Component {
   }
 
   // add the book in the cart
-  catchItem = (item) => {
-    this.setState({ orderBook: [...this.state.orderBook, item] });
+  catchItem = (product) => {
+    const orderBook = this.state.orderBook.slice();
+    let alreadyInCart = false;
+    orderBook.forEach((item) => {
+      if (item.id === product.id) {
+        item.count++;
+        alreadyInCart = true;
+      }
+    });
+    if (!alreadyInCart) {
+      orderBook.push({ ...product, count: 1 });
+    }
+    this.setState({ orderBook });
+    // this.setState({ orderBook: [...this.state.orderBook, item] });
   };
   // Delete the book in cart
   handleDelete = (id) => {
-    console.log(id);
     let itemDelete = this.state.orderBook;
     let i = itemDelete.findIndex((item) => item.id === id);
     itemDelete.splice(i, 1);
@@ -53,7 +64,6 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state.query);
     return (
       <BrowserRouter>
         <>
@@ -75,14 +85,25 @@ class App extends React.Component {
             exact
             path="/seller"
             render={(props) => {
-              return <SellerPage books={this.state.books} />;
+              return (
+                <SellerPage
+                  books={this.state.books}
+                  orderBook={this.state.orderBook}
+                />
+              );
             }}
           />
           <Route
             exact
             path="/"
             render={(props) => {
-              return <HomePage {...props} books={this.state.books} />;
+              return (
+                <HomePage
+                  {...props}
+                  books={this.state.books}
+                  orderBook={this.state.orderBook}
+                />
+              );
             }}
           />
           <Route
@@ -97,6 +118,8 @@ class App extends React.Component {
                   handleChange={this.handleChange}
                   books={this.state.books}
                   catchItem={this.catchItem}
+                  orderBook={this.state.orderBook}
+                  item={this.state.item}
                 />
               );
             }}
@@ -105,7 +128,9 @@ class App extends React.Component {
             exact
             path="/contact"
             render={(props) => {
-              return <ContactPage {...props} />;
+              return (
+                <ContactPage {...props} orderBook={this.state.orderBook} />
+              );
             }}
           />
           <Route
@@ -134,6 +159,7 @@ class App extends React.Component {
                   {...props}
                   books={this.state.books}
                   catchItem={this.catchItem}
+                  orderBook={this.state.orderBook}
                 />
               );
             }}

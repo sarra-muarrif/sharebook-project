@@ -5,15 +5,14 @@ import Header from "../components/Header.js";
 
 class DetailsPage extends React.Component {
   render() {
+    const books = this.props.books;
     const bookId = this.props.match.params.id;
-    const book = this.props.books.find((book) => book.id.includes(bookId));
+    const book = books.find((book) => book.id.includes(bookId));
     //Filter Price
     const filterPrice =
-      book &&
-      (book.saleInfo.saleability === "NOT_FOR_SALE" ||
-      book.saleInfo.saleability === "FREE"
-        ? 20
-        : book.saleInfo.retailPrice.amount);
+      book?.saleInfo?.saleability === "FOR_SALE"
+        ? book?.saleInfo?.listPrice?.amount
+        : 20;
     return (
       <>
         <Header orderBook={this.props.orderBook} />
@@ -26,7 +25,6 @@ class DetailsPage extends React.Component {
           limit={4}
           books={this.props.books}
           catchItem={this.props.catchItem}
-          price={filterPrice}
         />
       </>
     );

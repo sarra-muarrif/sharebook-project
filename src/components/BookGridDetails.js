@@ -8,7 +8,9 @@ class BookGridDetails extends React.Component {
         <BookDetails
           key={book.id}
           book={book}
-          price={this.props.price}
+          price={`${
+            (book.saleInfo.listPrice && book.saleInfo.listPrice.amount) || 20
+          }$`}
           catchItem={this.props.catchItem}
         />
       );

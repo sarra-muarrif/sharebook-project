@@ -38,7 +38,6 @@ class App extends React.Component {
       .then((res) => this.setState({ books: [...res.items] }))
       .catch((err) => console.log(err));
   }
-
   // add the book in the cart
   catchItem = (product) => {
     const orderBook = this.state.orderBook.slice();
@@ -160,6 +159,7 @@ class App extends React.Component {
                   books={this.state.books}
                   catchItem={this.catchItem}
                   orderBook={this.state.orderBook}
+                  filterPrice={this.filterPrice}
                 />
               );
             }}

@@ -33,6 +33,7 @@ class Details extends React.Component {
                 <div>
                   <h2 className="book-price">
                     {`${price}$`}
+
                     <StarRating
                       book={book}
                       score={5}

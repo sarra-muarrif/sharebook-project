@@ -60,6 +60,9 @@ class Header extends React.Component {
             <div className="cart-icon">
               <NavLink exact to="/cart">
                 <i className="fas fa-shopping-cart"></i>
+                <span className="style-num-cart">
+                  {this.props.orderBook.length}
+                </span>
               </NavLink>
             </div>
           </div>

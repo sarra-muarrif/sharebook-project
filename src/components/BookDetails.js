@@ -10,6 +10,7 @@ class BookDetails extends React.Component {
         <div className="book-details">
           <li>
             <div className="price">{price}</div>
+
             <NavLink exact to={`/details/${book.id}`}>
               <img
                 src={book.volumeInfo.imageLinks.thumbnail}

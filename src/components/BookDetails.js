@@ -4,17 +4,19 @@ import AddToCartButton from "./AddToCartButton.js";
 
 class BookDetails extends React.Component {
   render() {
+    const { book, price } = this.props;
     return (
       <>
         <div className="book-details">
           <li>
-            <div className="price">{this.props.price}</div>
-            <NavLink exact to={`/details/${this.props.id}`}>
-              <img src={this.props.image} alt="book cover" />
+            <div className="price">{price}</div>
+            <NavLink exact to={`/details/${book.id}`}>
+              <img
+                src={book.volumeInfo.imageLinks.thumbnail}
+                alt="book cover"
+              />
             </NavLink>
-            <AddToCartButton
-              onClick={() => this.props.catchItem(this.props.id)}
-            />
+            <AddToCartButton onClick={() => this.props.catchItem(book)} />
           </li>
         </div>
       </>

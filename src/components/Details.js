@@ -6,6 +6,13 @@ class Details extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
+  state = {
+    showMore: false,
+  };
+  showMore = () => {
+    this.setState({ showMore: !this.state.showMore });
+  };
+
   render() {
     const book = this.props.book;
     const price = this.props.filterPrice;
@@ -14,6 +21,7 @@ class Details extends React.Component {
       book && book.volumeInfo.averageRating
         ? book && book.volumeInfo.averageRating
         : 2;
+    console.log(book && book.volumeInfo.description.length, "length");
     return (
       <section className="detail">
         {book && (
@@ -43,7 +51,19 @@ class Details extends React.Component {
                 </div>
               </div>
               <div className="book-description">
-                <p>{book.volumeInfo.description}</p>
+                <p>
+                  {this.state.showMore
+                    ? book.volumeInfo.description
+                    : book.volumeInfo.description.slice(0, 99)}
+                  {book.volumeInfo.description.length >= 100 ? (
+                    <button
+                      className="showMore"
+                      onClick={() => this.showMore()}
+                    >
+                      {this.state.showMore ? "show less" : "show more"}
+                    </button>
+                  ) : null}
+                </p>
               </div>
               <div className="book-info">
                 <p id="book-Author">Author: {book.volumeInfo.authors}</p>

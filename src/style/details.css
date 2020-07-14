@@ -42,9 +42,17 @@
   text-align: justify;
   margin-bottom: 30px;
   padding: 10px 20px;
-  max-height: 8em;
-  overflow: overlay;
 }
+.book-description .showMore {
+  font-family: AvenirNext-DemiBold;
+  font-size: 23px;
+  color: green;
+  border: none;
+  background: #ebf8d6;
+  padding: 2px 12px;
+  margin: 0px 10px;
+}
+
 .book-info {
   font-size: 1.2em;
   line-height: 20px;

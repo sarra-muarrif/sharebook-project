@@ -12,14 +12,16 @@ import Footer from "./components/Footer";
 import { API_KEY, SEARCH_POINT } from "./constants/urls";
 
 class App extends React.Component {
-  state = {
-    books: [],
-    query: "cats",
-    orderBook: [],
-    item: 0,
-    price: "12",
-  };
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      books: [],
+      query: "cats",
+      orderBook: [],
+      item: 0,
+      price: "12",
+    };
+  }
   //handle search value in booksPage
   handleChange = (evt) => {
     this.setState({ query: evt.target.value });
@@ -30,6 +32,18 @@ class App extends React.Component {
   };
   componentDidMount() {
     this.fetchData();
+  }
+  componentWillMount() {
+    localStorage.getItem("orderBook") &&
+      this.setState({
+        orderBook: JSON.parse(localStorage.getItem("orderBook")),
+        isLoading: false,
+      });
+  }
+
+  componentDidUpdate(nextProps, nextState) {
+    localStorage.setItem("orderBook", JSON.stringify(nextState.orderBook));
+    localStorage.setItem("orderBookData", Date.now());
   }
   //fetch data with query from API
   fetchData() {
@@ -42,6 +56,7 @@ class App extends React.Component {
   // add the book in the cart
   catchItem = (product) => {
     const orderBook = this.state.orderBook.slice();
+
     let alreadyInCart = false;
     orderBook.forEach((item) => {
       if (item.id === product.id) {
@@ -51,10 +66,13 @@ class App extends React.Component {
     });
     if (!alreadyInCart) {
       orderBook.push({ ...product, count: 1 });
+      //  localStorage.setItem("my-tier-list", JSON.stringify(orderBook));
     }
     this.setState({ orderBook });
+
     // this.setState({ orderBook: [...this.state.orderBook, item] });
   };
+
   // Delete the book in cart
   handleDelete = (id) => {
     let itemDelete = this.state.orderBook;

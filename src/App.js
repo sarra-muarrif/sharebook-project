@@ -15,6 +15,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      isLoading:true,
       books: [],
       query: "cats",
       orderBook: [],
@@ -30,15 +31,16 @@ class App extends React.Component {
   handleSearch = (event) => {
     this.fetchData();
   };
-  componentDidMount() {
-    this.fetchData();
-  }
   componentWillMount() {
     localStorage.getItem("orderBook") &&
       this.setState({
         orderBook: JSON.parse(localStorage.getItem("orderBook")),
-        isLoading: false,
-      });
+        isLoading: false
+      })
+  }
+
+  componentDidMount() {
+    this.fetchData();
   }
 
   componentDidUpdate(nextProps, nextState) {

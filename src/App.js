@@ -15,7 +15,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isLoading:true,
+      isLoading: true,
       books: [],
       query: "cats",
       orderBook: [],
@@ -35,8 +35,8 @@ class App extends React.Component {
     localStorage.getItem("orderBook") &&
       this.setState({
         orderBook: JSON.parse(localStorage.getItem("orderBook")),
-        isLoading: false
-      })
+        isLoading: false,
+      });
   }
 
   componentDidMount() {

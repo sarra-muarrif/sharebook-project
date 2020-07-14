@@ -20,7 +20,7 @@ class App extends React.Component {
       query: "cats",
       orderBook: [],
       item: 0,
-      price: "12",
+      price: "20",
     };
   }
   //handle search value in booksPage
@@ -32,20 +32,18 @@ class App extends React.Component {
     this.fetchData();
   };
   componentWillMount() {
-    localStorage.getItem("orderBook") &&
-      this.setState({
-        orderBook: JSON.parse(localStorage.getItem("orderBook")),
-        isLoading: false,
-      });
+    this.setState({
+      orderBook: JSON.parse(localStorage.getItem("orderBook")),
+      isLoading: false,
+    });
   }
 
   componentDidMount() {
     this.fetchData();
   }
 
-  componentDidUpdate(nextProps, nextState) {
+  componentWillUpdate(nextProps, nextState) {
     localStorage.setItem("orderBook", JSON.stringify(nextState.orderBook));
-    localStorage.setItem("orderBookData", Date.now());
   }
   //fetch data with query from API
   fetchData() {
@@ -58,7 +56,6 @@ class App extends React.Component {
   // add the book in the cart
   catchItem = (product) => {
     const orderBook = this.state.orderBook.slice();
-
     let alreadyInCart = false;
     orderBook.forEach((item) => {
       if (item.id === product.id) {
@@ -68,8 +65,8 @@ class App extends React.Component {
     });
     if (!alreadyInCart) {
       orderBook.push({ ...product, count: 1 });
-      //  localStorage.setItem("my-tier-list", JSON.stringify(orderBook));
     }
+
     this.setState({ orderBook });
 
     // this.setState({ orderBook: [...this.state.orderBook, item] });

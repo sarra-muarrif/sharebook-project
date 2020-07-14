@@ -10,6 +10,7 @@ import SignUpPage from "./pages/SignUpPage";
 import SellerPage from "./pages/SellerPage";
 import Footer from "./components/Footer";
 import { API_KEY, SEARCH_POINT } from "./constants/urls";
+import Header from "./components/Header.js";
 
 class App extends React.Component {
   state = {
@@ -53,7 +54,6 @@ class App extends React.Component {
       orderBook.push({ ...product, count: 1 });
     }
     this.setState({ orderBook });
-    // this.setState({ orderBook: [...this.state.orderBook, item] });
   };
   // Delete the book in cart
   handleDelete = (id) => {
@@ -67,6 +67,7 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <>
+          <Header orderBook={this.state.orderBook} />
           <Route
             exact
             path="/sign-in"
@@ -97,13 +98,7 @@ class App extends React.Component {
             exact
             path="/"
             render={(props) => {
-              return (
-                <HomePage
-                  {...props}
-                  books={this.state.books}
-                  orderBook={this.state.orderBook}
-                />
-              );
+              return <HomePage {...props} books={this.state.books} />;
             }}
           />
           <Route
@@ -118,7 +113,6 @@ class App extends React.Component {
                   handleChange={this.handleChange}
                   books={this.state.books}
                   catchItem={this.catchItem}
-                  orderBook={this.state.orderBook}
                   item={this.state.item}
                 />
               );
@@ -128,9 +122,7 @@ class App extends React.Component {
             exact
             path="/contact"
             render={(props) => {
-              return (
-                <ContactPage {...props} orderBook={this.state.orderBook} />
-              );
+              return <ContactPage {...props} />;
             }}
           />
           <Route
@@ -159,7 +151,6 @@ class App extends React.Component {
                   {...props}
                   books={this.state.books}
                   catchItem={this.catchItem}
-                  orderBook={this.state.orderBook}
                 />
               );
             }}

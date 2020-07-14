@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../components/Header";
 
 class CartPage extends React.Component {
   render() {
@@ -7,7 +6,6 @@ class CartPage extends React.Component {
     const total = orderBook.reduce((a, c) => a + price * c.count, 0);
     return (
       <>
-        <Header orderBook={orderBook} />
         <section className="section-cart">
           <div className="container">
             <div className="cart-title">

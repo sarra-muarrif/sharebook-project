@@ -1,11 +1,9 @@
 import React from "react";
-import Header from "../components/Header";
 
 class ContactPage extends React.Component {
   render() {
     return (
       <>
-        <Header orderbook={this.props.orderbook} />
         <section className="section-contant">
           <div className="container">
             <h2 className="contact-us">Contact Us</h2>

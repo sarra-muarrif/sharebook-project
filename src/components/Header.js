@@ -1,8 +1,14 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, withRouter } from "react-router-dom";
 
 class Header extends React.Component {
   render() {
+    if (
+      this.props.location.pathname === "/sign-in" ||
+      this.props.location.pathname === "/sign-up"
+    ) {
+      return null;
+    }
     return (
       <header className="section-header">
         <div className="container">
@@ -72,4 +78,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default withRouter(Header);

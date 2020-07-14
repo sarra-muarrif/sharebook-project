@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import Header from "../components/Header";
+
 class SellerPage extends Component {
   render() {
     const { books, orderBook } = this.props;
     return (
       <>
-        <Header orderBook={orderBook} />
         <section className="section-seller">
           <div className="container">
             <div className="sign-out">

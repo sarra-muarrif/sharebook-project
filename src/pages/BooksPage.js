@@ -1,20 +1,17 @@
 import React from "react";
-
 import BookGridDetails from "../components/BookGridDetails.js";
-import Header from "../components/Header.js";
 
 class BooksPage extends React.Component {
   render() {
     const {
       books,
-      orderbook,
+      orderBook,
       catchItem,
       handleChange,
       handleSearch,
     } = this.props;
     return (
       <>
-        {/* <Header orderbook={this.props.orderbook} /> */}
         <section className="section hero-searchBook ">
           <div className="container">
             <div className="searchBook-img">

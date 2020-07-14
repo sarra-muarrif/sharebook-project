@@ -1,7 +1,6 @@
 import React from "react";
 import Details from "../components/Details.js";
 import BookGridDetails from "../components/BookGridDetails.js";
-import Header from "../components/Header.js";
 
 class DetailsPage extends React.Component {
   render() {
@@ -15,7 +14,6 @@ class DetailsPage extends React.Component {
         : 20;
     return (
       <>
-        <Header orderBook={this.props.orderBook} />
         <Details
           book={book}
           catchItem={this.props.catchItem}

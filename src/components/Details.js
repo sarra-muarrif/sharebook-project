@@ -9,6 +9,7 @@ class Details extends React.Component {
   state = {
     showMore: false,
   };
+  //Show-More
   showMore = () => {
     this.setState({ showMore: !this.state.showMore });
   };
@@ -21,7 +22,6 @@ class Details extends React.Component {
       book && book.volumeInfo.averageRating
         ? book && book.volumeInfo.averageRating
         : 2;
-    console.log(book && book.volumeInfo.description.length, "length");
     return (
       <section className="detail">
         {book && (
@@ -53,9 +53,9 @@ class Details extends React.Component {
               <div className="book-description">
                 <p>
                   {this.state.showMore
-                    ? book.volumeInfo.description
-                    : book.volumeInfo.description.slice(0, 99)}
-                  {book.volumeInfo.description.length >= 100 ? (
+                    ? book?.volumeInfo?.description
+                    : book?.volumeInfo?.description?.slice(0, 99)}
+                  {book?.volumeInfo?.description?.length >= 109 ? (
                     <button
                       className="showMore"
                       onClick={() => this.showMore()}

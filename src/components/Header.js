@@ -28,11 +28,6 @@ class Header extends React.Component {
             </div>
             <ul className="navbar-menu">
               <li>
-                <a href="/#about-us" className="navebar-item ">
-                  about
-                </a>
-              </li>
-              <li>
                 <NavLink
                   exact
                   to="/"
@@ -50,6 +45,16 @@ class Header extends React.Component {
                   activeClassName="active"
                 >
                   books
+                </NavLink>
+              </li>
+              <li>
+              <NavLink
+                  exact
+                  to="/seller"
+                  className="navebar-item"
+                  activeClassName="active"
+                >
+                Sell/Buy
                 </NavLink>
               </li>
               <li>

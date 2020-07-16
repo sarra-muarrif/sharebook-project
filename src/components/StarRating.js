@@ -1,10 +1,10 @@
 import React from "react";
 
-const StarRating = ({ score, averageRating }) => {
+const StarRating = ({ averageRating }) => {
   let newAverageRating = averageRating + 1;
   return (
     <span>
-      {[...Array(score)].map((star, i) => {
+      {[...Array(5)].map((star, i) => {
         newAverageRating--;
         return (
           <label key={i}>

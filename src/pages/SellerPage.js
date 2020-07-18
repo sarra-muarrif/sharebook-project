@@ -1,11 +1,10 @@
 import React, { Component } from "react";
-import Header from "../components/Header";
+
 class SellerPage extends Component {
   render() {
     const { books, orderBook } = this.props;
     return (
       <>
-        <Header orderBook={orderBook} />
         <section className="section-seller">
           <div className="container">
             <div className="sign-out">
@@ -32,7 +31,6 @@ class SellerPage extends Component {
             </form>
             <div>
               <button className="add-btn">Add</button>
-              <button className="remove-btn">Remove</button>
             </div>
             <div className="your-book">
               <h2>Your Books</h2>
@@ -46,6 +44,7 @@ class SellerPage extends Component {
                 />
                 <div className="book-group-desc">
                   <h2>{books[0].volumeInfo.title}</h2>
+                  <h2>Price:12$</h2>
                   <h2>Type:Paper</h2>
                 </div>
               </div>

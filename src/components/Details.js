@@ -6,6 +6,14 @@ class Details extends React.Component {
   componentDidMount() {
     window.scrollTo(0, 0);
   }
+  state = {
+    showMore: false,
+  };
+  //Show-More
+  showMore = () => {
+    this.setState({ showMore: !this.state.showMore });
+  };
+
   render() {
     const book = this.props.book;
     const price = this.props.filterPrice;
@@ -25,7 +33,6 @@ class Details extends React.Component {
                 alt={book.volumeInfo.title}
               />
               <AddToCartButton onClick={() => this.props.catchItem(book)} />
-              <p>Saler : Sara</p>
             </div>
             <div className="book-detail">
               <div className="book-overview">
@@ -33,16 +40,25 @@ class Details extends React.Component {
                 <div>
                   <h2 className="book-price">
                     {`${price}$`}
-                    <StarRating
-                      book={book}
-                      score={5}
-                      averageRating={averageRating}
-                    />
+
+                    <StarRating book={book} averageRating={averageRating} />
                   </h2>
                 </div>
               </div>
               <div className="book-description">
-                <p>{book.volumeInfo.description}</p>
+                <p>
+                  {this.state.showMore
+                    ? book?.volumeInfo?.description
+                    : book?.volumeInfo?.description?.slice(0, 99)}
+                  {book?.volumeInfo?.description?.length >= 109 ? (
+                    <button
+                      className="showMore"
+                      onClick={() => this.showMore()}
+                    >
+                      {this.state.showMore ? "show less" : "show more"}
+                    </button>
+                  ) : null}
+                </p>
               </div>
               <div className="book-info">
                 <p id="book-Author">Author: {book.volumeInfo.authors}</p>
@@ -61,5 +77,4 @@ class Details extends React.Component {
     );
   }
 }
-
 export default Details;

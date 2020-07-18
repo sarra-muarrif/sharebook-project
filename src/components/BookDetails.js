@@ -4,12 +4,12 @@ import AddToCartButton from "./AddToCartButton.js";
 
 class BookDetails extends React.Component {
   render() {
-    const { book } = this.props;
+    const { book, price } = this.props;
     return (
       <>
         <div className="book-details">
           <li>
-            <div className="price">{book.volumeInfo.title}</div>
+            <div className="price">{price}</div>
             <NavLink exact to={`/details/${book.id}`}>
               <img
                 src={book.volumeInfo.imageLinks.thumbnail}

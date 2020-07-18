@@ -32,7 +32,7 @@ class App extends React.Component {
   handleSearch = (event) => {
     this.fetchData();
   };
-  componentWillMount() {
+  componentDidMount() {
     this.setState({
       orderBook: JSON.parse(localStorage.getItem("orderBook")),
       isLoading: false,

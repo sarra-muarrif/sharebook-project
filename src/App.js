@@ -13,14 +13,17 @@ import { API_KEY, SEARCH_POINT } from "./constants/urls";
 import Header from "./components/Header.js";
 
 class App extends React.Component {
-  state = {
-    books: [],
-    query: "cats",
-    orderBook: [],
-    item: 0,
-    price: "12",
-  };
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: true,
+      books: [],
+      query: "cats",
+      orderBook: [],
+      item: 0,
+      price: "20",
+    };
+  }
   //handle search value in booksPage
   handleChange = (evt) => {
     this.setState({ query: evt.target.value });
@@ -29,8 +32,19 @@ class App extends React.Component {
   handleSearch = (event) => {
     this.fetchData();
   };
+  componentWillMount() {
+    this.setState({
+      orderBook: JSON.parse(localStorage.getItem("orderBook")),
+      isLoading: false,
+    });
+  }
+
   componentDidMount() {
     this.fetchData();
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem("orderBook", JSON.stringify(nextState.orderBook));
   }
   //fetch data with query from API
   fetchData() {
@@ -53,8 +67,10 @@ class App extends React.Component {
     if (!alreadyInCart) {
       orderBook.push({ ...product, count: 1 });
     }
+
     this.setState({ orderBook });
   };
+
   // Delete the book in cart
   handleDelete = (id) => {
     let itemDelete = this.state.orderBook;

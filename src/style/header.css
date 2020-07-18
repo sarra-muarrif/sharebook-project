@@ -49,7 +49,9 @@
   font-size: 32px;
 }
 .cart-icon span {
-  position: absolute;
-  top: 3.7em;
-  right: 9.9em;
+  padding: 0px 3px;
+  float: right;
+  background: turquoise;
+  color: black;
+  border-radius: 8px;
 }

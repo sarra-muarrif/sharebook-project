@@ -9,8 +9,8 @@ class DetailsPage extends React.Component {
     const book = books.find((book) => book.id.includes(bookId));
     //Filter Price
     const filterPrice =
-      book?.saleInfo?.saleability === "FOR_SALE"
-        ? book?.saleInfo?.listPrice?.amount
+      book.saleInfo.saleability === "FOR_SALE"
+        ? book.saleInfo.listPrice.amount
         : 20;
     return (
       <>

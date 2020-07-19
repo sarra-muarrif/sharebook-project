@@ -46,9 +46,9 @@ class Details extends React.Component {
             <div className="book-description">
               <p>
                 {this.state.showMore
-                  ? book?.volumeInfo?.description
-                  : book?.volumeInfo?.description?.slice(0, 99)}
-                {book?.volumeInfo?.description?.length >= 109 ? (
+                  ? book.volumeInfo.description
+                  : book.volumeInfo.description.slice(0, 99)}
+                {book.volumeInfo.description.length >= 109 ? (
                   <button className="showMore" onClick={() => this.showMore()}>
                     {this.state.showMore ? "show less" : "show more"}
                   </button>

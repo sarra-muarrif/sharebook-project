@@ -18,7 +18,7 @@ class App extends React.Component {
     this.state = {
       isLoading: true,
       books: [],
-      query: "cats",
+      query: "cats+dogs+flowers",
       orderBook: [],
       item: 0,
       price: "20",
@@ -33,18 +33,18 @@ class App extends React.Component {
     this.fetchData();
   };
   componentWillMount() {
-    this.setState({
-      orderBook: JSON.parse(localStorage.getItem("orderBook")),
-      isLoading: false,
-    });
+    localStorage.getItem("orderBook") &&
+      localStorage.getItem("books") &&
+      this.setState({
+        books: JSON.parse(localStorage.getItem("books")),
+        orderBook: JSON.parse(localStorage.getItem("orderBook")),
+        isLoading: false,
+      });
   }
-
   componentDidMount() {
-    this.fetchData();
-  }
-
-  componentWillUpdate(nextProps, nextState) {
-    localStorage.setItem("orderBook", JSON.stringify(nextState.orderBook));
+    if (!localStorage.getItem("books")) {
+      this.fetchData();
+    }
   }
   //fetch data with query from API
   fetchData() {
@@ -54,6 +54,10 @@ class App extends React.Component {
       .catch((err) => console.log(err));
   }
 
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem("books", JSON.stringify(nextState.books));
+    localStorage.setItem("orderBook", JSON.stringify(nextState.orderBook));
+  }
   // add the book in the cart
   catchItem = (product) => {
     const orderBook = this.state.orderBook.slice();

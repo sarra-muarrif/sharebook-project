@@ -62,18 +62,7 @@ class App extends React.Component {
     itemDelete.splice(i, 1);
     this.setState({ itemDelete });
   };
-  // Add books to sell page
-  addToSell = (bookSell) => {
-    const newBookSell = [bookSell, ...this.state.booksSell];
-    this.setState({ booksSell: newBookSell });
-  };
-  // delete books from sell page
-  deleteBookSell = (id) => {
-    const filterBookSell = this.state.booksSell.filter(
-      (bookSell) => bookSell.id !== id
-    );
-    this.setState({ booksSell: filterBookSell });
-  };
+
   render() {
     return (
       <BrowserRouter>
@@ -97,14 +86,7 @@ class App extends React.Component {
             exact
             path="/seller"
             render={(props) => {
-              return (
-                <SellerPage
-                  onSubmit={this.addToSell}
-                  booksSell={this.state.booksSell}
-                  deleteBookSell={this.deleteBookSell}
-                  sell={this.state.sell}
-                />
-              );
+              return <SellerPage />;
             }}
           />
           <Route

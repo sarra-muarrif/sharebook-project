@@ -166,6 +166,8 @@ class App extends React.Component {
                   {...props}
                   books={this.state.books}
                   catchItem={this.catchItem}
+                  orderBook={this.state.orderBook}
+                  filterPrice={this.filterPrice}
                 />
               );
             }}

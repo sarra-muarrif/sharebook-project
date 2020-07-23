@@ -11,16 +11,18 @@ class BookSellInput extends React.Component {
   };
 
   validate() {
-    if (this.state.title === "") {
+    if (this.state.title === "" || this.state.price === "") {
       return false;
     }
     return true;
   }
+
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
     });
   };
+
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.onSubmit({
@@ -38,14 +40,14 @@ class BookSellInput extends React.Component {
     return (
       <div>
         <form className="form-seller">
-          {/* <input
-                id="book-img"
-                type="file"
-                name="image"
-                value={this.state.image}
-                placeholder="load image"
-                onChange={this.handelChange}
-              /> */}
+          <input
+            id="book-img"
+            type="file"
+            name="image"
+            value={this.state.image}
+            placeholder="load image"
+            onChange={this.handleChange}
+          />
           <input
             id="book-name"
             name="title"
@@ -54,8 +56,8 @@ class BookSellInput extends React.Component {
             placeholder="enter book name"
             onChange={this.handleChange}
           />
-          <div className="error" style={{ color: "red", fontSize: "19px" }}>
-            {!this.validate() && <p>This falid is required!</p>}
+          <div className="error">
+            {!this.validate() && <p>THIS FIELD IS REQUIRED!</p>}
           </div>
           <input
             id="book-price"
@@ -63,8 +65,17 @@ class BookSellInput extends React.Component {
             value={this.state.price}
             type="text"
             placeholder="price"
-            onChange={this.handleChange}
+            onChange={(event) => {
+              if (isNaN(Number(event.target.value))) {
+                return;
+              } else {
+                this.setState({ price: event.target.value });
+              }
+            }}
           />
+          <div className="error">
+            {!this.validate() && <p>THIS FIELD ACCEPT ONLY NUMBER!</p>}
+          </div>
           <label id="type">Type:</label>
           <select
             id="book-type"

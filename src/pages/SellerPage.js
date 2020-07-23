@@ -38,7 +38,19 @@ class SellerPage extends React.Component {
               <h2>share book</h2>
             </div>
             <BookSellInput onSubmit={this.addItem} />
-            <BookSellList items={this.state.items} onDelete={this.deleteItem} />
+            <div className="your-book">
+              <h2>Your Books</h2>
+              {this.state.items.length > 0 ? (
+                <BookSellList
+                  items={this.state.items}
+                  onDelete={this.deleteItem}
+                />
+              ) : (
+                <div>
+                  <h3 className="no-book">No Books yet!</h3>
+                </div>
+              )}
+            </div>
           </div>
         </section>
       </>

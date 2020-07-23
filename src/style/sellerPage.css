@@ -44,14 +44,14 @@
   border: 2px solid #000000;
   font-size: 20px;
   text-transform: capitalize;
+  margin: 20px 0;
 }
 #book-name {
   display: list-item;
-  margin: 20px 0;
+
   width: 600px;
 }
 #book-price {
-  margin: 20px 255px 30px 0;
   width: 50px;
 }
 #type {
@@ -61,7 +61,7 @@
 }
 #book-img {
   float: right;
-  width: 146px;
+  width: 238px;
   height: 134px;
   text-align: center;
 }
@@ -119,4 +119,13 @@
 }
 .remove-btn.group {
   border-right: 2px solid #e7d747;
+}
+.error,
+.no-book {
+  font-family: AvenirNext-Medium;
+  color: #be0b0b;
+  font-size: 20px;
+}
+.no-book {
+  font-size: 28px;
 }

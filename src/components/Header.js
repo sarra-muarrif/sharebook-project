@@ -54,7 +54,11 @@ class Header extends React.Component {
                   className="navebar-item"
                   activeClassName="active"
                 >
+<<<<<<< HEAD
                   Sell/Buy
+=======
+                  Sell
+>>>>>>> 11f4670c58bb277801b0da89adfdc2f027b4ad10
                 </NavLink>
               </li>
               <li>

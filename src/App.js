@@ -13,15 +13,17 @@ import { API_KEY, SEARCH_POINT } from "./constants/urls";
 import Header from "./components/Header.js";
 
 class App extends React.Component {
-  state = {
-    books: [],
-    query: "cats",
-    orderBook: [],
-    item: 0,
-    price: "12",
-    booksSell: [],
-  };
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: true,
+      books: [],
+      query: "cats+dogs+flowers",
+      orderBook: [],
+      item: 0,
+      price: "20",
+    };
+  }
   //handle search value in booksPage
   handleChange = (evt) => {
     this.setState({ query: evt.target.value });
@@ -30,8 +32,19 @@ class App extends React.Component {
   handleSearch = (event) => {
     this.fetchData();
   };
+  componentWillMount() {
+    localStorage.getItem("orderBook") &&
+      localStorage.getItem("books") &&
+      this.setState({
+        books: JSON.parse(localStorage.getItem("books")),
+        orderBook: JSON.parse(localStorage.getItem("orderBook")),
+        isLoading: false,
+      });
+  }
   componentDidMount() {
-    this.fetchData();
+    if (!localStorage.getItem("books")) {
+      this.fetchData();
+    }
   }
   //fetch data with query from API
   fetchData() {
@@ -39,6 +52,11 @@ class App extends React.Component {
       .then((res) => res.json())
       .then((res) => this.setState({ books: [...res.items] }))
       .catch((err) => console.log(err));
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem("books", JSON.stringify(nextState.books));
+    localStorage.setItem("orderBook", JSON.stringify(nextState.orderBook));
   }
   // add the book in the cart
   catchItem = (product) => {
@@ -53,8 +71,10 @@ class App extends React.Component {
     if (!alreadyInCart) {
       orderBook.push({ ...product, count: 1 });
     }
+
     this.setState({ orderBook });
   };
+
   // Delete the book in cart
   handleDelete = (id) => {
     let itemDelete = this.state.orderBook;

@@ -48,13 +48,13 @@ class Header extends React.Component {
                 </NavLink>
               </li>
               <li>
-              <NavLink
+                <NavLink
                   exact
                   to="/seller"
                   className="navebar-item"
                   activeClassName="active"
                 >
-                Sell/Buy
+                  Sell
                 </NavLink>
               </li>
               <li>

@@ -23,6 +23,7 @@ class App extends React.Component {
       item: 0,
       price: "20",
     };
+    this.handleDelete = this.handleDelete.bind(this);
   }
   //handle search value in booksPage
   handleChange = (evt) => {
@@ -70,15 +71,11 @@ class App extends React.Component {
 
     this.setState({ orderBook });
   };
-
-  // Delete the book in cart
-  handleDelete = (id) => {
-    let itemDelete = this.state.orderBook;
-    let i = itemDelete.findIndex((item) => item.id === id);
-    itemDelete.splice(i, 1);
-    this.setState({ itemDelete });
-  };
-
+  // if delete the book
+  handleDelete(id) {
+    const isNotiId = this.state.orderBook.filter((item) => item.id !== id);
+    this.setState({ orderBook: isNotiId });
+  }
   render() {
     return (
       <BrowserRouter>

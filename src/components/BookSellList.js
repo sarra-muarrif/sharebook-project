@@ -4,7 +4,6 @@ class BookSellList extends React.Component {
     const { onDelete, items } = this.props;
     return (
       <>
-        <div>
           {items.map((item) => {
             return (
               <>
@@ -29,8 +28,7 @@ class BookSellList extends React.Component {
               </>
             );
           })}
-        </div>
-      </>
+       </>
     );
   }
 }

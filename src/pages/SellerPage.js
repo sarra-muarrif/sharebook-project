@@ -1,5 +1,4 @@
 import React from "react";
-import ShortId from "shortid";
 import BookSellInput from "../components/BookSellInput.js";
 import BookSellList from "../components/BookSellList.js";
 class SellerPage extends React.Component {
@@ -47,7 +46,7 @@ class SellerPage extends React.Component {
                 />
               ) : (
                 <div>
-                  <h3 className="no-book">No Books yet!</h3>
+                  <h3 className="no-book">No Books Added!</h3>
                 </div>
               )}
             </div>

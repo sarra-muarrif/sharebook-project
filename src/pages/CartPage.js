@@ -44,7 +44,7 @@ class CartPage extends React.Component {
               );
             })}
             <div className="total-order">
-              {orderBook.length === 0 ? null : (
+              {orderBook.length === 0 ? null : 
                 <>
                   <div className="total-price">
                     <h2>Total : {total}</h2>
@@ -52,7 +52,7 @@ class CartPage extends React.Component {
                   </div>
                   <button>Proceed To Checkout</button>
                 </>
-              )}
+              }
             </div>
           </div>
         </section>

@@ -57,7 +57,7 @@ class BookSellInput extends React.Component {
             onChange={this.handleChange}
           />
           <div className="error">
-            {!this.validate() && <p>THIS FIELD IS REQUIRED!</p>}
+            {this.state.title === "" && <p>THIS FIELD IS REQUIRED!</p>}
           </div>
           <input
             id="book-price"
@@ -74,7 +74,7 @@ class BookSellInput extends React.Component {
             }}
           />
           <div className="error">
-            {!this.validate() && <p>THIS FIELD ACCEPT ONLY NUMBER!</p>}
+            {this.state.price === "" && <p>THIS FIELD ACCEPT ONLY NUMBER!</p>}
           </div>
           <label id="type">Type:</label>
           <select

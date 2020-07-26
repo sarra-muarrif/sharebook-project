@@ -6,8 +6,8 @@ class BookSellList extends React.Component {
       <>
           {items.map((item) => {
             return (
-              <>
-                <div className="book-group" key={item.id}>
+              <div key={item.id}>
+                <div className="book-group" >
                   <div className="book-group-image">
                     <img width="200" alt="book cover" />
                     <div className="book-group-desc">
@@ -25,7 +25,7 @@ class BookSellList extends React.Component {
                     Remove
                   </button>
                 </div>
-              </>
+              </div>
             );
           })}
        </>

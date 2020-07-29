@@ -21,7 +21,7 @@ class CartPage extends React.Component {
                     />
                     <div className="book-desc">
                       <h2>{book.volumeInfo.title}</h2>
-                      <h2>Price : {orderBook.finalPrice}</h2>
+                      <h2>Sold By : Sara</h2>
                     </div>
                   </div>
                   <div className="cart-btns">

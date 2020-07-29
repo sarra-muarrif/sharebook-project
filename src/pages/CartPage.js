@@ -10,11 +10,7 @@ class CartPage extends React.Component {
         <section className="section-cart">
           <div className="container">
             <div className="cart-title">
-              {orderBook.length === 0 ? (
-                <h2>Cart is empty</h2>
-              ) : (
-                <h2>Shopping Cart</h2>
-              )}
+              <h2>Shopping Cart</h2>
             </div>
             {orderBook.map((book) => {
               return (
@@ -26,7 +22,7 @@ class CartPage extends React.Component {
                     />
                     <div className="book-desc">
                       <h2>{book.volumeInfo.title}</h2>
-                      <h2>Sold By : Sara</h2>
+                      <h2>{price}$</h2>
                     </div>
                   </div>
                   <div className="cart-btns">
@@ -44,15 +40,21 @@ class CartPage extends React.Component {
               );
             })}
             <div className="total-order">
-              {orderBook.length === 0 ? null : 
+              {orderBook.length === 0 ? (
+                <div className="total-price">
+                  <h2 className="animate__animated animate__zoomInDown">
+                    Cart is empty
+                  </h2>
+                </div>
+              ) : (
                 <>
                   <div className="total-price">
-                    <h2>Total : {total}</h2>
+                    <h2>Total : {total}$</h2>
                     <h2>QTY : {orderBook.length}</h2>
                   </div>
                   <button>Proceed To Checkout</button>
                 </>
-              }
+              )}
             </div>
           </div>
         </section>

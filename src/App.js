@@ -11,6 +11,7 @@ import SellerPage from "./pages/SellerPage";
 import Footer from "./components/Footer";
 import { API_KEY, SEARCH_POINT } from "./constants/urls";
 import Header from "./components/Header.js";
+import Book from "./components/Book.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -21,7 +22,7 @@ class App extends React.Component {
       query: "cats",
       orderBook: [],
       item: 0,
-      price: "20",
+      price: "",
     };
   }
   //handle search value in booksPage
@@ -59,6 +60,10 @@ class App extends React.Component {
     const orderBook = this.state.orderBook.slice();
     let alreadyInCart = false;
     orderBook.forEach((item) => {
+      product.finalPrice =
+        item.saleInfo.saleability === "FOR_SALE"
+          ? item.saleInfo.listPrice.amount
+          : 20;
       if (item.id === product.id) {
         item.count++;
         alreadyInCart = true;
@@ -78,7 +83,6 @@ class App extends React.Component {
     itemDelete.splice(i, 1);
     this.setState({ itemDelete });
   };
-
   render() {
     return (
       <BrowserRouter>
@@ -102,12 +106,7 @@ class App extends React.Component {
             exact
             path="/seller"
             render={(props) => {
-              return (
-                <SellerPage
-                  books={this.state.books}
-                  orderBook={this.state.orderBook}
-                />
-              );
+              return <SellerPage />;
             }}
           />
           <Route
@@ -167,6 +166,7 @@ class App extends React.Component {
                   {...props}
                   books={this.state.books}
                   catchItem={this.catchItem}
+                  orderBook={this.state.orderBook}
                 />
               );
             }}

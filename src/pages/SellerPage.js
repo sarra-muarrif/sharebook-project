@@ -1,8 +1,26 @@
-import React, { Component } from "react";
+import React from "react";
+import BookSellInput from "../components/BookSellInput.js";
+import BookSellList from "../components/BookSellList.js";
+class SellerPage extends React.Component {
+  state = {
+    items: [],
+  };
 
-class SellerPage extends Component {
+  addItem = (item) => {
+    const newItems = [item, ...this.state.items];
+    this.setState({
+      items: newItems,
+    });
+  };
+
+  deleteItem = (id) => {
+    const deleteItem = this.state.items.filter((item) => item.id !== id);
+    this.setState({
+      items: deleteItem,
+    });
+  };
+
   render() {
-    const { books, orderBook } = this.props;
     return (
       <>
         <section className="section-seller">
@@ -18,39 +36,19 @@ class SellerPage extends Component {
             <div className="hero-seller">
               <h2>share book</h2>
             </div>
-            <form className="form-seller">
-              <input id="book-name" type="text" placeholder="enter book name" />
-              <input id="book-price" type="text" placeholder="price" />
-              <label id="type" htmlFor="type">
-                Type:
-              </label>
-              <select id="book-type">
-                <option value="paper">Paper</option>
-                <option value="Digital">Digital</option>
-              </select>
-            </form>
-            <div>
-              <button className="add-btn">Add</button>
-            </div>
+            <BookSellInput onSubmit={this.addItem} />
             <div className="your-book">
               <h2>Your Books</h2>
-            </div>
-            <div className="book-group">
-              <div className="book-group-image">
-                <img
-                  src={books[0].volumeInfo.imageLinks.thumbnail}
-                  width="200"
-                  alt="book cover"
+              {this.state.items.length > 0 ? (
+                <BookSellList
+                  items={this.state.items}
+                  onDelete={this.deleteItem}
                 />
-                <div className="book-group-desc">
-                  <h2>{books[0].volumeInfo.title}</h2>
-                  <h2>Price:12$</h2>
-                  <h2>Type:Paper</h2>
+              ) : (
+                <div>
+                  <h3 className="no-book">No Books Added!</h3>
                 </div>
-              </div>
-              <div className="remove-group">
-                <button className="remove-btn group ">Remove</button>
-              </div>
+              )}
             </div>
           </div>
         </section>

@@ -24,6 +24,7 @@ class Details extends React.Component {
         : 2;
     return (
       <section className="detail">
+<<<<<<< HEAD
         {book && (
           <div className="container">
             <div className="book-preview">
@@ -66,6 +67,26 @@ class Details extends React.Component {
                   Pub. Year: {book.volumeInfo.publishedDate}
                 </p>
                 <p id="book-Pages">Pages: {book.volumeInfo.pageCount}</p>
+=======
+        <div className="container">
+          <div className="book-preview">
+            <img
+              src={book.volumeInfo.imageLinks.thumbnail}
+              className="main-photo"
+              alt={book.volumeInfo.title}
+            />
+            <AddToCartButton onClick={() => this.props.catchItem(book)} />
+          </div>
+          <div className="book-detail">
+            <div className="book-overview">
+              <h2 className="book-title">{book.volumeInfo.title}</h2>
+              <div>
+                <h2 className="book-price">
+                  {`${price}$`}
+                  
+                  <StarRating book={book} averageRating={averageRating} />
+                </h2>
+>>>>>>> 49d21af7e8383f4c61850768621ecccc777882a2
               </div>
             </div>
           </div>

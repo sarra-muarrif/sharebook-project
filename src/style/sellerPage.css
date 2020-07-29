@@ -37,26 +37,33 @@
 }
 #book-name,
 #book-price,
-#book-type {
+#book-type,
+#book-img {
   padding: 12px 20px;
   background: rgba(196, 196, 196, 0.15);
   border: 2px solid #000000;
   font-size: 20px;
   text-transform: capitalize;
+  margin: 20px 0;
 }
 #book-name {
   display: list-item;
-  margin: 20px 0;
+
   width: 600px;
 }
 #book-price {
-  margin: 20px 255px 30px 0;
   width: 50px;
 }
 #type {
   font-size: 25px;
   text-transform: capitalize;
   padding-right: 15px;
+}
+#book-img {
+  float: right;
+  width: 238px;
+  height: 134px;
+  text-align: center;
 }
 .add-btn,
 .remove-btn {
@@ -112,4 +119,13 @@
 }
 .remove-btn.group {
   border-right: 2px solid #e7d747;
+}
+.error,
+.no-book {
+  font-family: AvenirNext-Medium;
+  color: #be0b0b;
+  font-size: 20px;
+}
+.no-book {
+  font-size: 28px;
 }

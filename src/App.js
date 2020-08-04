@@ -11,6 +11,7 @@ import SellerPage from "./pages/SellerPage";
 import Footer from "./components/Footer";
 import { API_KEY, SEARCH_POINT } from "./constants/urls";
 import Header from "./components/Header.js";
+import Book from "./components/Book.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -18,12 +19,10 @@ class App extends React.Component {
     this.state = {
       isLoading: true,
       books: [],
-      query: "cats+dogs+flowers",
+      query: "cats",
       orderBook: [],
       item: 0,
-      price: "20",
     };
-    this.handleDelete = this.handleDelete.bind(this);
   }
   //handle search value in booksPage
   handleChange = (evt) => {
@@ -33,22 +32,19 @@ class App extends React.Component {
   handleSearch = (event) => {
     this.fetchData();
   };
-
-
-  componentWillMount() {
-    localStorage.getItem("orderBook") &&
-      localStorage.getItem("books") &&
-      this.setState({
-        books: JSON.parse(localStorage.getItem("books")),
-        orderBook: JSON.parse(localStorage.getItem("orderBook")),
-        isLoading: false,
-      });
-
-  }
   componentDidMount() {
-    if (!localStorage.getItem("books")) {
-      this.fetchData();
-    }
+    this.setState({
+      orderBook: JSON.parse(localStorage.getItem("orderBook")),
+      isLoading: false,
+    });
+  }
+
+  componentDidMount() {
+    this.fetchData();
+  }
+
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem("orderBook", JSON.stringify(nextState.orderBook));
   }
   //fetch data with query from API
   fetchData() {
@@ -58,31 +54,31 @@ class App extends React.Component {
       .catch((err) => console.log(err));
   }
 
-  componentWillUpdate(nextProps, nextState) {
-    localStorage.setItem("books", JSON.stringify(nextState.books));
-    localStorage.setItem("orderBook", JSON.stringify(nextState.orderBook));
-  }
   // add the book in the cart
   catchItem = (product) => {
     const orderBook = this.state.orderBook.slice();
     let alreadyInCart = false;
-    orderBook.forEach((item) => {
+    product.finalPrice =
+      product.saleInfo.saleability === "FOR_SALE"
+        ? product.saleInfo.listPrice.amount
+        : 20;
+    orderBook.map((item) => {
       if (item.id === product.id) {
-        item.count++;
         alreadyInCart = true;
       }
     });
     if (!alreadyInCart) {
-      orderBook.push({ ...product, count: 1 });
+      orderBook.push(product);
     }
-
     this.setState({ orderBook });
   };
-  // if delete the book
-  handleDelete(id) {
-    const isNotiId = this.state.orderBook.filter((item) => item.id !== id);
-    this.setState({ orderBook: isNotiId });
-  }
+  // Delete the book in cart
+  handleDelete = (id) => {
+    let itemDelete = this.state.orderBook;
+    let i = itemDelete.findIndex((item) => item.id === id);
+    itemDelete.splice(i, 1);
+    this.setState({ itemDelete });
+  };
   render() {
     return (
       <BrowserRouter>
@@ -106,12 +102,7 @@ class App extends React.Component {
             exact
             path="/seller"
             render={(props) => {
-              return (
-                <SellerPage
-                  books={this.state.books}
-                  orderBook={this.state.orderBook}
-                />
-              );
+              return <SellerPage />;
             }}
           />
           <Route
@@ -171,6 +162,7 @@ class App extends React.Component {
                   {...props}
                   books={this.state.books}
                   catchItem={this.catchItem}
+                  orderBook={this.state.orderBook}
                 />
               );
             }}

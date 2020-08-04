@@ -2,8 +2,8 @@ import React from "react";
 
 class CartPage extends React.Component {
   render() {
-    const { handleDelete, orderBook, price } = this.props;
-    const total = orderBook.reduce((a, c) => a + price * orderBook.length, 0);
+    const { handleDelete, orderBook } = this.props;
+    const total = orderBook.reduce((a, c) => a + c.finalPrice, 0);
 
     return (
       <>
@@ -22,7 +22,7 @@ class CartPage extends React.Component {
                     />
                     <div className="book-desc">
                       <h2>{book.volumeInfo.title}</h2>
-                      <h2>{price}$</h2>
+                      <h2>{book.finalPrice}$</h2>
                     </div>
                   </div>
                   <div className="cart-btns">

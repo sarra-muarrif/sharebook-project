@@ -22,7 +22,6 @@ class App extends React.Component {
       query: "cats",
       orderBook: [],
       item: 0,
-      price: "",
     };
   }
   //handle search value in booksPage
@@ -59,23 +58,20 @@ class App extends React.Component {
   catchItem = (product) => {
     const orderBook = this.state.orderBook.slice();
     let alreadyInCart = false;
-    orderBook.forEach((item) => {
-      product.finalPrice =
-        item.saleInfo.saleability === "FOR_SALE"
-          ? item.saleInfo.listPrice.amount
-          : 20;
+    product.finalPrice =
+      product.saleInfo.saleability === "FOR_SALE"
+        ? product.saleInfo.listPrice.amount
+        : 20;
+    orderBook.map((item) => {
       if (item.id === product.id) {
-        item.count++;
         alreadyInCart = true;
       }
     });
     if (!alreadyInCart) {
-      orderBook.push({ ...product, count: 1 });
+      orderBook.push(product);
     }
-
     this.setState({ orderBook });
   };
-
   // Delete the book in cart
   handleDelete = (id) => {
     let itemDelete = this.state.orderBook;

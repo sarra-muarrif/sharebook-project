@@ -22,7 +22,6 @@ class App extends React.Component {
       query: "cats+dogs+flowers",
       orderBook: [],
       item: 0,
-      price: "",
     };
   }
   //handle search value in booksPage
@@ -63,20 +62,18 @@ class App extends React.Component {
   catchItem = (product) => {
     const orderBook = this.state.orderBook.slice();
     let alreadyInCart = false;
-    orderBook.forEach((item) => {
-      product.finalPrice =
-        item.saleInfo.saleability === "FOR_SALE"
-          ? item.saleInfo.listPrice.amount
-          : 20;
+    product.finalPrice =
+      product.saleInfo.saleability === "FOR_SALE"
+        ? product.saleInfo.listPrice.amount
+        : 20;
+    orderBook.map((item) => {
       if (item.id === product.id) {
-        item.count++;
         alreadyInCart = true;
       }
     });
     if (!alreadyInCart) {
-      orderBook.push({ ...product, count: 1 });
+      orderBook.push(product);
     }
-
     this.setState({ orderBook });
   };
 
@@ -155,7 +152,6 @@ class App extends React.Component {
                   orderBook={this.state.orderBook}
                   handleDelete={this.handleDelete}
                   catchItem={this.catchItem}
-                  price={this.state.price}
                   item={this.state.item}
                 />
               );

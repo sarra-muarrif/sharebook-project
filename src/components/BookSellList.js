@@ -6,7 +6,7 @@ class BookSellList extends React.Component {
       <>
           {items.map((item) => {
             return (
-              <div key={item.id}>
+              <div key={item._id}>
                 <div className="book-group" >
                   <div className="book-group-image">
                     <img width="200" alt="book cover" />
@@ -20,7 +20,7 @@ class BookSellList extends React.Component {
                 <div className="remove-group">
                   <button
                     className="remove-btn group "
-                    onClick={() => onDelete(item.id)}
+                    onClick={() => onDelete(item._id)}
                   >
                     Remove
                   </button>

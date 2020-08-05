@@ -121,11 +121,15 @@
   border-right: 2px solid #e7d747;
 }
 .error,
-.no-book {
+.no-book,
+.showError {
   font-family: AvenirNext-Medium;
   color: #be0b0b;
   font-size: 20px;
 }
 .no-book {
   font-size: 28px;
+}
+.showError {
+  text-align: center;
 }

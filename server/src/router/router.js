@@ -1,11 +1,22 @@
 const router = require("express").Router();
 const user = require("../models/users");
-
-//signIn existing user
+//getall users
 router.get("/users", async (req, res) => {
   try {
     const users = await user.find({});
-    res.send(users);
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({
+      Error: error,
+    });
+  }
+});
+//signIn existing user
+router.get("/users/:Email", async (req, res) => {
+  const { Email } = req.params;
+  try {
+    const users = await user.find({ email: Email });
+    res.json(users);
   } catch (error) {
     res.status(500).json({
       Error: error,

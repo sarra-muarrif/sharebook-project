@@ -30,7 +30,7 @@ class App extends React.Component {
     this.setState({ query: evt.target.value });
   };
   //handle search in booksPage
-  handleSearch = (event) => {
+  handleSearch = () => {
     this.fetchData();
   };
   componentWillMount() {

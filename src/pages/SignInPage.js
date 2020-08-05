@@ -1,6 +1,16 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 class SignInPage extends React.Component {
+  state = { email: "", password: "" };
+  handleInput = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+  signIn = (Email) => {
+    fetch(`http://localhost:5000/users/${Email}`)
+      .then((res) => res.json())
+      .then((res) => console.log(res.firstName))
+      .catch((err) => console.log(err));
+  };
   render() {
     return (
       <section className="section-signin">
@@ -17,28 +27,28 @@ class SignInPage extends React.Component {
               now!
             </p>
           </div>
-          <div className="reader-seller-btn">
-            <NavLink exact to="/sign-in">
-              Reader
-            </NavLink>
-            <NavLink exact to="./seller">
-              Seller
-            </NavLink>
-          </div>
           <form className="form-signin">
             <input
               id="email-signin"
+              name="email"
               type="Email"
               placeholder="email"
               required
+              onChange={this.handleInput}
             />
             <input
               id="password-signin"
+              name="password"
               type="password"
               placeholder="password"
               required
+              onChange={this.handleInput}
             />
-            <input id="sign-in-btn" type="button" value="SIGN IN" />
+            <NavLink exact to="/">
+              <button id="sign-in-btn" onClick={this.signIn(this.state.email)}>
+                sign in
+              </button>
+            </NavLink>
           </form>
         </div>
       </section>

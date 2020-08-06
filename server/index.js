@@ -1,27 +1,22 @@
+
 // import the required libraries
 //   download the required modules
-const express = require("express");
+const app = require("./app");
 const mongoose = require("mongoose");
-const bodyparser = require("body-parser");
-const setupRoutes = require("./src/router/router");
-const cors = require("cors");
-const URL = "mongodb://localhost:27017/seller-db";
+const port = app.get("port");
+//const URL = "mongodb://localhost:27017/seller-db";
+const URI = "mongodb://localhost:27017/shareBook-db";
 
 const start = async () => {
   try {
-    await mongoose.connect(URL, {
+    await mongoose.connect(URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
     });
-    console.log("connect to DB, Lets create app");
-    const app = express();
-    app.use(cors());
-    app.use(bodyparser.urlencoded({ extended: false }));
-    app.use(bodyparser.json());
-    console.log("App is create, Lets create router");
-    setupRoutes(app);
-    console.log("App Router is added, Lets listen on 5000");
-    app.listen(5000);
+    console.log("shareBook-db is connected...");
+    app.listen(port, () =>
+    console.log(`the server is running on port ${port}`)
+  );
   } catch (error) {
     console.error(error);
   }

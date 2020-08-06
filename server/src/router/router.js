@@ -1,9 +1,11 @@
 // in this file, set up your application routes
 // 1. import the seller module
+const router = require("express").Router();
+const user = require("../models/users");
 const SellerBook = require("../models/Seller");
-const setupRoutes = (app) => {
+
   //git seller books
-  app.get("/seller", async (req, res) => {
+  router.get("/seller", async (req, res) => {
     try {
       const sellerBooks = await SellerBook.find({});
       //res.json(sellerBooks);
@@ -14,7 +16,7 @@ const setupRoutes = (app) => {
       });
     }
     //add new seller books
-    app.post("/seller", async (req, res) => {
+    router.post("/seller", async (req, res) => {
       const { title, price, type } = req.body;
       const newSellerBook = new SellerBook({
         title,
@@ -33,7 +35,7 @@ const setupRoutes = (app) => {
     });
   });
   //delete seller books
-  app.delete("/seller/:id", async (req, res) => {
+  router.delete("/seller/:id", async (req, res) => {
     const { id } = req.params;
     try {
       const deleteSellerBook = await SellerBook.deleteOne({
@@ -47,6 +49,47 @@ const setupRoutes = (app) => {
     }
   });
 
-  app.get("*", (req, res) => res.send("URL NOT FOUND"));
-};
-module.exports = setupRoutes;
+ // app.get("*", (req, res) => res.send("URL NOT FOUND"));
+
+//get all users
+router.get("/users", async (req, res) => {
+  try {
+    const users = await user.find({});
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({
+      Error: error,
+    });
+  }
+});
+//signIn existing user
+router.get("/users/:Email", async (req, res) => {
+  const { Email } = req.params;
+  try {
+    const users = await user.find({ email: Email });
+    res.json(users);
+  } catch (error) {
+    res.status(500).json({
+      Error: error,
+    });
+  }
+});
+//signUp new user
+router.post("/users", async (req, res) => {
+  const newUser = new user({
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    password: req.body.password,
+  });
+  try {
+    await newUser.save();
+    res.json(newUser);
+  } catch (error) {
+    res.status(500).json({
+      Error: error,
+    });
+  }
+});
+
+module.exports = router;

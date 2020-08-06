@@ -86,3 +86,6 @@
 .total-order button:hover {
   color: yellowgreen;
 }
+.animate__zoomInDown {
+  --animate-duration: 1.5s;
+}

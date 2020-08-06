@@ -1,10 +1,8 @@
 import React from "react";
-import ShortId from "shortid";
 
 class BookSellInput extends React.Component {
   state = {
-    id: "",
-    image: "",
+    image: [],
     title: "",
     price: "",
     type: "Paper",
@@ -26,7 +24,6 @@ class BookSellInput extends React.Component {
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.onSubmit({
-      id: ShortId.generate(),
       title: this.state.title,
       price: this.state.price,
       type: this.state.type,

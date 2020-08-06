@@ -1,23 +1,97 @@
 import React from "react";
 import BookSellInput from "../components/BookSellInput.js";
 import BookSellList from "../components/BookSellList.js";
+import { LIST_URI } from "../constants/urls";
 class SellerPage extends React.Component {
   state = {
     items: [],
+    showError: false,
+    errorMessage: "",
   };
 
-  addItem = (item) => {
-    const newItems = [item, ...this.state.items];
-    this.setState({
-      items: newItems,
-    });
+  //show books in uploade page
+  componentDidMount() {
+    this.fetchData();
+  }
+  //git items from DataBase
+  fetchData() {
+    fetch(LIST_URI)
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({ items: res });
+      })
+      .catch((err) => console.log(err));
+  }
+  //add items
+  addItem = ({ title, price, type }) => {
+    fetch(LIST_URI, {
+      method: "post",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        title,
+        price,
+        type,
+      }),
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          return res.json();
+        }
+        throw new Error("can't add book");
+      })
+      .then((res) => this.fetchData())
+      .catch((err) => {
+        this.setState(
+          {
+            showError: true,
+            errorMessage: err.message,
+          },
+          () => {
+            return setTimeout(
+              () =>
+                this.setState({
+                  showError: false,
+                  errorMessage: "",
+                }),
+              3000
+            );
+          }
+        );
+      });
   };
-
+  //delete items
   deleteItem = (id) => {
-    const deleteItem = this.state.items.filter((item) => item.id !== id);
-    this.setState({
-      items: deleteItem,
-    });
+    fetch(`${LIST_URI}/${id}`, {
+      method: "delete",
+    })
+      .then((res) => {
+        console.log(res);
+        if (res.status === 200) {
+          return res.json();
+        }
+        throw new Error("can't delete item");
+      })
+      .then((res) => this.fetchData())
+      .catch((err) => {
+        this.setState(
+          {
+            showError: true,
+            errorMessage: err.message,
+          },
+          () => {
+            return setTimeout(
+              () =>
+                this.setState({
+                  showError: false,
+                  errorMessage: "",
+                }),
+              3000
+            );
+          }
+        );
+      });
   };
 
   render() {
@@ -39,6 +113,9 @@ class SellerPage extends React.Component {
             <BookSellInput onSubmit={this.addItem} />
             <div className="your-book">
               <h2>Your Books</h2>
+              {this.state.showError && (
+                <span className="showError">{this.state.errorMessage}</span>
+              )}
               {this.state.items.length > 0 ? (
                 <BookSellList
                   items={this.state.items}

@@ -2,7 +2,7 @@ import React from "react";
 
 class BookSellInput extends React.Component {
   state = {
-    image: [],
+    image: "",
     title: "",
     price: "",
     type: "Paper",
@@ -36,15 +36,18 @@ class BookSellInput extends React.Component {
   render() {
     return (
       <div>
-        <form className="form-seller">
+        <form className="form-seller" method="POST" action="/upload" encType="multipart/form-data">
           <input
             id="book-img"
             type="file"
             name="image"
-            value={this.state.image}
+            //value={this.state.image}
             placeholder="load image"
             onChange={this.handleChange}
           />
+          <div>
+            <input type="submit" name="btn_upload_profile_pic" value="Upload" />
+        </div>
           <input
             id="book-name"
             name="title"
@@ -91,7 +94,7 @@ class BookSellInput extends React.Component {
         >
           Add
         </button>
-      </div>
+      </div >
     );
   }
 }

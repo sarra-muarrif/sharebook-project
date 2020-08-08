@@ -38,7 +38,7 @@ class SellerPage extends React.Component {
         if (res.status === 200) {
           return res.json();
         }
-        throw new Error("can't add item");
+        throw new Error("can't add book");
       })
       .then((res) => this.fetchData())
       .catch((err) => {

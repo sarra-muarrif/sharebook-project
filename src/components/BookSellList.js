@@ -9,7 +9,7 @@ class BookSellList extends React.Component {
             <div key={item._id}>
               <div className="book-group">
                 <div className="book-group-image">
-                  <img width="200" alt="book cover" />
+                  <img  src="file" width="200" alt="book cover" />
                   <div className="book-group-desc">
                     <h2>{item.title}</h2>
                     <h2>Price:{item.price}</h2>
@@ -21,14 +21,6 @@ class BookSellList extends React.Component {
                 <button
                   className="remove-btn group "
                   onClick={() => onDelete(item._id)}
-                >
-                  Remove
-                </button>
-              </div>
-              <div className="remove-group">
-                <button
-                  className="remove-btn group "
-                  onClick={() => onDelete(item.id)}
                 >
                   Remove
                 </button>

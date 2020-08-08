@@ -1,11 +1,102 @@
-import React, { Component } from "react";
-import Header from "../components/Header";
-class SellerPage extends Component {
+import React from "react";
+import BookSellInput from "../components/BookSellInput.js";
+import BookSellList from "../components/BookSellList.js";
+import { LIST_URI } from "../constants/urls";
+class SellerPage extends React.Component {
+  state = {
+    items: [],
+    showError: false,
+    errorMessage: "",
+  };
+
+  //show books in uploade page
+  componentDidMount() {
+    this.fetchData();
+  }
+  //git items from DataBase
+  fetchData() {
+    fetch(LIST_URI)
+      .then((res) => res.json())
+      .then((res) => {
+        this.setState({ items: res });
+      })
+      .catch((err) => console.log(err));
+  }
+  //add items
+  addItem = ({ title, price, type }) => {
+    fetch(LIST_URI, {
+      method: "post",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify({
+        title,
+        price,
+        type,
+      }),
+    })
+      .then((res) => {
+        if (res.status === 200) {
+          return res.json();
+        }
+        throw new Error("can't add book");
+      })
+      .then((res) => this.fetchData())
+      .catch((err) => {
+        this.setState(
+          {
+            showError: true,
+            errorMessage: err.message,
+          },
+          () => {
+            return setTimeout(
+              () =>
+                this.setState({
+                  showError: false,
+                  errorMessage: "",
+                }),
+              3000
+            );
+          }
+        );
+      });
+  };
+  //delete items
+  deleteItem = (id) => {
+    fetch(`${LIST_URI}/${id}`, {
+      method: "delete",
+    })
+      .then((res) => {
+        console.log(res);
+        if (res.status === 200) {
+          return res.json();
+        }
+        throw new Error("can't delete item");
+      })
+      .then((res) => this.fetchData())
+      .catch((err) => {
+        this.setState(
+          {
+            showError: true,
+            errorMessage: err.message,
+          },
+          () => {
+            return setTimeout(
+              () =>
+                this.setState({
+                  showError: false,
+                  errorMessage: "",
+                }),
+              3000
+            );
+          }
+        );
+      });
+  };
+
   render() {
-    const { books, orderBook } = this.props;
     return (
       <>
-        <Header orderBook={orderBook} />
         <section className="section-seller">
           <div className="container">
             <div className="sign-out">
@@ -19,39 +110,22 @@ class SellerPage extends Component {
             <div className="hero-seller">
               <h2>share book</h2>
             </div>
-            <form className="form-seller">
-              <input id="book-name" type="text" placeholder="enter book name" />
-              <input id="book-price" type="text" placeholder="price" />
-              <label id="type" htmlFor="type">
-                Type:
-              </label>
-              <select id="book-type">
-                <option value="paper">Paper</option>
-                <option value="Digital">Digital</option>
-              </select>
-            </form>
-            <div>
-              <button className="add-btn">Add</button>
-              <button className="remove-btn">Remove</button>
-            </div>
+            <BookSellInput onSubmit={this.addItem} />
             <div className="your-book">
               <h2>Your Books</h2>
-            </div>
-            <div className="book-group">
-              <div className="book-group-image">
-                <img
-                  src={books[0].volumeInfo.imageLinks.thumbnail}
-                  width="200"
-                  alt="book cover"
+              {this.state.showError && (
+                <span className="showError">{this.state.errorMessage}</span>
+              )}
+              {this.state.items.length > 0 ? (
+                <BookSellList
+                  items={this.state.items}
+                  onDelete={this.deleteItem}
                 />
-                <div className="book-group-desc">
-                  <h2>{books[0].volumeInfo.title}</h2>
-                  <h2>Type:Paper</h2>
+              ) : (
+                <div>
+                  <h3 className="no-book">No Books Added!</h3>
                 </div>
-              </div>
-              <div className="remove-group">
-                <button className="remove-btn group ">Remove</button>
-              </div>
+              )}
             </div>
           </div>
         </section>

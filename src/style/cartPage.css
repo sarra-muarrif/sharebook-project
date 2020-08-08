@@ -39,6 +39,7 @@
   border: none;
   padding: 15px 120px;
   font-weight: bold;
+  outline: none;
 }
 .cart-btns a .back-btn {
   width: max-content;
@@ -80,7 +81,11 @@
   margin: 80px;
   padding: 20px;
   font-family: AvenirNext-Bold;
+  outline: none;
 }
 .total-order button:hover {
   color: yellowgreen;
+}
+.animate__zoomInDown {
+  --animate-duration: 1.5s;
 }

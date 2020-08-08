@@ -1,13 +1,12 @@
 import React from "react";
-import Header from "../components/Header";
 
 class CartPage extends React.Component {
   render() {
-    const { handleDelete, orderBook, price } = this.props;
-    const total = orderBook.reduce((a, c) => a + price * c.count, 0);
+    const { handleDelete, orderBook } = this.props;
+    const total = orderBook.reduce((a, c) => a + c.finalPrice, 0);
+
     return (
       <>
-        <Header orderBook={orderBook} />
         <section className="section-cart">
           <div className="container">
             <div className="cart-title">
@@ -23,7 +22,7 @@ class CartPage extends React.Component {
                     />
                     <div className="book-desc">
                       <h2>{book.volumeInfo.title}</h2>
-                      <h2>Sold By : Sara</h2>
+                      <h2>{book.finalPrice}$</h2>
                     </div>
                   </div>
                   <div className="cart-btns">
@@ -41,11 +40,21 @@ class CartPage extends React.Component {
               );
             })}
             <div className="total-order">
-              <div className="total-price">
-                <h2>Total : {total}</h2>
-                <h2>QTY : {orderBook.length}</h2>
-              </div>
-              <button>Proceed To Checkout</button>
+              {orderBook.length === 0 ? (
+                <div className="total-price">
+                  <h2 className="animate__animated animate__zoomInDown">
+                    Cart is empty
+                  </h2>
+                </div>
+              ) : (
+                <>
+                  <div className="total-price">
+                    <h2>Total : {total}$</h2>
+                    <h2>QTY : {orderBook.length}</h2>
+                  </div>
+                  <button>Proceed To Checkout</button>
+                </>
+              )}
             </div>
           </div>
         </section>

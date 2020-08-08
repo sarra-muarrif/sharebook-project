@@ -10,26 +10,41 @@ import SignUpPage from "./pages/SignUpPage";
 import SellerPage from "./pages/SellerPage";
 import Footer from "./components/Footer";
 import { API_KEY, SEARCH_POINT } from "./constants/urls";
+import Header from "./components/Header.js";
+import Book from "./components/Book.js";
 
 class App extends React.Component {
-  state = {
-    books: [],
-    query: "cats",
-    orderBook: [],
-    item: 0,
-    price: "12",
-  };
-
+  constructor(props) {
+    super(props);
+    this.state = {
+      isLoading: true,
+      books: [],
+      query: "cats+dogs+flowers",
+      orderBook: [],
+      item: 0,
+    };
+  }
   //handle search value in booksPage
   handleChange = (evt) => {
     this.setState({ query: evt.target.value });
   };
   //handle search in booksPage
-  handleSearch = (event) => {
+  handleSearch = () => {
     this.fetchData();
   };
+  componentWillMount() {
+    localStorage.getItem("orderBook") &&
+      localStorage.getItem("books") &&
+      this.setState({
+        books: JSON.parse(localStorage.getItem("books")),
+        orderBook: JSON.parse(localStorage.getItem("orderBook")),
+        isLoading: false,
+      });
+  }
   componentDidMount() {
-    this.fetchData();
+    if (!localStorage.getItem("books")) {
+      this.fetchData();
+    }
   }
   //fetch data with query from API
   fetchData() {
@@ -38,22 +53,30 @@ class App extends React.Component {
       .then((res) => this.setState({ books: [...res.items] }))
       .catch((err) => console.log(err));
   }
+
+  componentWillUpdate(nextProps, nextState) {
+    localStorage.setItem("books", JSON.stringify(nextState.books));
+    localStorage.setItem("orderBook", JSON.stringify(nextState.orderBook));
+  }
   // add the book in the cart
   catchItem = (product) => {
     const orderBook = this.state.orderBook.slice();
     let alreadyInCart = false;
-    orderBook.forEach((item) => {
+    product.finalPrice =
+      product.saleInfo.saleability === "FOR_SALE"
+        ? product.saleInfo.listPrice.amount
+        : 20;
+    orderBook.map((item) => {
       if (item.id === product.id) {
-        item.count++;
         alreadyInCart = true;
       }
     });
     if (!alreadyInCart) {
-      orderBook.push({ ...product, count: 1 });
+      orderBook.push(product);
     }
     this.setState({ orderBook });
-    // this.setState({ orderBook: [...this.state.orderBook, item] });
   };
+
   // Delete the book in cart
   handleDelete = (id) => {
     let itemDelete = this.state.orderBook;
@@ -61,11 +84,11 @@ class App extends React.Component {
     itemDelete.splice(i, 1);
     this.setState({ itemDelete });
   };
-
   render() {
     return (
       <BrowserRouter>
         <>
+          <Header orderBook={this.state.orderBook} />
           <Route
             exact
             path="/sign-in"
@@ -84,25 +107,14 @@ class App extends React.Component {
             exact
             path="/seller"
             render={(props) => {
-              return (
-                <SellerPage
-                  books={this.state.books}
-                  orderBook={this.state.orderBook}
-                />
-              );
+              return <SellerPage />;
             }}
           />
           <Route
             exact
             path="/"
             render={(props) => {
-              return (
-                <HomePage
-                  {...props}
-                  books={this.state.books}
-                  orderBook={this.state.orderBook}
-                />
-              );
+              return <HomePage {...props} books={this.state.books} />;
             }}
           />
           <Route
@@ -117,7 +129,6 @@ class App extends React.Component {
                   handleChange={this.handleChange}
                   books={this.state.books}
                   catchItem={this.catchItem}
-                  orderBook={this.state.orderBook}
                   item={this.state.item}
                 />
               );
@@ -127,9 +138,7 @@ class App extends React.Component {
             exact
             path="/contact"
             render={(props) => {
-              return (
-                <ContactPage {...props} orderBook={this.state.orderBook} />
-              );
+              return <ContactPage {...props} />;
             }}
           />
           <Route
@@ -143,7 +152,6 @@ class App extends React.Component {
                   orderBook={this.state.orderBook}
                   handleDelete={this.handleDelete}
                   catchItem={this.catchItem}
-                  price={this.state.price}
                   item={this.state.item}
                 />
               );
@@ -159,7 +167,6 @@ class App extends React.Component {
                   books={this.state.books}
                   catchItem={this.catchItem}
                   orderBook={this.state.orderBook}
-                  filterPrice={this.filterPrice}
                 />
               );
             }}

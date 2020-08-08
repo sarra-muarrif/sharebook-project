@@ -1,5 +1,4 @@
 import React from "react";
-import Header from "../components/Header";
 import HeroHome from "../components/HeroHome.js";
 import AboutUs from "../components/AboutUs.js";
 import BookGrid from "../components/BookGrid";
@@ -32,7 +31,6 @@ class HomePage extends React.Component {
     });
     return (
       <>
-        <Header orderBook={this.props.orderBook} />
         <HeroHome />
         <BookGrid
           title="featured books"

@@ -1,6 +1,19 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 class SignUpPage extends React.Component {
+  state = { firstName: "", lastName: "", email: "", password: "" };
+  handleInput = (event) => {
+    this.setState({ [event.target.name]: event.target.value });
+  };
+  signUp = () => {
+    fetch("http://localhost:5000/users", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: `firstName=${this.state.firstName}&lastName=${this.state.lastName}&email=${this.state.email}&password=${this.state.password}`,
+    })
+      .then((res) => console.log(res))
+      .catch((err) => console.log(err));
+  };
   render() {
     return (
       <section className="section-signup">
@@ -16,38 +29,37 @@ class SignUpPage extends React.Component {
               </NavLink>
             </p>
           </div>
-          <div className="reader-seller-btn">
-            <NavLink exact to="/sign-up">
-              Reader
-            </NavLink>
-            <NavLink exact to="./seller">
-              Seller
-            </NavLink>
-          </div>
-          <form className="form-signin">
+          <form className="form-signup">
             <input
               id="first-name"
+              name="firstName"
               type="text"
-              placeholder="frist name"
+              placeholder="first name"
               required
+              onChange={this.handleInput}
             />
             <input
               id="last-name"
+              name="lastName"
               type="text"
               placeholder="last name"
-              required
+              onChange={this.handleInput}
             />
             <input
               id="email-signup"
+              name="email"
               type="Email"
               placeholder="email"
               required
+              onChange={this.handleInput}
             />
             <input
               id="password-signup"
+              name="password"
               type="password"
               placeholder="password"
               required
+              onChange={this.handleInput}
             />
             <input
               id="confirm-password"
@@ -55,7 +67,11 @@ class SignUpPage extends React.Component {
               placeholder="confirm password"
               required
             />
-            <input id="signup-btn" type="button" value="sign up" />
+            <NavLink exact to="/sign-in">
+              <button id="signup-btn" onClick={this.signUp}>
+                sign up
+              </button>
+            </NavLink>
           </form>
         </div>
       </section>

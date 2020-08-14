@@ -4,7 +4,7 @@ const port = app.get("port");
 const URI = "mongodb://localhost:27017/shareBook-db";
 
 mongoose
-  .connect(URI, { useNewUrlParser: true, useUnifiedTopology: true })
+  .connect(URI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
   .then(() => {
     console.log("shareBook-db is connected...");
     app.listen(port, () =>

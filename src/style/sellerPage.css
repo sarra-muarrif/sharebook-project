@@ -45,10 +45,10 @@
   font-size: 20px;
   text-transform: capitalize;
   margin: 20px 0;
+  
 }
 #book-name {
-  display: list-item;
-
+  /*display: list-item;*/
   width: 600px;
 }
 #book-price {
@@ -61,8 +61,6 @@
 }
 #book-img {
   float: right;
-  width: 238px;
-  height: 134px;
   text-align: center;
 }
 .add-btn,

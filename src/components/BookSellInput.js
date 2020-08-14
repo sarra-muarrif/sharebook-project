@@ -14,7 +14,11 @@ class BookSellInput extends React.Component {
     }
     return true;
   }
-
+  onChangeHandlerImg = (e) => {
+    this.setState({
+      image: e.target.files[0],
+    })
+  }
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value,
@@ -22,32 +26,30 @@ class BookSellInput extends React.Component {
   };
 
   handleSubmit = (e) => {
+    console.log(e.target)
     e.preventDefault();
     this.props.onSubmit({
       title: this.state.title,
       price: this.state.price,
       type: this.state.type,
+      image: this.state.image
     });
     this.setState({
       title: "",
       price: "",
+      image: ""
     });
   };
   render() {
     return (
       <div>
-        <form className="form-seller" method="POST" action="/upload" encType="multipart/form-data">
+        <form className="form-seller" >
           <input
             id="book-img"
             type="file"
             name="image"
-            //value={this.state.image}
-            placeholder="load image"
-            onChange={this.handleChange}
+            onChange={this.onChangeHandlerImg}
           />
-          <div>
-            <input type="submit" name="btn_upload_profile_pic" value="Upload" />
-        </div>
           <input
             id="book-name"
             name="title"
@@ -94,7 +96,8 @@ class BookSellInput extends React.Component {
         >
           Add
         </button>
-      </div >
+
+      </div>
     );
   }
 }

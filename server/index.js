@@ -4,12 +4,11 @@
 const app = require("./app");
 const mongoose = require("mongoose");
 const port = app.get("port");
-const URL = "mongodb://localhost:27017/seller-db";
-//const URI = "mongodb://localhost:27017/shareBook-db";
+const URI = "mongodb://localhost:27017/shareBook-db";
 
 const start = async () => {
   try {
-    await mongoose.connect(URL, {
+    await mongoose.connect(URI, {
       useNewUrlParser: true,
       useUnifiedTopology: true,
       useCreateIndex: true

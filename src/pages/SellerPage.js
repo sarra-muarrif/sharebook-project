@@ -8,6 +8,7 @@ class SellerPage extends React.Component {
     showError: false,
     errorMessage: "",
   };
+
   //show books in uploade page
   componentDidMount() {
     this.fetchData();
@@ -22,17 +23,16 @@ class SellerPage extends React.Component {
       .catch((err) => console.log(err));
   }
   //add items
-  addItem = ({ title, price, type }) => {
+  addItem = ({ title, price, type, image }) => {
+    const formData = new FormData()
+    formData.append("title", title)
+    formData.append("price", price)
+    formData.append("type", type)
+    formData.append("image", image)
+
     fetch(LIST_URI, {
       method: "post",
-      headers: {
-        "content-type": "application/json",
-      },
-      body: JSON.stringify({
-        title,
-        price,
-        type,
-      }),
+      body: formData
     })
       .then((res) => {
         if (res.status === 200) {
@@ -92,6 +92,7 @@ class SellerPage extends React.Component {
         );
       });
   };
+
   render() {
     return (
       <>
@@ -120,10 +121,10 @@ class SellerPage extends React.Component {
                   onDelete={this.deleteItem}
                 />
               ) : (
-                <div>
-                  <h3 className="no-book">No Books Added!</h3>
-                </div>
-              )}
+                  <div>
+                    <h3 className="no-book">No Books Added!</h3>
+                  </div>
+                )}
             </div>
           </div>
         </section>

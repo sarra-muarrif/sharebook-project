@@ -1,11 +1,37 @@
-// in this file, set up your application routes
-// 1. import the seller module
 const router = require("express").Router();
 // import the user module
 const user = require("../models/users");
 //import the seller module
 const SellerBook = require("../models/Seller");
-const upload = require("../middware/upload")
+const multer = require("multer")
+const path = require("path")
+
+const storage = multer.diskStorage({
+  destination: './uploads',
+  filename: (req, file, cb) => {
+    console.log(file);
+    cb(null, file.fieldname + `-` + Date.now() + path.extname(file.originalname));
+  }
+});
+const upload = multer({
+  storage: storage,
+  limits: { filesize: 1000000 },
+  fileFilter: (req, file, cb) => {
+    checkFileType(file, cb)
+
+  }
+})
+//check file type
+const checkFileType = (file, cb) => {
+  const filetypes = /jpg|png|jpeg|gif/
+  const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+  const mimetype = filetypes.test(file.mimetype)
+  if (mimetype && extname) {
+    return cb(null, true)
+  } else {
+    cb('ERROR:IMAGES ONLY!')
+  }
+}
 
 //getall users
 router.get("/users", async (req, res) => {
@@ -62,24 +88,27 @@ router.get("/seller", async (req, res) => {
   }
 
   //add new seller books
-  router.post("/seller", async (req, res) => {
+  router.post("/seller", upload.single('image'), async (req, res, next) => {
     const { title, price, type } = req.body;
+    const image_URL = req.file.destination.slice(1) + '/' + req.file.filename;
+    const image = image_URL
     const newSellerBook = new SellerBook({
       title,
       price,
       type,
-    })
-    // if (req.file) {
-    //   newSellerBook.image = req.file.path
-    // }
+      image
+    });
     try {
       await newSellerBook.save();
       res.json(newSellerBook);
+
     } catch (error) {
       res.status(500).json({
         Error: error,
+
       });
     }
+
   });
 });
 
@@ -97,52 +126,7 @@ router.delete("/seller/:id", async (req, res) => {
     });
   }
 });
-//upload image
-// router.post('/upload', (req, res, next) => {
-//   upload(req, res, (err) => {
-//     // if (err) {
-//     //   res, render('index', {
-//     //     msg: err
-//     //   })
-//     // } else {
-//     //   console.log(req.file)
-//     //   if (req.file == "") {
-//     //     res, render('index', {
-//     //       msg: "Error:No File selected"
-//     //     })
-//     //   } else {
-//     //     res.render('index', {
-//     //       msg: "File uploade!",
-//     //       file: `uploads/${req.file.filename}`
-//     //     })
-//     //   }
-//     // }
-//   //   try {
-//   //     return res.status(201).json({
-//   //         message: 'File uploded successfully'
-//   //     });
-//   // } catch (error) {
-//   //     console.error(error);
-//   // }
 
-  
-
-//   })
-// })
-router.post('/upload', (req, res, next) => {
-  upload(req,res,(err)=>{
-    if (!file) {
-      const error = new Error('Please upload a file')
-      error.httpStatusCode = 400
-      return next(error)
-    }
-      res.send(file)
-      console.log(req.file)
-    
-  })
-  const file = req.file
- 
-})
 router.get("*", (req, res) => res.send("PAGE NOT FOUND"));
 
 module.exports = router;

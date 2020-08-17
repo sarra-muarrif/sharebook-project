@@ -2,4 +2,5 @@
 const API_KEY = "AIzaSyB5rElTrudeCdlBNu_TM5k0YIQIOjWKpKQ";
 const SEARCH_POINT = "https://www.googleapis.com/books/v1/volumes";
 const LIST_URI = "http://localhost:5000/seller";
-export { API_KEY, SEARCH_POINT, LIST_URI };
+const main_URL = "http://localhost:5000";
+export { API_KEY, SEARCH_POINT, LIST_URI, main_URL };

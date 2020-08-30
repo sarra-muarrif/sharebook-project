@@ -98,12 +98,7 @@ class SellerPage extends React.Component {
         <section className="section-seller">
           <div className="container">
             <div className="sign-out">
-              <a href="/">sign out</a>
-            </div>
-            <div className="seller-name">
-              <h1>
-                welcome <span>Sara</span>
-              </h1>
+              <button onClick={this.props.handleSignOut}>sign out</button>
             </div>
             <div className="hero-seller">
               <h2>share book</h2>

@@ -1,8 +1,11 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 
 class CartPage extends React.Component {
+  checkOut = (totalPrice, isSignedIn) => {};
+
   render() {
-    const { handleDelete, orderBook } = this.props;
+    const { handleDelete, orderBook, isSignedIn } = this.props;
     const total = orderBook.reduce((a, c) => a + c.finalPrice, 0);
 
     return (
@@ -52,8 +55,21 @@ class CartPage extends React.Component {
                     <h2>Total : {total}$</h2>
                     <h2>QTY : {orderBook.length}</h2>
                   </div>
-                  <button>Proceed To Checkout</button>
+                  <button onClick={this.checkOut(total, isSignedIn)}>
+                    Proceed To Checkout
+                  </button>
                 </>
+              )}
+              {isSignedIn === true ? (
+                <div className="total-price">
+                  <h2>Your final Bill is : {total}$</h2>
+                </div>
+              ) : (
+                <div className="total-price">
+                  <NavLink exact to="./sign-in" className="sign-in-now">
+                    You Aren't A User Please signIn First
+                  </NavLink>
+                </div>
               )}
             </div>
           </div>

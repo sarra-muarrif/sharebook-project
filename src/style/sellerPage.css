@@ -4,14 +4,18 @@
 .sign-out {
   float: right;
   border: 2px solid #b12121;
-  padding: 18px 15px;
+  padding: 3px 5px;
 }
-.sign-out a {
+.sign-out button {
+  border: none;
+  background-color: transparent;
   color: #b12121;
   font-family: AvenirNext-Bold;
   font-size: 20px;
   font-weight: bold;
-  margin: 30px auto;
+  margin: 20px auto;
+  outline: none;
+  cursor: pointer;
 }
 .seller-name {
   margin: 60px auto 20px;

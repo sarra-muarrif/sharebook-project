@@ -11,7 +11,6 @@ import SellerPage from "./pages/SellerPage";
 import Footer from "./components/Footer";
 import { API_KEY, SEARCH_POINT } from "./constants/urls";
 import Header from "./components/Header.js";
-import Book from "./components/Book.js";
 
 class App extends React.Component {
   constructor(props) {

@@ -83,7 +83,7 @@ class App extends React.Component {
       product.saleInfo.saleability === "FOR_SALE"
         ? product.saleInfo.listPrice.amount
         : 20;
-    orderBook.map((item) => {
+    orderBook.forEach((item) => {
       if (item.id === product.id) {
         alreadyInCart = true;
       }

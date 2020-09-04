@@ -1,6 +1,6 @@
 const router = require("express").Router();
 // import the user module
-const user = require("../models/users");
+const userModel = require("../models/users");
 //import the seller module
 const SellerBook = require("../models/Seller");
 
@@ -39,7 +39,7 @@ const checkFileType = (file, cb) => {
 //getall users
 router.get("/users", async (req, res) => {
   try {
-    const users = await user.find({});
+    const users = await userModel.find({});
     res.json(users);
   } catch (error) {
     res.status(500).json({
@@ -52,7 +52,7 @@ router.get("/users", async (req, res) => {
 router.get("/users/:Email", async (req, res) => {
   const { Email } = req.params;
   try {
-    const users = await user.find({ email: Email });
+    const users = await userModel.find({ email: Email });
     res.json(users);
   } catch (error) {
     res.status(500).json({
@@ -63,7 +63,7 @@ router.get("/users/:Email", async (req, res) => {
 
 //signUp new user
 router.post("/users", async (req, res) => {
-  const newUser = new user({
+  const newUser = new userModel({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     email: req.body.email,

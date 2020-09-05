@@ -22,7 +22,7 @@ services:
     stdin_open: true
     restart: on-failure
     ports:
-      - 3001:3000
+      - 3000:3000
     command: npm start
     depends_on:
       - server

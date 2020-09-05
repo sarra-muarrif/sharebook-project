@@ -1,0 +1,31 @@
+version: "3"
+services:
+  mongo:
+    image: mongo
+    container_name: mongo
+    ports:
+      - 27017-27019:27017-27019
+    volumes:
+      - mongodb_data:/data/db
+  server:
+    build: ./server
+    container_name: server-container
+    restart: on-failure
+    ports:
+      - 5000:5000
+    command: npm start
+    depends_on:
+      - mongo
+  web:
+    build: .
+    container_name: web-container
+    stdin_open: true
+    restart: on-failure
+    ports:
+      - 3001:3000
+    command: npm start
+    depends_on:
+      - server
+volumes:
+  mongodb_data:
+    driver: local

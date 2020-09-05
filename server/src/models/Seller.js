@@ -7,6 +7,7 @@ const SellerBookSchema = new Schema({
   title: String,
   price: Number,
   type: String,
+  image: String,
 });
 
 // 3.create  the book model

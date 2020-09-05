@@ -4,11 +4,12 @@ class SignInPage extends React.Component {
   state = { email: "", password: "" };
   handleInput = (event) => {
     this.setState({ [event.target.name]: event.target.value });
+    this.props.handleSignIn();
   };
   signIn = (Email) => {
     fetch(`http://localhost:5000/users/${Email}`)
       .then((res) => res.json())
-      .then((res) => console.log(res.firstName))
+      .then((res) => this.props.handleUserName(res[0].firstName))
       .catch((err) => console.log(err));
   };
   render() {

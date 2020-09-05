@@ -1,13 +1,45 @@
 const router = require("express").Router();
 // import the user module
-const user = require("../models/users");
+const userModel = require("../models/users");
 //import the seller module
 const SellerBook = require("../models/Seller");
+
+const multer = require("multer");
+const path = require("path");
+
+const storage = multer.diskStorage({
+  destination: "./uploads",
+  filename: (req, file, cb) => {
+    console.log(file);
+    cb(
+      null,
+      file.fieldname + `-` + Date.now() + path.extname(file.originalname)
+    );
+  },
+});
+const upload = multer({
+  storage: storage,
+  limits: { filesize: 1000000 },
+  fileFilter: (req, file, cb) => {
+    checkFileType(file, cb);
+  },
+});
+//check file type
+const checkFileType = (file, cb) => {
+  const filetypes = /jpg|png|jpeg|gif/;
+  const extname = filetypes.test(path.extname(file.originalname).toLowerCase());
+  const mimetype = filetypes.test(file.mimetype);
+  if (mimetype && extname) {
+    return cb(null, true);
+  } else {
+    cb("ERROR:IMAGES ONLY!");
+  }
+};
 
 //getall users
 router.get("/users", async (req, res) => {
   try {
-    const users = await user.find({});
+    const users = await userModel.find({});
     res.json(users);
   } catch (error) {
     res.status(500).json({
@@ -20,7 +52,7 @@ router.get("/users", async (req, res) => {
 router.get("/users/:Email", async (req, res) => {
   const { Email } = req.params;
   try {
-    const users = await user.find({ email: Email });
+    const users = await userModel.find({ email: Email });
     res.json(users);
   } catch (error) {
     res.status(500).json({
@@ -31,7 +63,7 @@ router.get("/users/:Email", async (req, res) => {
 
 //signUp new user
 router.post("/users", async (req, res) => {
-  const newUser = new user({
+  const newUser = new userModel({
     firstName: req.body.firstName,
     lastName: req.body.lastName,
     email: req.body.email,
@@ -59,12 +91,15 @@ router.get("/seller", async (req, res) => {
   }
 
   //add new seller books
-  router.post("/seller", async (req, res) => {
+  router.post("/seller", upload.single("image"), async (req, res, next) => {
     const { title, price, type } = req.body;
+    const image_URL = req.file.destination.slice(1) + "/" + req.file.filename;
+    const image = image_URL;
     const newSellerBook = new SellerBook({
       title,
       price,
       type,
+      image,
     });
     try {
       await newSellerBook.save();

@@ -3,6 +3,7 @@ import { NavLink, withRouter } from "react-router-dom";
 
 class Header extends React.Component {
   render() {
+    const { orderBook, isSignedIn, userName } = this.props;
     if (
       this.props.location.pathname === "/sign-in" ||
       this.props.location.pathname === "/sign-up"
@@ -17,15 +18,20 @@ class Header extends React.Component {
               ShareBook
             </NavLink>
           </div>
+
           <div className="group-header-items">
-            <div className="icon">
-              <NavLink exact to="/sign-in">
-                sign in
-              </NavLink>
-              <NavLink exact to="/sign-up">
-                sign up
-              </NavLink>
-            </div>
+            {isSignedIn === true ? (
+              <div>welcome {userName}</div>
+            ) : (
+              <div className="icon">
+                <NavLink exact to="/sign-in">
+                  sign in
+                </NavLink>
+                <NavLink exact to="/sign-up">
+                  sign up
+                </NavLink>
+              </div>
+            )}
             <ul className="navbar-menu">
               <li>
                 <NavLink
@@ -71,9 +77,7 @@ class Header extends React.Component {
             <div className="cart-icon">
               <NavLink exact to="/cart">
                 <i className="fas fa-shopping-cart"></i>
-                <span className="style-num-cart">
-                  {this.props.orderBook.length}
-                </span>
+                <span className="style-num-cart">{orderBook.length}</span>
               </NavLink>
             </div>
           </div>

@@ -11,7 +11,6 @@ import SellerPage from "./pages/SellerPage";
 import Footer from "./components/Footer";
 import { API_KEY, SEARCH_POINT } from "./constants/urls";
 import Header from "./components/Header.js";
-import Book from "./components/Book.js";
 
 class App extends React.Component {
   constructor(props) {
@@ -22,8 +21,22 @@ class App extends React.Component {
       query: "cats+dogs+flowers",
       orderBook: [],
       item: 0,
+      userName: "",
+      isSignedIn: false,
     };
   }
+  //save userName
+  handleUserName = (name) => {
+    this.setState({ userName: name });
+  };
+  //signIn user
+  handleSignIn = () => {
+    this.setState({ isSignedIn: true });
+  };
+  //signout user
+  handleSignOut = () => {
+    this.setState({ isSignedIn: false });
+  };
   //handle search value in booksPage
   handleChange = (evt) => {
     this.setState({ query: evt.target.value });
@@ -38,6 +51,8 @@ class App extends React.Component {
       this.setState({
         books: JSON.parse(localStorage.getItem("books")),
         orderBook: JSON.parse(localStorage.getItem("orderBook")),
+        isSignedIn: JSON.parse(localStorage.getItem("isSignedIn")),
+        userName: JSON.parse(localStorage.getItem("userName")),
         isLoading: false,
       });
   }
@@ -57,6 +72,8 @@ class App extends React.Component {
   componentWillUpdate(nextProps, nextState) {
     localStorage.setItem("books", JSON.stringify(nextState.books));
     localStorage.setItem("orderBook", JSON.stringify(nextState.orderBook));
+    localStorage.setItem("isSignedIn", JSON.stringify(nextState.isSignedIn));
+    localStorage.setItem("userName", JSON.stringify(nextState.userName));
   }
   // add the book in the cart
   catchItem = (product) => {
@@ -66,7 +83,7 @@ class App extends React.Component {
       product.saleInfo.saleability === "FOR_SALE"
         ? product.saleInfo.listPrice.amount
         : 20;
-    orderBook.map((item) => {
+    orderBook.forEach((item) => {
       if (item.id === product.id) {
         alreadyInCart = true;
       }
@@ -88,12 +105,21 @@ class App extends React.Component {
     return (
       <BrowserRouter>
         <>
-          <Header orderBook={this.state.orderBook} />
+          <Header
+            orderBook={this.state.orderBook}
+            isSignedIn={this.state.isSignedIn}
+            userName={this.state.userName}
+          />
           <Route
             exact
             path="/sign-in"
             render={(props) => {
-              return <SignInPage />;
+              return (
+                <SignInPage
+                  handleSignIn={this.handleSignIn}
+                  handleUserName={this.handleUserName}
+                />
+              );
             }}
           />
           <Route
@@ -107,7 +133,7 @@ class App extends React.Component {
             exact
             path="/seller"
             render={(props) => {
-              return <SellerPage />;
+              return <SellerPage handleSignOut={this.handleSignOut} />;
             }}
           />
           <Route
@@ -153,6 +179,7 @@ class App extends React.Component {
                   handleDelete={this.handleDelete}
                   catchItem={this.catchItem}
                   item={this.state.item}
+                  isSignedIn={this.state.isSignedIn}
                 />
               );
             }}

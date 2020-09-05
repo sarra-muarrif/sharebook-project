@@ -2,7 +2,7 @@ import React from "react";
 
 class BookSellInput extends React.Component {
   state = {
-    image: [],
+    image: "",
     title: "",
     price: "",
     type: "Paper",
@@ -14,6 +14,12 @@ class BookSellInput extends React.Component {
     }
     return true;
   }
+
+  onChangeHandlerImg = (e) => {
+    this.setState({
+      image: e.target.files[0],
+    });
+  };
 
   handleChange = (e) => {
     this.setState({
@@ -27,10 +33,12 @@ class BookSellInput extends React.Component {
       title: this.state.title,
       price: this.state.price,
       type: this.state.type,
+      image: this.state.image,
     });
     this.setState({
       title: "",
       price: "",
+      image: "",
     });
   };
   render() {
@@ -41,9 +49,7 @@ class BookSellInput extends React.Component {
             id="book-img"
             type="file"
             name="image"
-            value={this.state.image}
-            placeholder="load image"
-            onChange={this.handleChange}
+            onChange={this.onChangeHandlerImg}
           />
           <input
             id="book-name"

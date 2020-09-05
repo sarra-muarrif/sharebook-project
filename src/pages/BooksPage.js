@@ -3,13 +3,7 @@ import BookGridDetails from "../components/BookGridDetails.js";
 
 class BooksPage extends React.Component {
   render() {
-    const {
-      books,
-      orderBook,
-      catchItem,
-      handleChange,
-      handleSearch,
-    } = this.props;
+    const { books, catchItem, handleChange, handleSearch } = this.props;
     return (
       <>
         <section className="section hero-searchBook ">

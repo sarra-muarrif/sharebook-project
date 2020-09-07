@@ -7,7 +7,7 @@ class SignInPage extends React.Component {
     this.props.handleSignIn();
   };
   signIn = (Email) => {
-    fetch(`http://localhost:5000/users/${Email}`)
+    fetch(`/api/v1/users/${Email}`)
       .then((res) => res.json())
       .then((res) => this.props.handleUserName(res[0].firstName))
       .catch((err) => console.log(err));

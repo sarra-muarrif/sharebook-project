@@ -10,9 +10,9 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 app.use("/api/v1", router);
-app.use(express.static(join(__dirname, "..", "client", "build")));
+app.use(express.static(join(__dirname, "..", "build")));
 app.get("*", (_req, res) => {
-  res.sendFile(join(__dirname, "..", "client", "build", "index.html"));
+  res.sendFile(join(__dirname, "..", "build", "index.html"));
 });
 app.set("port", process.env.PORT || 5000);
 

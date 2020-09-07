@@ -6,7 +6,7 @@ class SignUpPage extends React.Component {
     this.setState({ [event.target.name]: event.target.value });
   };
   signUp = () => {
-    fetch("http://localhost:5000/users", {
+    fetch("/api/v1/users", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: `firstName=${this.state.firstName}&lastName=${this.state.lastName}&email=${this.state.email}&password=${this.state.password}`,

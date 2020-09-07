@@ -10,11 +10,7 @@ class BookSellList extends React.Component {
             <div key={item._id}>
               <div className="book-group">
                 <div className="book-group-image">
-                  <img
-                    src={main_URL + item.image}
-                    width="200"
-                    alt="book cover"
-                  />
+                  <img src={item.image} width="200" alt="book cover" />
                   <div className="book-group-desc">
                     <h2>{item.title}</h2>
                     <h2>Price:{`${item.price}$`}</h2>

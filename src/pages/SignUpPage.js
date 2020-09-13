@@ -1,12 +1,13 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { USER_URL } from "../constants/urls";
 class SignUpPage extends React.Component {
   state = { firstName: "", lastName: "", email: "", password: "" };
   handleInput = (event) => {
     this.setState({ [event.target.name]: event.target.value });
   };
   signUp = () => {
-    fetch("/api/v1/users", {
+    fetch(USER_URL, {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: `firstName=${this.state.firstName}&lastName=${this.state.lastName}&email=${this.state.email}&password=${this.state.password}`,

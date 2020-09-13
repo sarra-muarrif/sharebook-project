@@ -41,3 +41,32 @@
   font-size: 76px;
   padding: 4px 46px;
 }
+/*Media Query*/
+@media (max-width: 768px) {
+  .hero-img {
+    height: 340px;
+  }
+  .hero-img-bacground {
+    width: 300px;
+    margin: 30px auto;
+  }
+  .hero-img-bacground p {
+    font-size: 25px;
+  }
+  .soical-media h2 {
+    font-size: 16px;
+  }
+  .border-line {
+    margin: 0 auto;
+    width: 209px;
+  }
+  .soical-media {
+    padding-top: 8px;
+  }
+  .fa-instagram,
+  .fa-facebook-square,
+  .fa-twitter-square {
+    font-size: 35px;
+    padding: 0 8px;
+  }
+}

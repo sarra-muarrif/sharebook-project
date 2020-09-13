@@ -37,3 +37,28 @@
   margin: 60px 0 0 160px;
   padding-right: 30px;
 }
+/*Media Query*/
+@media (max-width: 768px) {
+  .about-us-cover img {
+    width: 160px;
+    height: 138px;
+  }
+  .all-about,
+  #us {
+    font-size: 30px;
+    padding: 30px 15px;
+  }
+  .about-us-background {
+    height: 146px;
+    width: 100%;
+    background-color: rgba(196, 196, 196, 0.13);
+  }
+  .about-us-pargraph {
+    font-size: 12px;
+    line-height: 17px;
+    padding: 6px 5px 6px 40px;
+    text-align: inherit;
+    font-weight: bold;
+    margin: 6px auto;
+  }
+}

@@ -40,3 +40,22 @@
   font-family: AvenirNext-Bold;
   color: black;
 }
+/*Media Query*/
+@media (max-width: 768px) {
+  .featured-books-title,
+  .new-books-title {
+    font-size: 20px;
+    width: 200px;
+    height: auto;
+    margin: 20px 0;
+  }
+  .books-grid {
+    justify-content: space-between;
+    overflow: scroll;
+    margin: 10px;
+  }
+  .books-grid img {
+    width: 231px;
+    height: 220px;
+  }
+}

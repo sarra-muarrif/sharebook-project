@@ -10,14 +10,15 @@ class Header extends React.Component {
       return null;
     }
     return (
-      <header className="section-header">
+      <header className="section-header ">
         <div className="container">
           <div className="web-title">
             <NavLink exact to="/">
               ShareBook
             </NavLink>
           </div>
-          <div className="group-header-items">
+          <div className="group-header-items is-active" >
+            <button className="navbar-burger"><span class="nav-icon"></span></button>
             <div className="icon">
               <NavLink exact to="/sign-in">
                 sign in

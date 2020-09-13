@@ -44,3 +44,32 @@
   padding: 15px 0px 0 12px;
   display: inline;
 }
+/*Media Query*/
+@media only screen and (max-width: 767px) {
+  .contact-info {
+    margin: auto;
+  }
+  .section-desc {
+    margin: 10px 0 12px 20px;
+    display: inline-block;
+    line-height: 20px;
+  }
+  .contact-info h4,
+  .contact-info h3,
+  .delivery h3,
+  .payment-methods h3 {
+    font-size: 12px;
+  }
+  .fa-truck {
+    font-size: 16px;
+  }
+  .payment-methods {
+    margin: 6px auto;
+  }
+  .fa-cc-visa,
+  .fa-cc-mastercard,
+  .fa-cc-paypal {
+    font-size: 18px;
+    padding: 6px;
+  }
+}

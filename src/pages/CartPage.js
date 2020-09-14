@@ -2,8 +2,6 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 class CartPage extends React.Component {
-  checkOut = (totalPrice, isSignedIn) => {};
-
   render() {
     const { handleDelete, orderBook, isSignedIn } = this.props;
     const total = orderBook.reduce((a, c) => a + c.finalPrice, 0);

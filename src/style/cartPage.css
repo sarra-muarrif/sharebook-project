@@ -89,3 +89,80 @@
 .animate__zoomInDown {
   --animate-duration: 1.5s;
 }
+/* For mobile phones: */
+@media only screen and (max-width: 767px) {
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .book-review {
+    display: block;
+    margin: auto;
+    padding: 30px 0;
+  }
+  .book-checkout img {
+    display: grid;
+    margin: auto;
+    width: 40%;
+  }
+  .book-desc h2 {
+    font-size: 24px;
+    padding: 22px 20px;
+  }
+  .cart-btns a .back-btn {
+    width: auto;
+    font-size: 24px;
+  }
+  .cart-btns .delete-btn {
+    width: auto;
+    font-size: 24px;
+  }
+  .cart-btns button {
+    padding: 0% 15%;
+  }
+  .total-order {
+    font-size: 16px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  .total-order button {
+    font-size: 16px;
+    margin: 20px 4px;
+  }
+  .book-desc h2 {
+    margin: 0;
+  }
+  .cart-btns {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+  .total-price h2 {
+    margin: 20px 0;
+    display: flex;
+    justify-content: center;
+  }
+  .total-price h2 {
+    padding: 0px;
+  }
+}
+/* for tablet */
+@media only screen and (min-width: 768px) and (max-width: 1220px) {
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .book-desc h2 {
+    margin: 0;
+  }
+  .total-order button {
+    font-size: 20px;
+    margin: 20px;
+  }
+  .total-price h2 {
+    font-size: 20px;
+    padding: 0px;
+    display: block;
+  }
+}

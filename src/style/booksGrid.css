@@ -59,3 +59,18 @@
     height: 220px;
   }
 }
+/*---------tablet---------*/
+@media (min-width: 768px) and (max-width: 1024px) {
+  .featured-books .container,
+  .New-books .container {
+    align-items: center;
+  }
+  .books-grid {
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 12px 16px;
+  }
+  .books-grid li {
+    margin: 16px auto;
+  }
+}

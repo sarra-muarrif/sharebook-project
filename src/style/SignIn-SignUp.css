@@ -75,3 +75,40 @@
   font-weight: bold;
   font-size: 25px;
 }
+
+/*---------responsive-----------*/
+@media only screen and (max-width: 767px) {
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  #first-name,
+  #last-name,
+  #email-signup,
+  #password-signup,
+  #email-signin,
+  #password-signin,
+  #confirm-password {
+    padding: 8px 8px;
+    width: 90%;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 1220px) {
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  #first-name,
+  #last-name,
+  #email-signup,
+  #password-signup,
+  #email-signin,
+  #password-signin,
+  #confirm-password {
+    padding: 8px 8px;
+    margin: 0 10px 30px 0;
+    width: 90%;
+  }
+}

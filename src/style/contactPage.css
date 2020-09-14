@@ -71,3 +71,19 @@
 .send-btn:hover {
   color: cornsilk;
 }
+
+/*---------responsive----------*/
+@media only screen and (max-width: 768px) {
+  .container {
+    max-width: 90%;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .contact-form {
+    display: block;
+  }
+  .dialer-name input,
+  .dialer-email input {
+    width: 96%;
+  }
+}

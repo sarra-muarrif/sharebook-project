@@ -2,6 +2,10 @@ import React from "react";
 import { NavLink, withRouter } from "react-router-dom";
 
 class Header extends React.Component {
+  state = { clicked: false };
+  handleClick = () => {
+    this.setState({ clicked: !this.state.clicked });
+  };
   render() {
     const { orderBook, isSignedIn, userName } = this.props;
     if (
@@ -11,15 +15,23 @@ class Header extends React.Component {
       return null;
     }
     return (
-      <header className="section-header">
+      <header className="section-header ">
         <div className="container">
           <div className="web-title">
             <NavLink exact to="/">
               ShareBook
             </NavLink>
           </div>
-
-          <div className="group-header-items">
+          <div
+            className={
+              this.state.clicked
+                ? "group-header-items is-active"
+                : "group-header-items"
+            }
+          >
+            <button className="navbar-burger" onClick={this.handleClick}>
+              <span class="nav-icon"></span>
+            </button>
             {isSignedIn === true ? (
               <div>welcome {userName}</div>
             ) : (

@@ -40,3 +40,47 @@
   text-align: center;
   padding: 12px 30px;
 }
+/*----------------------------------------------*/
+/*                    Responsive                */
+/*       كل ما هو متعلق بالهواتف والتابلت    */
+/*---------------------------------------------*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .searchBook-img-bacground p,
+  .searchBook-img-bacground h3,
+  .search-bar {
+    line-height: 100px;
+  }
+  .searchBook-img-bacground p {
+    padding: 50px 0 0 0;
+  }
+}
+@media (max-width: 767px) {
+  .searchBook-img-bacground {
+    height: 350px;
+  }
+  .searchBook-img-bacground p {
+    font-size: 29px;
+    padding: 11px 0 0;
+  }
+  .searchBook-img-bacground h3 {
+    font-size: 29px;
+  }
+  .searchBook-img-bacground p,
+  .searchBook-img-bacground h3,
+  .search-bar {
+    line-height: 50px;
+  }
+  #search-book {
+    font-size: 22px;
+    border: 2px solid #000000;
+    width: fit-content;
+    margin-bottom: 10px;
+    padding: 12px 12px;
+  }
+  #search-btn {
+    border: 2px solid #fffbfb;
+    font-size: 27px;
+    padding: 5px 22px;
+  }
+}

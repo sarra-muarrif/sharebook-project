@@ -53,9 +53,7 @@ class CartPage extends React.Component {
                     <h2>Total : {total}$</h2>
                     <h2>QTY : {orderBook.length}</h2>
                   </div>
-                  <button onClick={this.checkOut(total, isSignedIn)}>
-                    Proceed To Checkout
-                  </button>
+                  <button>Proceed To Checkout</button>
                 </>
               )}
               {isSignedIn === true ? (

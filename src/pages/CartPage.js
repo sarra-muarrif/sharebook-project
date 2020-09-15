@@ -50,7 +50,7 @@ class CartPage extends React.Component {
               ) : (
                 <>
                   <div className="total-price">
-                    <h2>Total : {total}$</h2>
+                    <h2>Total : {total.toLocaleString()}$</h2>
                     <h2>QTY : {orderBook.length}</h2>
                   </div>
                   <button>Proceed To Checkout</button>

@@ -133,3 +133,80 @@
 .showError {
   text-align: center;
 }
+/*----------responsive--------*/
+@media (max-width: 768px) {
+  .section-seller {
+    padding: 40px 0;
+  }
+  .hero-seller h2 {
+    font-size: 25px;
+  }
+  .sign-out {
+    padding: 2px;
+  }
+  .sign-out button {
+    font-size: 12px;
+    margin: 12px auto;
+  }
+  .form-seller {
+    margin: 0 auto 12px;
+    padding-bottom: 25px;
+  }
+  #book-name,
+  #book-price,
+  #book-type,
+  #book-img {
+    display: flex;
+    float: none;
+    flex-direction: column;
+    justify-content: center;
+    padding: 10px;
+    font-size: 12px;
+    margin: 8px 0;
+  }
+  #book-name {
+    width: auto;
+  }
+  .error,
+  .no-book,
+  .showError {
+    font-size: 12px;
+  }
+  #book-price {
+    width: 35px;
+  }
+  #book-type {
+    position: relative;
+    bottom: 70px;
+    float: right;
+  }
+  #type {
+    position: relative;
+    bottom: 52px;
+    right: 137px;
+    float: right;
+    font-size: 16px;
+  }
+  .add-btn,
+  .remove-btn {
+    font-size: 20px;
+    height: auto;
+    padding: 0 30px;
+  }
+  .your-book h2 {
+    padding: 60px 0 40px;
+    font-size: 25px;
+  }
+  .book-group-desc h2 {
+    font-size: 20px;
+    padding: 14px 0;
+  }
+  .book-group-image img {
+    width: 45%;
+  }
+}
+@media (min-width: 768px) and (max-width: 1024px) {
+  #book-name {
+    width: auto;
+  }
+}

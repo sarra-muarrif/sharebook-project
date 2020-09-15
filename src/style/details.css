@@ -52,7 +52,6 @@
   padding: 2px 12px;
   margin: 0px 10px;
 }
-
 .book-info {
   font-size: 1.2em;
   line-height: 20px;
@@ -78,4 +77,74 @@
   font-size: 3em;
   text-align: center;
   margin: 50px 140px;
+}
+/*------Media Query-------*/
+@media (max-width: 768px) {
+  .detail .container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .book-preview {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .main-photo {
+    width: 60%;
+  }
+  .book-preview button {
+    width: 60%;
+    height: 49px;
+    font-size: 16px;
+  }
+  .book-detail {
+    margin: auto;
+  }
+  .book-overview {
+    font-size: 20px;
+    margin: auto;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+  }
+  .book-description p {
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .book-description .showMore {
+    font-size: 16px;
+    margin: 10px 8px;
+  }
+  .book-info {
+    font-size: 16px;
+    line-height: 12px;
+    text-align: justify;
+  }
+  #book-Author,
+  #book-PubYear,
+  #book-Pages {
+    font-size: 16px;
+    padding: 12px;
+    line-height: 13px;
+  }
+  .other-options {
+    height: auto;
+  }
+  .other-options h3 {
+    font-size: 25px;
+    margin: 12px auto;
+  }
+}
+@media (min-width: 600px) and (max-width: 768px) {
+  .book-overview h2 {
+    font-size: 32px;
+  }
+  .book-description p {
+    font-size: 22px;
+  }
+  #book-Author,
+  #book-PubYear,
+  #book-Pages {
+    font-size: 22px;
+  }
 }

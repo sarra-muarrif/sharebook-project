@@ -58,7 +58,7 @@ class CartPage extends React.Component {
               )}
               {isSignedIn === true ? (
                 <div className="total-price">
-                  <h2>Your final Bill is : {total}$</h2>
+                  <h2>Your final Bill is : {total.toLocaleString()}$</h2>
                 </div>
               ) : (
                 <div className="total-price">

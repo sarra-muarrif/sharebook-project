@@ -58,9 +58,15 @@
     width: 231px;
     height: 220px;
   }
+  .books-grid button {
+    width: 231px;
+  }
+  .book-details {
+    margin: 0 5px;
+  }
 }
 /*---------tablet---------*/
-@media (min-width: 768px) and (max-width: 1024px) {
+@media (min-width: 768px) and (max-width: 1250px) {
   .featured-books .container,
   .New-books .container {
     align-items: center;
@@ -68,9 +74,18 @@
   .books-grid {
     flex-wrap: wrap;
     justify-content: center;
-    margin: 12px 16px;
+    margin: 16px 16px;
   }
   .books-grid li {
     margin: 16px auto;
+  }
+  .book-details {
+    margin: 50px 30px;
+  }
+}
+
+@media (min-width: 769px) and(max-width:895px) {
+  .book-details {
+    margin: 50px 10px;
   }
 }

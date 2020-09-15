@@ -3,7 +3,7 @@
 .navbar-menu {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 .navbar-burger {
   display: none;
@@ -139,5 +139,10 @@
   .group-header-items.is-active .navbar-menu li {
     padding: 16px 20px;
     font-size: 16px;
+  }
+}
+@media (min-width: 769px) and(max-width:1000px) {
+  .navbar-menu {
+    padding: 0 10px 0 50px;
   }
 }

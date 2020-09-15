@@ -1,5 +1,4 @@
 import React from "react";
-import { main_URL } from "../constants/urls";
 class BookSellList extends React.Component {
   render() {
     const { onDelete, items } = this.props;

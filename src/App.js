@@ -11,6 +11,9 @@ import SellerPage from "./pages/SellerPage";
 import Footer from "./components/Footer";
 import { API_KEY, SEARCH_POINT } from "./constants/urls";
 import Header from "./components/Header.js";
+import Noty from "noty";
+import "../node_modules/noty/lib/noty.css";
+import "../node_modules/noty/lib/themes/mint.css";
 
 class App extends React.Component {
   constructor(props) {
@@ -92,6 +95,12 @@ class App extends React.Component {
       orderBook.push(product);
     }
     this.setState({ orderBook });
+    new Noty({
+      type: "success",
+      layout: "topLeft",
+      text: "New Book Is Added To Cart",
+      timeout: 3000,
+    }).show();
   };
 
   // Delete the book in cart
@@ -100,6 +109,12 @@ class App extends React.Component {
     let i = itemDelete.findIndex((item) => item.id === id);
     itemDelete.splice(i, 1);
     this.setState({ itemDelete });
+    new Noty({
+      type: "error",
+      layout: "topLeft",
+      text: "One Book has Deleted From The Cart",
+      timeout: 3000,
+    }).show();
   };
   render() {
     return (

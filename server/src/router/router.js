@@ -10,7 +10,6 @@ const path = require("path");
 const storage = multer.diskStorage({
   destination: "./uploads",
   filename: (req, file, cb) => {
-    console.log(file);
     cb(
       null,
       file.fieldname + `-` + Date.now() + path.extname(file.originalname)
@@ -86,7 +85,7 @@ router.get("/seller", async (req, res) => {
     res.send(sellerBooks);
   } catch (error) {
     res.status(500).json({
-      Error: console.log(error),
+      Error: error,
     });
   }
 
